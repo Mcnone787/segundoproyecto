@@ -17,3 +17,12 @@
     justify-content: center;
     align-items: center;
 }
+
+.footer_class{
+    background-color: #AAE6D9 !important;
+
+}
+a{
+    text-decoration: none !important;
+    color: black;   
+}
