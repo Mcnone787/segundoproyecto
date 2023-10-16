@@ -15,6 +15,7 @@
 
 
 include "../src/controllers/index.php";
+include "../src/controllers/footer.php";
 
 
 // $r = $_REQUEST["r"];
