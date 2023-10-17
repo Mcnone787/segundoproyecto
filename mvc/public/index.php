@@ -15,25 +15,27 @@
 
 
 include "../src/controllers/index.php";
+include "../src/controllers/login.php";
+include "../src/controllers/registro.php";
 
-
-// $r = $_REQUEST["r"];
+$r = $_REQUEST["r"];
 
 // /* Creem els diferents models */
 // $session = new Daw\Session();
 // $images = new Daw\Images();
 
-// if ($r === "login") {
-//     ctrlLogin($_GET, $session);
-// } elseif ($r === "save") {
-//     ctrlSave($_POST, $session);
-// } elseif ($r == "about") {
-//     ctrlAbout($_GET, $_COOKIE, $session);
-// } elseif ($r == "exemple") {
-//     ctrlExemple($images);
-// } elseif ($r == "") {
-//     ctrlIndex($_GET, $_COOKIE, $session, $images);
-// } else {
-//     ctrlError($_GET, $session);
-// }
+switch ($r) {
+    case "login":
+        ctrlLogin();
+        break;
+    case "index":
+        ctrlIndex();
+        break;
+    case "registro":
+        ctrlRegistro();
+        break;
+    default:
+        ctrlIndex();
+        break;
+}
 
