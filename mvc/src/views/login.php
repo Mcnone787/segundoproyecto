@@ -10,7 +10,6 @@
     <title>Login | Apartamentos Figueres</title>
     <link rel="icon" href="imgs/logo/logo-removebg-preview.png" type="image/x-icon">
 </head>
-
 <body>
     <div class="container">
         <div class="row align-items-center" style="height: 100vh">
