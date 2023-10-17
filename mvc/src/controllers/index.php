@@ -18,6 +18,7 @@
   * @param $images Model que encapsula les imatges.
   *
 **/
-
-    include "../src/views/index.php";
+function ctrlIndex(){
+  include "../src/views/index.php";
+}
 
