@@ -17,7 +17,6 @@
 include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/registro.php";
-include "../src/controllers/footer.php";
 
 $r = $_REQUEST["r"];
 
@@ -34,9 +33,6 @@ switch ($r) {
         break;
     case "registro":
         ctrlRegistro();
-        break;
-    case "footer":
-        ctrlFooter();
         break;
     default:
         ctrlIndex();
