@@ -20,10 +20,10 @@
     <div class="container">
         <div class="row align-items-center" style="height: 100vh">
             <div class="mx-auto col-10 col-md-8 col-lg-6">
-                <div class="mb-3">
-                    <h3>Iniciar Sessión</h3>
-                </div>
-                <form class="form-control" action="login.php" method="post">
+                <form class="form-control form_session" action="login.php" method="post">
+                    <div class="my-4">
+                        <h3>Iniciar Sessión</h3>
+                    </div>
                     <div class="mb-3">
                         <label class="col-form-label-lg" for="user">Correo Electronico</label>
                         <input class="form-control form-control-lg" type="text" name="mail" id="mail" placeholder="Correo Electronico" required>
@@ -33,7 +33,8 @@
                         <input class="form-control form-control-lg" type="password" name="password" id="password" placeholder="Contraseña" required>
                     </div>
                     <div class="mb-3">
-                        <button class="btn btn-primary btn-lg" type="submit" value="login">Entrar</button>
+                        <button class="btn btn-primary btn-lg my-2" type="submit" value="login">Entrar</button>
+                        <a href="?r=registro">No tienes una cuenta Registrate Aqui</a>
                     </div>
                 </form>
             </div>
