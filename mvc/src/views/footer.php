@@ -1,5 +1,6 @@
-<footer class="row text-center text-lg-start bg-light text-muted footer_class">
-    <div class="col-3">
+<footer class="row footer_class">
+<div class="col-3">
+
         <div class="container-fluid mt-2">
             <img src="imgs/logo/logo.png" alt="logo" class="img-thumbnail" width="auto" style="height: 150px;">
         </div>

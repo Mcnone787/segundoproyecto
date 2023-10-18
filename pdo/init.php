@@ -11,10 +11,9 @@
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-
-$dsn = 'mysql:dbname=tasques;host=localhost;port:8306';
+$dsn = 'mysql:dbname=apartamentos;host=localhost';
 $usuari = 'root';
-$clau = 'hsdvewy';
+$clau = '';
 try {
     $sql = new PDO($dsn, $usuari, $clau);
 } catch (PDOException $e) {
@@ -28,19 +27,19 @@ $query = "truncate table tasques;";
 $sql->exec($query);
 echo "[ok]\n";
 
-// Inserim valors
-$tasques = array(
-    array("tasca" => "Tasca 1", "borrat" => 0),
-    array("tasca" => "Tasca 2", "borrat" => 0),
-    array("tasca" => "Tasca 3", "borrat" => 1),
-);
+// // Inserim valors
+// $tasques = array(
+//     array("tasca" => "Tasca 1", "borrat" => 0),
+//     array("tasca" => "Tasca 2", "borrat" => 0),
+//     array("tasca" => "Tasca 3", "borrat" => 1),
+// );
 
 
-foreach ($tasques as $actual) {
-    echo "Inserint la tasca: \"{$actual['tasca']}\" ";
-    $stm = $sql->prepare('insert into tasques (tasca,borrat) values (:tasca, :borrat);');
-    $result = $stm->execute([':tasca' => $actual["tasca"], ':borrat' => $actual["borrat"]]);
-    echo "[ok]\n";
-}
+// foreach ($tasques as $actual) {
+//     echo "Inserint la tasca: \"{$actual['tasca']}\" ";
+//     $stm = $sql->prepare('insert into tasques (tasca,borrat) values (:tasca, :borrat);');
+//     $result = $stm->execute([':tasca' => $actual["tasca"], ':borrat' => $actual["borrat"]]);
+//     echo "[ok]\n";
+// }
 
 
