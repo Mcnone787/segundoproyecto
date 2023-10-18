@@ -21,22 +21,22 @@
                     </div>
                     <div class="mb-2">
                         <label class="col-form-label-lg" for="nombre">Nombre</label>
-                        <input class="form-control form-control-lg" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                        <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
                     </div>
                     <div class="mb-2">
                         <label class="col-form-label-lg" for="apellido">Apellido</label>
-                        <input class="form-control form-control-lg" type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                        <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Apellido" required>
                     </div>
                     <div class="mb-2">
                         <label class="col-form-label-lg" for="debit-card">Tarjeta de Debito</label>
-                        <input class="form-control form-control-lg" type="text" name="debit-card" id="dbCard" placeholder="0000/0000/0000/0000" required>
+                        <input class="form-control" type="text" name="debit-card" id="dbCard" placeholder="0000/0000/0000/0000" required>
                     <div class="mb-2">
                         <label class="col-form-label-lg" for="user">Correo Electronico</label>
-                        <input class="form-control form-control-lg" type="text" name="mail" id="mail" placeholder="Correo Electronico" required>
+                        <input class="form-control" type="text" name="mail" id="mail" placeholder="Correo Electronico" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-4">
                         <label class="col-form-label-lg" for="password">Contraseña</label>
-                        <input class="form-control form-control-lg" type="password" name="password" id="password" placeholder="Contraseña" required>
+                        <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" required>
                     </div>
                     <div class="mb-2">
                         <button class="btn btn-primary btn-lg" type="submit" value="Registrar">Registrar</button>
