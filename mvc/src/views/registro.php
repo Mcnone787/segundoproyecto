@@ -9,15 +9,14 @@
     <link type="text/css" rel="stylesheet" href="srcs/style.css">
     <title>Registro | Apartadawdmentos Figueres</title>
     <link rel="icon" href="imgs/logo/logo-removebg-preview.png" type="image/x-icon">
-
 </head>
 
 <body>
     <div class="container">
-        <div class="row align-items-center" style="height: 100vh">
+        <div class="row align-items-center">
             <div class="mx-auto col-10 col-md-8 col-lg-6">
-                <form class="form-control" action="registro.php" method="post">
-                    <div class="mt-2">
+                <form class="form-control form_session" action="registro.php" method="post">
+                    <div class="my-3">
                         <h3>Registro</h3>
                     </div>
                     <div class="mb-2">
@@ -28,6 +27,9 @@
                         <label class="col-form-label-lg" for="apellido">Apellido</label>
                         <input class="form-control form-control-lg" type="text" name="apellido" id="apellido" placeholder="Apellido" required>
                     </div>
+                    <div class="mb-2">
+                        <label class="col-form-label-lg" for="debit-card">Tarjeta de Debito</label>
+                        <input class="form-control form-control-lg" type="text" name="debit-card" id="dbCard" placeholder="0000/0000/0000/0000" required>
                     <div class="mb-2">
                         <label class="col-form-label-lg" for="user">Correo Electronico</label>
                         <input class="form-control form-control-lg" type="text" name="mail" id="mail" placeholder="Correo Electronico" required>
