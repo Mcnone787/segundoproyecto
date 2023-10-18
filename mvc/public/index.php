@@ -45,6 +45,9 @@ switch ($r) {
     case "registro":
         ctrlRegistro($request, $response, $container);
         break;
+    case "footer":
+        ctrlFooter($request, $response, $container);
+        break;
     default:
     ctrlIndex($request, $response, $container);
         break;
