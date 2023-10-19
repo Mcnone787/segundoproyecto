@@ -36,16 +36,16 @@ $r = $_REQUEST["r"];
 
 switch ($r) {
     case "login":
-        ctrlLogin();
+        ctrlLogin($request, $response, $container);
         break;
     case "index":
         ctrlIndex($request, $response, $container);
         break;
     case "registro":
-        ctrlRegistro();
+        ctrlRegistro($request, $response, $container);
         break;
     case "footer":
-        ctrlFooter();
+        ctrlFooter($request, $response, $container);
         break;
     default:
     ctrlIndex($request, $response, $container);
