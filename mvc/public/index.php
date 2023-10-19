@@ -21,6 +21,7 @@ include "../src/controllers/footer.php";
 include "../src/controllers/nav.php";
 include "../src/controllers/ctrlDologin.php";
 include "../src/controllers/ctrladd.php";
+
 // registro && DoRegistro
 include "../src/controllers/DoRegister.php";
 include "../src/controllers/registro.php";
