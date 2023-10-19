@@ -18,7 +18,10 @@
  * @param $images Model que encapsula les imatges.
  *
  **/
-function ctrlIndex()
-{
-  include "../src/views/index.php";
+function ctrlIndex($request, $response, $container){
+  
+  $response->setTemplate("index.php");
+  $response->set("container",$container);
+
+  return $response;
 }

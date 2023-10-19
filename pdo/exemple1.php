@@ -8,15 +8,16 @@
  * Exemple de com utilitzar l'objecte PDO.
 ***************************/
 
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 //include "config.php";
 
 $examples = array();
 
 $dsn = 'mysql:dbname=tasks;host=localhost';
-$user = 'demo-daw';
+$user = '';
 $password = '1234';
+echo "dwd";
+
 try {
     $sql = new PDO($dsn, $user, $password);
 } catch (PDOException $e) {
@@ -28,6 +29,8 @@ try {
 // die();
 
 // Exemple de consulta
+/*
+
 $tasks = array();
 $query = "select id, task from tasks where deleted=0;";
 foreach ($sql->query($query, PDO::FETCH_ASSOC) as $task) {
@@ -133,3 +136,4 @@ $stm->execute([':task' => $task]);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </body>
 </html>
+*/

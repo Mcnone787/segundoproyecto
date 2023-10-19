@@ -10,7 +10,6 @@
 ***************************/
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
-
 $dsn = 'mysql:dbname=apartamentos;host=localhost';
 $usuari = 'root';
 $clau = '';
@@ -20,12 +19,21 @@ try {
     die('Ha fallat la connexió: ' . $e->getMessage());
 }
 
+$tasks = array();
+$query = "select * from usuarios;";
+foreach ($sql->query($query, PDO::FETCH_ASSOC) as $task) {
+    $tasks[] = $task["Nombre"] ;
+}
+foreach($tasks as $items){
+    echo $items;
+}
+
 // Buidem la taula
-$tasques = array();
-echo "Buidant la taula - ";
-$query = "truncate table tasques;";
-$sql->exec($query);
-echo "[ok]\n";
+// $tasques = array();
+// echo "Buidant la taula - ";
+// $query = "truncate table tasques;";
+// $sql->exec($query);
+// echo "[ok]\n";
 
 // // Inserim valors
 // $tasques = array(
