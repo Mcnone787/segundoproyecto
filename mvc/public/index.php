@@ -19,6 +19,7 @@ include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/footer.php";
 include "../src/controllers/nav.php";
+
 // registro && DoRegistro
 include "../src/controllers/DoRegister.php";
 include "../src/controllers/registro.php";
