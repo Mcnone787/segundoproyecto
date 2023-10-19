@@ -19,6 +19,7 @@ include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/registro.php";
 include "../src/controllers/footer.php";
+include "../src/controllers/nav.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -44,12 +45,8 @@ switch ($r) {
     case "registro":
         ctrlRegistro();
         break;
-    case "footer":
-        ctrlFooter();
-        break;
     default:
     ctrlIndex($request, $response, $container);
-
         break;
 }
 
