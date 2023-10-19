@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +9,9 @@
     <title>Login | Apartamentos Figueres</title>
     <link rel="icon" href="imgs/logo/logo-removebg-preview.png" type="image/x-icon">
 </head>
+
 <body>
+    <?php include "nav.php"; ?>
     <div class="container">
         <div class="row align-items-center" style="height: 100vh">
             <div class="mx-auto col-10 col-md-8 col-lg-6">
@@ -34,6 +35,7 @@
             </div>
         </div>
     </div>
+    <?php include "footer.php"; ?>
 </body>
 
 </html>

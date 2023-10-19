@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +11,7 @@
 </head>
 
 <body>
+    <?php include "nav.php"; ?>
     <div class="container">
         <div class="row align-items-center">
             <div class="mx-auto col-10 col-md-8 col-lg-6">
@@ -30,21 +30,23 @@
                     <div class="mb-2">
                         <label class="col-form-label-lg" for="debit-card">Tarjeta de Debito</label>
                         <input class="form-control" type="text" name="debit-card" id="dbCard" placeholder="0000/0000/0000/0000" required>
-                    <div class="mb-2">
-                        <label class="col-form-label-lg" for="user">Correo Electronico</label>
-                        <input class="form-control" type="text" name="mail" id="mail" placeholder="Correo Electronico" required>
-                    </div>
-                    <div class="mb-4">
-                        <label class="col-form-label-lg" for="password">Contraseña</label>
-                        <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" required>
-                    </div>
-                    <div class="mb-2">
-                        <button class="btn btn-primary btn-lg" type="submit" value="Registrar">Registrar</button>
-                    </div>
+                        <div class="mb-2">
+                            <label class="col-form-label-lg" for="user">Correo Electronico</label>
+                            <input class="form-control" type="text" name="mail" id="mail" placeholder="Correo Electronico" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="col-form-label-lg" for="password">Contraseña</label>
+                            <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" required>
+                        </div>
+                        <div class="mb-2">
+                            <button class="btn btn-primary btn-lg" type="submit" value="Registrar">Registrar</button>
+                        </div>
                 </form>
             </div>
         </div>
     </div>
+    </div>
+    <?php include "footer.php"; ?>
 </body>
 
 </html>
