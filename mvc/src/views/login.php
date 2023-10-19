@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +15,9 @@
     <link rel="icon" type="image/x-icon" href="../../public/imgs/logo/favicon/logo-removebg-preview.png">
 >>>>>>> 207aab0 (session in development v2)
 </head>
+
 <body>
+    <?php include "nav.php"; ?>
     <div class="container">
         <div class="row align-items-center" style="height: 100vh">
             <div class="mx-auto col-10 col-md-8 col-lg-6">
@@ -40,6 +41,7 @@
             </div>
         </div>
     </div>
+    <?php include "footer.php"; ?>
 </body>
 
 </html>
