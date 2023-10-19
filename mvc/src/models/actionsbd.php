@@ -1,8 +1,8 @@
 <?php
 
-namespace Daw;
+namespace BDM;
 
-class Tasks {
+class actionbd {
 
     public $sql;
 

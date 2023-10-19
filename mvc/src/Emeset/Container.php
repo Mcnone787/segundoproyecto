@@ -44,7 +44,7 @@ class Container
 
     public function tasks()
     {
-        return new \Daw\Tasks(
+        return new \BDM\actionbd(
             $this->config["db"]["user"],
             $this->config["db"]["pass"],
             $this->config["db"]["db"], 
