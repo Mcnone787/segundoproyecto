@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link type='text/css' rel='stylesheet' href='css/style.css'>
+    <link type='text/css' rel='stylesheet' href='srcs/style.css'>
     <title>Login | Apartamentos Figueres</title>
     <link rel="icon" href="imgs/logo/logo-removebg-preview.png" type="image/x-icon">
 </head>
@@ -19,10 +19,6 @@
                     <div class="my-4">
                         <h3>Iniciar Sessión</h3>
                     </div>
-                <form class="form-control form_session" action="login.php" method="post">
-                    <div class="my-4">
-                        <h3>Iniciar Sessión</h3>
-                    </div>
                     <div class="mb-3">
                         <label class="col-form-label-lg" for="user">Correo Electronico</label>
                         <input class="form-control form-control-lg" type="text" name="mail" id="mail" placeholder="Correo Electronico" required>
@@ -32,10 +28,6 @@
                         <input class="form-control form-control-lg" type="password" name="password" id="password" placeholder="Contraseña" required>
                     </div>
                     <div class="mb-3">
-                        <button class="btn btn-primary btn-lg " type="submit" value="login">Entrar</button>
-                    </div>
-                    <div class="mb-3">
-                    <a class="" href="?r=registro">No tienes una cuenta Registrate Aqui</a>
                         <button class="btn btn-primary btn-lg " type="submit" value="login">Entrar</button>
                     </div>
                     <div class="mb-3">
