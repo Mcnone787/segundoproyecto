@@ -23,8 +23,6 @@
 >>>>>>> b3b51c2 (backend-register in development)
 =======
                 <form class="form-control form_session" action="index.php" method="post">
-                <input type="hidden" name="r" value="doregistro">
->>>>>>> e16eed2 (backend register v3)
                     <div class="my-3">
                         <h3>Registro</h3>
                     </div>

@@ -51,6 +51,7 @@ class Container
             $this->config["db"]["host"]
         );
     }
+
     public function users()
     {
         return new \Daw\Users(
