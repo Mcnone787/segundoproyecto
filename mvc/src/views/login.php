@@ -34,8 +34,10 @@
                         <input class="form-control form-control-lg" type="password" name="password" id="password" placeholder="Contraseña" required>
                     </div>
                     <div class="mb-3">
-                        <button class="btn btn-primary btn-lg my-2" type="submit" value="login">Entrar</button>
-                        <a href="?r=registro">No tienes una cuenta Registrate Aqui</a>
+                        <button class="btn btn-primary btn-lg " type="submit" value="login">Entrar</button>
+                    </div>
+                    <div class="mb-3">
+                    <a class="" href="?r=registro">No tienes una cuenta Registrate Aqui</a>
                     </div>
                 </form>
             </div>
