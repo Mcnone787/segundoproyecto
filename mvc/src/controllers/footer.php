@@ -1,5 +1,9 @@
 <?php
 
-function ctrlFooter(){
-    include "../src/views/footer.php";
-}
+function ctrlFooter($request, $response, $container){
+  
+    $response->setTemplate("footer.php");
+    $response->set("container",$container);
+  
+    return $response;
+  }

@@ -31,9 +31,9 @@
                      <li class="nav-item">
                         <a class="nav-link" href="#">Departamentos</a>
                      </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                           Session
+                     <li class="nav-item ">
+                        <a class="nav-link " href="index.php?r=login" role="button" aria-expanded="false">
+                           Login
                         </a>
                      </li>
                    
