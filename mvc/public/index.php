@@ -12,13 +12,22 @@
  *
  **/
 
-
+ 
+ include "../src/config.php";
 
 include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/registro.php";
 
+include "../src/Emeset/Container.php";
+include "../src/Emeset/Request.php";
+include "../src/Emeset/Response.php";
+$request = new \Emeset\Request();
+$response = new \Emeset\Response();
+$container = new \Emeset\Container($config);
+
 $r = $_REQUEST["r"];
+
 
 // /* Creem els diferents models */
 // $session = new Daw\Session();
@@ -29,13 +38,19 @@ switch ($r) {
         ctrlLogin();
         break;
     case "index":
-        ctrlIndex();
+        ctrlIndex($request, $response, $container);
         break;
     case "registro":
         ctrlRegistro();
         break;
     default:
-        ctrlIndex();
+    ctrlIndex($request, $response, $container);
+
         break;
 }
+
+$response->response();
+
+
+
 
