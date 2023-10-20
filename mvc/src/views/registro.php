@@ -15,16 +15,8 @@
     <div class="container">
         <div class="row align-items-center" style="height: 90vh">
             <div class="mx-auto col-10 col-md-8 col-lg-6">
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <form class="form-control form_session" action="index.php" method="post">
-=======
                 <form class="form-control form_session" action="?r=doregistro" method="post">
->>>>>>> b3b51c2 (backend-register in development)
-=======
-                <form class="form-control form_session" action="index.php" method="post">
-                <input type="hidden" name="r" value="doregistro">
->>>>>>> e16eed2 (backend register v3)
                     <div class="my-3">
                         <h3>Registro</h3>
                     </div>
