@@ -40,7 +40,7 @@ $r = $_REQUEST["r"];
 
 // /* Creem els diferents models */
 // $session = new Daw\Session();
-// $images = new Daw\Images();
+// $images = new Daw\Images()dd;
 
 switch ($r) {
     case "login":
