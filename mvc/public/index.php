@@ -20,7 +20,7 @@ include "../src/controllers/login.php";
 include "../src/controllers/footer.php";
 include "../src/controllers/nav.php";
 include "../src/controllers/ctrlDologin.php";
-include "../src/controllers/ctrladd.php";
+include "../src/controllers/DoRegister.php";
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
 include "../src/Emeset/Response.php";
