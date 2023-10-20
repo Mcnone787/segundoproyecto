@@ -2,11 +2,13 @@
 
 namespace Daw;
 
-class Users {
+class Users
+{
 
     public $sql;
 
-    public function __construct($user, $pass, $db, $host){
+    public function __construct($user, $pass, $db, $host)
+    {
 
         $dsn = "mysql:dbname={$db};host={$host}";
         try {
@@ -50,17 +52,19 @@ class Users {
 
 
 
-    public function login($user, $pass){
+    public function login($user, $pass)
+    {
         $stm = $this->sql->prepare('select id, user, pass from users where user=:user;');
         $stm->execute([':user' => $user]);
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
-        if(is_array($result) && $result["pass"] == $pass){
+        if (is_array($result) && $result["pass"] == $pass) {
             return $result;
         } else {
             return false;
         }
     }
 
+<<<<<<< HEAD
     public function register($nombre, $apellido, $debitcard, $email, $contraseña){
         $stm = $this->sql->prepare('insert into usuarios (IDUsuario,Nombre,Apellidos,Tarjeta_Credito,Telefono,contraseña,Rol,email) values (:IDUsuario,:Nombre, :Apellidos, :Tarjeta_Credito, :email, :Telefono,:contraseña,:Rol);');
         
@@ -80,3 +84,12 @@ class Users {
 =======
 >>>>>>> b3b51c2 (backend-register in development)
 }
+=======
+    public function register($nombre, $apellido, $debitcard, $email, $contraseña)
+    {
+        $stm = $this->sql->prepare('INSERT INTO usuarios (Nombre, Apellidos, Tarjeta_Credito, Telefono, contrasena, Rol, email) values (:Nombre, :Apellidos, :Tarjeta_Credito, :Telefono, :contrasena, :Rol, :email);');
+        $stm->execute([':Nombre' => $nombre, ':Apellidos' => $apellido, ':Tarjeta_Credito' => $debitcard,  ':Telefono' => 000000000, ':contrasena' => $contraseña, ':Rol' => 'user', ':email' => $email]);
+    }
+
+}
+>>>>>>> e16eed2 (backend register v3)
