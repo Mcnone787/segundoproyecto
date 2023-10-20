@@ -31,7 +31,7 @@ class Users
 
 
     public function login($user, $pass){
-        $stm = $this->sql->prepare('select id, user, pass from users where user=:user;');
+        $stm = $this->sql->prepare('select IDUsuario, usuario, contrasena from users where email=:user;');
         $stm->execute([':user' => $user]);
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
         if(is_array($result) && $result["pass"] == $pass){
