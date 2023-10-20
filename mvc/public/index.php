@@ -19,6 +19,7 @@ include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/footer.php";
 include "../src/controllers/nav.php";
+include "../src/controllers/registro.php";
 include "../src/controllers/ctrlDologin.php";
 include "../src/controllers/DoRegister.php";
 include "../src/Emeset/Container.php";
@@ -45,12 +46,12 @@ switch ($r) {
     case "registro":
         ctrlRegistro($request, $response, $container);
         break;
-        case "doRegistro":
-            ctrlRegistro($request, $response, $container);
-            break;
-            case "dologin":
-                ctrlDoLogin($request, $response, $container);
-                                break;
+    case "doregistro":
+        ctrlDoRegistro($request, $response, $container);
+    break;
+    case "dologin":
+        ctrlDoLogin($request, $response, $container);
+    break;
     case "footer":
         ctrlFooter($request, $response, $container);
         break;

@@ -8,7 +8,6 @@ function ctrlDoRegistro($request, $response, $container){
     $debitCard = $request->get(INPUT_POST, "debit-card");
     $email = $request->get(INPUT_POST, "email");
     $pass = $request->get(INPUT_POST, "password");
-
     if($userModel){
         $userModel->register($name, $lastname, $debitCard, $email, $pass);
         $response->redirect("Location: index.php?r=login");
