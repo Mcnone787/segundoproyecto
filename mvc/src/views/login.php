@@ -26,7 +26,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="col-form-label-lg" for="password">Contraseña</label>
-                        <input class="form-control form-control-lg" type="password" name="password" id="password" placeholder="Contraseña" required>
+                        <input class="form-control form-control-lg" type="password" name="pass" id="password" placeholder="Contraseña" required>
                     </div>
                     <div class="mb-3">
                         <button class="btn btn-primary btn-lg " type="submit" value="login">Entrar</button>
