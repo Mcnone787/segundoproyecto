@@ -36,9 +36,7 @@
                         <p class=''  aria-expanded='false'>
                         Bienvenido 
                         ".$_SESSION['user']['Nombre']."
-                        <span>
-                           Perfil
-                        </span>
+                       
                         </p>
                      </li>";
                      }else{

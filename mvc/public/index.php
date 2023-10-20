@@ -22,6 +22,8 @@ include "../src/controllers/nav.php";
 include "../src/controllers/registro.php";
 include "../src/controllers/ctrlDologin.php";
 include "../src/controllers/DoRegister.php";
+include "../src/controllers/ctrlLogout.php";
+
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
 include "../src/Emeset/Response.php";
@@ -51,6 +53,10 @@ switch ($r) {
     break;
     case "dologin":
         ctrlDoLogin($request, $response, $container);
+    break;
+    case "dologout":
+        
+        ctrlDoLogout($request, $response, $container);
     break;
     case "footer":
         ctrlFooter($request, $response, $container);
