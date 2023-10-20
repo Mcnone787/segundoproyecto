@@ -54,7 +54,7 @@ class Users
 
     public function login($user, $pass)
     {
-        $stm = $this->sql->prepare('select id, user, pass from users where user=:user;');
+        $stm = $this->sql->prepare('select id, user, pass from users where email=:user;');
         $stm->execute([':user' => $user]);
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
 
