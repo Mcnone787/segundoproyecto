@@ -26,12 +26,7 @@ class Users {
         return $tasks;
     }
 
-    public function add($task) {
-        $stm = $this->sql->prepare('insert into usuarios (Nombre,Apellidos,Tarjeta_Credito,Telefono,Rol,Contrasena) values 
-        (:Nombre,:Apellidos,:Tarjeta_Credito,:Telefono,:Rol,:Contrasena );');
-        $result = $stm->execute([':Nombre'=>"dd",':Apellidos'=>"daw",':Tarjeta_Credito'=>"dd",':Telefono'=>1234,':Rol'=>"d",':Contrasena'=>"dwad"]);
-
-    }
+  
 
 
     public function login($user, $pass){

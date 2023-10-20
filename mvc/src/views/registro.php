@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row align-items-center" style="height: 90vh">
             <div class="mx-auto col-10 col-md-8 col-lg-6">
-                <form class="form-control form_session" action="index.php?r=add" method="post">
+                <form class="form-control form_session" action="index.php" method="post">
                     <div class="my-3">
                         <h3>Registro</h3>
                     </div>
