@@ -2,11 +2,13 @@
 
 namespace Daw;
 
-class Users {
+class Users
+{
 
     public $sql;
 
-    public function __construct($user, $pass, $db, $host){
+    public function __construct($user, $pass, $db, $host)
+    {
 
         $dsn = "mysql:dbname={$db};host={$host}";
         try {
@@ -16,32 +18,34 @@ class Users {
         }
     }
 
-    public function getAll(){
-        $tasks = array();
-        $query = "select id, user, pass from users;";
-        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $task) {
-            $tasks[] = $task;
-        }
+    // public function getAll(){
+    //     $tasks = array();
+    //     $query = "select id, user, pass from users;";
+    //     foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $task) {
+    //         $tasks[] = $task;
+    //     }
 
-        return $tasks;
-    }
-
-  
+    //     return $tasks;
+    // }
 
 
-    public function login($user, $pass){
-        $stm = $this->sql->prepare('select IDUsuario, Nombre from usuarios where Nombre=:user;');
+
+    public function login($user, $pass)
+    {
+        $stm = $this->sql->prepare('select id, user, pass from users where user=:user;');
         $stm->execute([':user' => $user]);
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
-        print_r($result);
-        if(is_array($result) && $result["pass"] == $pass){
-            
+        if (is_array($result) && $result["pass"] == $pass) {
             return $result;
         } else {
             return false;
         }
     }
 
-
+    public function register($nombre, $apellido, $debitcard, $email, $contraseña)
+    {
+        $stm = $this->sql->prepare('INSERT INTO usuarios (Nombre, Apellidos, Tarjeta_Credito, Telefono, contrasena, Rol, email) values (:Nombre, :Apellidos, :Tarjeta_Credito, :Telefono, :contrasena, :Rol, :email);');
+        $stm->execute([':Nombre' => $nombre, ':Apellidos' => $apellido, ':Tarjeta_Credito' => $debitcard,  ':Telefono' => 000000000, ':contrasena' => $contraseña, ':Rol' => 'user', ':email' => $email]);
+    }
 
 }
