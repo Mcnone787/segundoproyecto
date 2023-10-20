@@ -30,10 +30,10 @@ class Users
 
 
     public function login($user, $pass){
-        $stm = $this->sql->prepare('select IDUsuario, email,contrasena from usuarios where Nombre=:user;');
-        $stm->execute([':user' => $email]);
+        $stm = $this->sql->prepare('select IDUsuario, Nombre,email,contrasena from usuarios where email=:user;');
+        $stm->execute([':user' => $user]);
+        
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
-
         if(is_array($result) && $result["contrasena"] == $pass){
             
             return $result;
