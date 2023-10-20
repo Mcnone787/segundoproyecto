@@ -12,16 +12,17 @@
 
 <body>
     <?php include "nav.php"; ?>
+ 
     <div class="container">
         <div class="row align-items-center" style="height: 100vh">
             <div class="mx-auto col-10 col-md-8 col-lg-6">
-                <form class="form-control form_session" action="login.php" method="post">
+                <form class="form-control form_session" action="index.php?r=dologin" method="post">
                     <div class="my-4">
                         <h3>Iniciar Sessión</h3>
                     </div>
                     <div class="mb-3">
                         <label class="col-form-label-lg" for="user">Correo Electronico</label>
-                        <input class="form-control form-control-lg" type="text" name="mail" id="mail" placeholder="Correo Electronico" required>
+                        <input class="form-control form-control-lg" type="text" name="user" id="mail" placeholder="Correo Electronico" required>
                     </div>
                     <div class="mb-3">
                         <label class="col-form-label-lg" for="password">Contraseña</label>

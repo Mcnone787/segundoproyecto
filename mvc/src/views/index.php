@@ -17,8 +17,6 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-      <?php     $taskModel = $container->tasks();
-?>
 
             <div class="collapse navbar-collapse" id="navbarScroll">
                <div style="margin: 0 auto; width: 50%;">
@@ -31,11 +29,30 @@
                      <li class="nav-item">
                         <a class="nav-link" href="#">Departamentos</a>
                      </li>
-                     <li class="nav-item ">
-                        <a class="nav-link " href="index.php?r=login" role="button" aria-expanded="false">
+                     <?php
+                     
+                     if($_SESSION["user"]){
+                        echo  "  <li class='nav-item' style='border:solid black 2px;' >
+                        <p class=''  aria-expanded='false'>
+                        Bienvenido 
+                        ".$_SESSION['user']['Nombre']."
+                        <span>
+                           Perfil
+                        </span>
+                        </p>
+                     </li>";
+                     }else{
+                        echo "
+                        <li class='nav-item '>
+                        <a class='nav-link ' href='index.php?r=login' role='button' aria-expanded='false'>
                            Login
                         </a>
                      </li>
+                        ";
+                     }
+                   
+                     ?>
+                  
                    
                   </ul>
                </div>

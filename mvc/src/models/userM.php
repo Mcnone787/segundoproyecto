@@ -26,17 +26,21 @@ class Users {
         return $tasks;
     }
 
-    // public function add($task) {
-    //     $stm = $this->sql->prepare('insert into tasks (task,deleted) values (:task, 0);');
-    //     $result = $stm->execute([':task' => $task]);
-    // }
+    public function add($task) {
+        $stm = $this->sql->prepare('insert into usuarios (Nombre,Apellidos,Tarjeta_Credito,Telefono,Rol,Contrasena) values 
+        (:Nombre,:Apellidos,:Tarjeta_Credito,:Telefono,:Rol,:Contrasena );');
+        $result = $stm->execute([':Nombre'=>"dd",':Apellidos'=>"daw",':Tarjeta_Credito'=>"dd",':Telefono'=>1234,':Rol'=>"d",':Contrasena'=>"dwad"]);
+
+    }
 
 
     public function login($user, $pass){
-        $stm = $this->sql->prepare('select id, user, pass from users where user=:user;');
+        $stm = $this->sql->prepare('select IDUsuario, Nombre from usuarios where Nombre=:user;');
         $stm->execute([':user' => $user]);
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
+        print_r($result);
         if(is_array($result) && $result["pass"] == $pass){
+            
             return $result;
         } else {
             return false;
