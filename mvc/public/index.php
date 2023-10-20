@@ -23,6 +23,7 @@ include "../src/controllers/nav.php";
 // registro && DoRegistro
 include "../src/controllers/DoRegister.php";
 include "../src/controllers/registro.php";
+include "../src/controllers/ctrlDologin.php";
 
 
 include "../src/Emeset/Container.php";
