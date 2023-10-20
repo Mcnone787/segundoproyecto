@@ -7,9 +7,10 @@
       <title>Bootstrap demo</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
       <link rel="stylesheet" href="srcs/style.css">
-      <link rel="icon" href="imgs/logo/logo-removebg-preview.png" type="image/x-icon">
+      <link rel="icon" href="imgs/logo/favicon/logo-removebg-preview.png" type="image/x-icon">
+      <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
    </head>
-   <body>
+   <body data-bs-theme="dark">
 
    <nav class="navbar navbar-expand-lg bg-body-tertiary nav">
          <div class="container-fluid">
@@ -30,30 +31,26 @@
                         <a class="nav-link" href="#">Departamentos</a>
                      </li>
                      <?php
-                     
                      if($_SESSION["user"]){
-                        echo  "  <li class='nav-item' style='border:solid black 2px;' >
-                        <p class=''  aria-expanded='false'>
-                        Bienvenido 
-                        ".$_SESSION['user']['Nombre']."
-                        <span>
-                           Perfil
-                        </span>
-                        </p>
-                     </li>";
+                        echo  "
+                        <li class='nav-item dropdown'>
+                              <a class='nav-link dropdown-toggle-hide' type='button' data-bs-toggle='dropdown' aria-expanded='false'>".$_SESSION['user']['Nombre']."</a>
+                              <ul class='dropdown-menu dropdown-menu-lg-end'>
+                                 <li><a class='dropdown-item' href='#'>Perfil</a></li>
+                                 <li><a class='dropdown-item' href='#'>Reservas</a></li>
+                                 <li><a class='dropdown-item' href='index.php?r=dologout'>Log Out</a></li>
+                                 <li><div class='form-check form-switch'>
+                                 <input class='form-check-input btnSwitch' type='checkbox' role='switch' id='flexSwitchCheckDefault'>
+                                 <label class='form-check-label' for='flexSwitchCheckDefault'>Dark Mode</label>
+                               </div></li>
+                              </ul>
+                        </li>";
                      }else{
                         echo "
-                        <li class='nav-item '>
-                        <a class='nav-link ' href='index.php?r=login' role='button' aria-expanded='false'>
-                           Login
-                        </a>
-                     </li>
-                        ";
-                     }
-                   
-                     ?>
-                  
-                   
+                        <li class='nav-item'>
+                           <a class='nav-link' href='index.php?r=login' role='button' aria-expanded='false'>Login</a>
+                        </li>";
+                     }?>
                   </ul>
                </div>
             </div>
@@ -184,5 +181,6 @@
       <?php include "footer.php";?>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <script src="srcs/index.js"></script>
    </body>
 </html>
