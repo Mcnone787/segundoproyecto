@@ -29,13 +29,13 @@ class Users
     // }
 
 
-
-    public function login($user, $pass)
-    {
-        $stm = $this->sql->prepare('select id, user, pass from users where user=:user;');
-        $stm->execute([':user' => $user]);
+    public function login($user, $pass){
+        $stm = $this->sql->prepare('select IDUsuario, email,contrasena from usuarios where Nombre=:user;');
+        $stm->execute([':user' => $email]);
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
-        if (is_array($result) && $result["pass"] == $pass) {
+
+        if(is_array($result) && $result["contrasena"] == $pass){
+            
             return $result;
         } else {
             return false;
