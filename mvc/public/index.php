@@ -52,6 +52,9 @@ switch ($r) {
     case "doregistro":
         ctrlDoRegistro($request, $response, $container);
         break;
+        case "login":
+            ctrlDoLogin($request, $response, $container);
+            break;
     case "registro":
         ctrlRegistro($request, $response, $container);
         break;

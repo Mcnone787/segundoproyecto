@@ -18,28 +18,6 @@ class Users
         }
     }
 
-<<<<<<< HEAD
-    public function getAll(){
-        $tasks = array();
-        $query = "select id, user, pass from users;";
-        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $task) {
-            $tasks[] = $task;
-        }
-
-        return $tasks;
-    }
-
-  
-
-
-    public function login($user, $pass){
-        $stm = $this->sql->prepare('select IDUsuario, Nombre from usuarios where Nombre=:user;');
-        $stm->execute([':user' => $user]);
-        $result = $stm->fetch(\PDO::FETCH_ASSOC);
-        print_r($result);
-        if(is_array($result) && $result["pass"] == $pass){
-            
-=======
     // public function getAll(){
     //     $tasks = array();
     //     $query = "select id, user, pass from users;";
@@ -54,7 +32,7 @@ class Users
 
     public function login($user, $pass)
     {
-        $stm = $this->sql->prepare('select id, user, pass from users where email=:user;');
+        $stm = $this->sql->prepare('select id, Nombre, contrasena from users where email=:user;');
         $stm->execute([':user' => $user]);
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
 
@@ -66,27 +44,6 @@ class Users
         }
     }
 
-<<<<<<< HEAD
-    public function register($nombre, $apellido, $debitcard, $email, $contraseña){
-        $stm = $this->sql->prepare('insert into usuarios (IDUsuario,Nombre,Apellidos,Tarjeta_Credito,Telefono,contraseña,Rol,email) values (:IDUsuario,:Nombre, :Apellidos, :Tarjeta_Credito, :email, :Telefono,:contraseña,:Rol);');
-        
-        $stm->execute([':IDUsuario'=>9999,':Nombre' => "dwad", ':Apellidos' => "dawd", ':Tarjeta_Credito' => 123123, ':Telefono' => 123123123, ':contraseña' => 1,":Rol" => "dad","email"=>"user"]);
-        $result = $stm->fetch(\PDO::FETCH_ASSOC);
-        if(is_array($result)){
->>>>>>> b3b51c2 (backend-register in development)
-            return $result;
-        } else {
-            return false;
-        }
-    }
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> b3b51c2 (backend-register in development)
-}
-=======
     public function register($nombre, $apellido, $debitcard, $email, $contraseña)
     {
         $stm = $this->sql->prepare('INSERT INTO usuarios (Nombre, Apellidos, Tarjeta_Credito, Telefono, contrasena, Rol, email) values (:Nombre, :Apellidos, :Tarjeta_Credito, :Telefono, :contrasena, :Rol, :email);');
@@ -94,4 +51,3 @@ class Users
     }
 
 }
->>>>>>> e16eed2 (backend register v3)
