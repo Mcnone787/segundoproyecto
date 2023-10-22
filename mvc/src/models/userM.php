@@ -43,8 +43,8 @@ class Users
 
     public function register($nombre, $apellido, $debitcard, $email, $contraseña)
     {
-        $stm = $this->sql->prepare('INSERT INTO usuarios (Nombre, Apellidos, Tarjeta_Credito, Telefono, contrasena, Rol, email) values (:Nombre, :Apellidos, :Tarjeta_Credito, :Telefono, :contrasena, :Rol, :email);');
-        $stm->execute([':Nombre' => $nombre, ':Apellidos' => $apellido, ':Tarjeta_Credito' => $debitcard,  ':Telefono' => 000000000, ':contrasena' => $contraseña, ':Rol' => 'user', ':email' => $email]);
+        $stm = $this->sql->prepare('INSERT INTO usuarios (Nombre, Apellidos, Tarjeta_Credito, contrasena, Rol, email) values (:Nombre, :Apellidos, :Tarjeta_Credito, :contrasena, :Rol, :email);');
+        $stm->execute([':Nombre' => $nombre, ':Apellidos' => $apellido, ':Tarjeta_Credito' => $debitcard, ':contrasena' => $contraseña, ':Rol' => 'user', ':email' => $email]);
     }
 
 
