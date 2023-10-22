@@ -10,7 +10,7 @@
       <link rel="icon" href="imgs/logo/favicon/logo-removebg-preview.png" type="image/x-icon">
       <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
    </head>
-   <body data-bs-theme="dark">
+   <body data-bs-theme="light">
 
    <nav class="navbar navbar-expand-lg bg-body-tertiary nav">
          <div class="container-fluid">
@@ -18,28 +18,28 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarScroll">
                <div style="margin: 0 auto; width: 50%;">
-                  <form class="d-flex" role="search">
-                     <input class="form-control me-2 search_nav" type="search" placeholder="Search" aria-label="Search" style="width: 65%;margin:0 auto;">
+                  <form class="d-flex text-dark" role="search">
+                     <input class="form-control me-2 search_nav text-dark" type="search" placeholder="Search" aria-label="Search" style="width: 65%;margin:0 auto;">
                   </form>
                </div>
                <div style="float: right;">
                   <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Departamentos</a>
+                        <a class="nav-link text-dark" href="#">Departamentos</a>
                      </li>
                      <?php
                      if($_SESSION["user"]){
                         echo  "
                         <li class='nav-item dropdown'>
-                              <a class='nav-link dropdown-toggle-hide' type='button' data-bs-toggle='dropdown' aria-expanded='false'>".$_SESSION['user']['Nombre']."</a>
+                              <a class='nav-link dropdown-toggle-hide text-dark' type='button' data-bs-toggle='dropdown' aria-expanded='false'>".$_SESSION['user']['Nombre']."</a>
                               <ul class='dropdown-menu dropdown-menu-lg-end'>
                                  <li><a class='dropdown-item' href='#'>Perfil</a></li>
                                  <li><a class='dropdown-item' href='#'>Reservas</a></li>
                                  <li><a class='dropdown-item' href='index.php?r=dologout'>Log Out</a></li>
-                                 <li><div class='form-check form-switch'>
+                                 <li><hr class='dropdown-divider'></li>
+                                 <li><div class='form-check form-switch ms-2'>
                                  <input class='form-check-input btnSwitch' type='checkbox' role='switch' id='flexSwitchCheckDefault'>
                                  <label class='form-check-label' for='flexSwitchCheckDefault'>Dark Mode</label>
                                </div></li>
@@ -47,7 +47,7 @@
                         </li>";
                      }else{
                         echo "
-                        <li class='nav-item'>
+                        <li class='nav-item text-dark'>
                            <a class='nav-link' href='index.php?r=login' role='button' aria-expanded='false'>Login</a>
                         </li>";
                      }?>
@@ -70,11 +70,11 @@
                <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
             </div>
          </div>
-         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+         <button class="carousel-control-prev text-light" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
          <span class="visually-hidden">Previous</span>
          </button>
-         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+         <button class="carousel-control-next text-light" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
          <span class="carousel-control-next-icon" aria-hidden="true"></span>
          <span class="visually-hidden">Next</span>
          </button>
