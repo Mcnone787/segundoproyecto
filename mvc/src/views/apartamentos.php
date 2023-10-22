@@ -15,70 +15,30 @@
     <?php include 'nav.php'; ?>
     <div class="container-fluid">
         <div class="row row-cols-1 row-cols-md-5 g-4 ">
-            <div class="col">
-                <div class="card h-100" style="width: 75%;">
-                    <img src="imgs/logo/logo.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">apartamentos</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100" style="width: 75%;">
-                    <img src="imgs/logo/logo.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">apartamentos</h5>
+        <?php
+            // Check if the "apartamentos" variable exists in the response
+            if (isset($apartamentos)) {
+                foreach ($apartamentos as $apartamento) {
+                    // Extract apartment details
+                    $titulo = $apartamento['Titulo'];
+                    $descripcion = $apartamento['Descripcion'];
+                    // You can extract other fields as needed
 
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100" style="width: 75%;">
-                    <img src="imgs/logo/logo.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">apartamentos</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100" style="width: 75%;">
-                    <img src="imgs/logo/logo.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">apartamentos</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100" style="width: 75%;">
-                    <img src="imgs/logo/logo.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">apartamentos</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100" style="width: 75%;">
-                    <img src="imgs/logo/logo.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">apartamentos</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100" style="width: 75%;">
-                    <img src="imgs/logo/logo.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">apartamentos</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
+                    // Generate a card for each apartment
+                    echo '<div class="col">
+                        <div class="card h-100" style="width: 75%;">
+                            <img src="imgs/logo/logo.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">' . $titulo . '</h5>
+                                <p class="card-text">' . $descripcion . '</p>
+                            </div>
+                        </div>
+                    </div>';
+                }
+            } else {
+                echo '<p>No apartments available.</p>';
+            }
+            ?>
         </div>
     </div>
 
