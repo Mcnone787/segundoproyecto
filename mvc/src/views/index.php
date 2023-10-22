@@ -27,7 +27,7 @@
                <div style="float: right;">
                   <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                      <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Departamentos</a>
+                        <a class="nav-link text-dark" href="index.php?r=apartamentos">Departamentos</a>
                      </li>
                      <?php
                      if($_SESSION["user"]){

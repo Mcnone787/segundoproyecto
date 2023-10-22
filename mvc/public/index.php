@@ -12,8 +12,8 @@
  *
  **/
 
- 
- include "../src/config.php";
+
+include "../src/config.php";
 
 include "../src/controllers/index.php";
 include "../src/controllers/login.php";
@@ -23,6 +23,7 @@ include "../src/controllers/registro.php";
 include "../src/controllers/ctrlDologin.php";
 include "../src/controllers/DoRegister.php";
 include "../src/controllers/ctrlLogout.php";
+include "../src/controllers/apartamentos.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -50,24 +51,22 @@ switch ($r) {
         break;
     case "doregistro":
         ctrlDoRegistro($request, $response, $container);
-    break;
+        break;
     case "dologin":
         ctrlDoLogin($request, $response, $container);
-    break;
+        break;
     case "dologout":
-        
         ctrlDoLogout($request, $response, $container);
-    break;
+        break;
+    case "apartamentos":
+        ctrlApartamentos($request, $response, $container);
+        break;
     case "footer":
         ctrlFooter($request, $response, $container);
         break;
     default:
-    ctrlIndex($request, $response, $container);
+        ctrlIndex($request, $response, $container);
         break;
 }
 
 $response->response();
-
-
-
-
