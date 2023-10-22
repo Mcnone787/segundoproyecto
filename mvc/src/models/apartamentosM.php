@@ -19,8 +19,11 @@ class Apartamentos
     public function getApartamentos()
     {
         $apartamentos = array();
-        $query = $this->sql->prepare("SELECT * FROM apartamentos");
-        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $apartamento) {
+        $query = "SELECT * FROM apartamentos";
+        $stm = $this->sql->prepare($query);
+        $stm->execute();
+    
+        while ($apartamento = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $apartamentos[] = $apartamento;
         }
         return $apartamentos;
