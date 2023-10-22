@@ -29,28 +29,32 @@
                      <li class="nav-item">
                         <a class="nav-link text-dark" href="#">Departamentos</a>
                      </li>
-                     <?php
-                     if($_SESSION["user"]){
-                        echo  "
-                        <li class='nav-item dropdown'>
-                              <a class='nav-link dropdown-toggle-hide text-dark' type='button' data-bs-toggle='dropdown' aria-expanded='false'>".$_SESSION['user']['Nombre']."</a>
+                     <li class='nav-item dropdown'>
+                        <?php if($_SESSION['user']){?>
+                              <a class='nav-link dropdown-toggle-hide text-dark' type='button' data-bs-toggle='dropdown' aria-expanded='false'><?php echo $_SESSION['user']['Nombre']; ?></a>
                               <ul class='dropdown-menu dropdown-menu-lg-end'>
                                  <li><a class='dropdown-item' href='#'>Perfil</a></li>
-                                 <li><a class='dropdown-item' href='#'>Reservas</a></li>
                                  <li><a class='dropdown-item' href='index.php?r=dologout'>Log Out</a></li>
+                                 <?php if($_SESSION["user"]["Rol"]=="gestor" || $_SESSION["user"]["Rol"]=="admin"){?>
+                                 <li><a class='dropdown-item' href='index.php?r=gestores'>Apartamentos</a></li>
+                                 <?php
+                                 }
+                                 if($_SESSION["user"]["Rol"]=="admin"){
+                                 ?>
+                                 <li><a class='dropdown-item' href='index.php?r=gestores'>Panel</a></li>
+                                    <?php }?>
                                  <li><hr class='dropdown-divider'></li>
                                  <li><div class='form-check form-switch ms-2'>
                                  <input class='form-check-input btnSwitch' type='checkbox' role='switch' id='flexSwitchCheckDefault'>
                                  <label class='form-check-label' for='flexSwitchCheckDefault'>Dark Mode</label>
                                </div></li>
                               </ul>
-                        </li>";
-                     }else{
-                        echo "
-                        <li class='nav-item text-dark'>
-                           <a class='nav-link' href='index.php?r=login' role='button' aria-expanded='false'>Login</a>
-                        </li>";
-                     }?>
+                              <?php }else{
+                                    echo "<li class='nav-item text-dark'>
+                                           <a class='nav-link' href='index.php?r=login' role='button' aria-expanded='false'>Login</a>
+                                    </li>";
+                                 }?>
+                        </li>
                   </ul>
                </div>
             </div>
