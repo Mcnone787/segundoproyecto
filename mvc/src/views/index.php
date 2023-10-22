@@ -12,9 +12,9 @@
    </head>
    <body data-bs-theme="light">
 
-   <nav class="navbar navbar-expand-lg bg-body-tertiary nav">
+   <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary nav">
          <div class="container-fluid">
-            <img  src="imgs/logo/logo.png" class="img-thumbnail" alt="logo" width="auto"  style="height:90px;">
+            <img  src="imgs/logo/logo.png" class="img-thumbnail" alt="logo" width="auto"  style="height:90px;">Apartaments Figures
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>

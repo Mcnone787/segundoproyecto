@@ -59,6 +59,8 @@ switch ($r) {
     case "dologin":
         ctrlDoLogin($request, $response, $container);
     break;
+    case "dologout":
+        ctrlDoLogout($request, $response, $container);
     case "ctrldeleteapartamento":
         ctrldeletedepartamento($request, $response, $container);
     break;
