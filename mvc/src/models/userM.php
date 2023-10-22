@@ -7,15 +7,11 @@ class Users
 
     public $sql;
 
-    public function __construct($user, $pass, $db, $host)
+    public function __construct($sql)
     {
 
-        $dsn = "mysql:dbname={$db};host={$host}";
-        try {
-            $this->sql = new \PDO($dsn, $user, $pass);
-        } catch (\PDOException $e) {
-            die('Ha fallat la connexió: ' . $e->getMessage());
-        }
+        $this->sql = $sql;
+
     }
 
     // public function getAll(){

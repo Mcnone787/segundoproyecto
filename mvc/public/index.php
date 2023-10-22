@@ -23,6 +23,8 @@ include "../src/controllers/registro.php";
 include "../src/controllers/ctrlDologin.php";
 include "../src/controllers/DoRegister.php";
 include "../src/controllers/ctrlLogout.php";
+include "../src/controllers/gestors.php";
+
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -41,13 +43,16 @@ $r = $_REQUEST["r"];
 switch ($r) {
     case "login":
         ctrlLogin($request, $response, $container);
-        break;
+    break;
+    case "gestores":
+        ctrlgestores($request, $response, $container);
+    break;
     case "index":
         ctrlIndex($request, $response, $container);
-        break;
+    break;
     case "registro":
         ctrlRegistro($request, $response, $container);
-        break;
+    break;
     case "doregistro":
         ctrlDoRegistro($request, $response, $container);
     break;
@@ -55,7 +60,6 @@ switch ($r) {
         ctrlDoLogin($request, $response, $container);
     break;
     case "dologout":
-        
         ctrlDoLogout($request, $response, $container);
     break;
     case "footer":

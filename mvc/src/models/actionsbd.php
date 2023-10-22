@@ -1,8 +1,8 @@
 <?php
 
-namespace BDM;
+namespace Daw;
 
-class actionbd {
+class Db {
 
     public $sql;
 
@@ -16,19 +16,7 @@ class actionbd {
         }
     }
 
-    public function getAll(){
-        $tasks = array();
-        $query = "select id, task from tasks where deleted=0;";
-        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $task) {
-            $tasks[] = $task;
-        }
-
-        return $tasks;
+    public function getConnection(){
+        return $this->sql;
     }
-
-    public function add($task) {
-        $stm = $this->sql->prepare('insert into tasks (task,deleted) values (:task, 0);');
-        $result = $stm->execute([':task' => $task]);
-    }
-
 }
