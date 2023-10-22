@@ -30,18 +30,20 @@ class Apartamentos
         $stm->execute([':user_id' => $userId]);
    
         $tasks = array();
+        
         while ($task = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $tasks[] = $task;
         }
-
+        
         return $tasks;
     }
 
     public function EliminarApartamento($id){
         
         $stm = $this->sql->prepare("delete from apartamentos where ApartamentosId = :id;");
-        $stm->execute([':id' => $id]);
         
+        $stm->execute([':id' => $id]);
+       
     }
 
   

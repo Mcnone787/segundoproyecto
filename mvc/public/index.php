@@ -25,7 +25,7 @@ include "../src/controllers/DoRegister.php";
 include "../src/controllers/ctrlLogout.php";
 include "../src/controllers/gestors.php";
 include "../src/controllers/Ctrldeletedepartamento.php";
-
+include "../src/controllers/Ctrlanadirapartamento.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -40,7 +40,6 @@ $r = $_REQUEST["r"];
 // /* Creem els diferents models */
 // $session = new Daw\Session();
 // $images = new Daw\Images()dd;
-
 switch ($r) {
     case "login":
         ctrlLogin($request, $response, $container);
@@ -62,6 +61,9 @@ switch ($r) {
     break;
     case "ctrldeleteapartamento":
         ctrldeletedepartamento($request, $response, $container);
+    break;
+    case "addapartamento":
+        ctrladdapartamento($request, $response, $container);
     break;
     case "footer":
         ctrlFooter($request, $response, $container);
