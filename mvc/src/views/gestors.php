@@ -12,7 +12,11 @@
 </head>
 <body>
 <?php include "nav.php"; ?>
-
+<?php
+        if($_GET["delete"]=="1"){
+                include "deletebien.php";
+        }
+?>
 <div class="row row-table" style="margin-bottom:50px;">
     <div class="col-12" style="">
                     <h3 style="text-align:center;padding:20px;">Tus apartamentos sr/sra/sre:</h3>
@@ -36,8 +40,8 @@
                             <p ><?php echo $task["Titulo"]; ?></p>
                             <p><?php echo $task["CP"]; ?></p>
                             <div>
-                                <button style="display:block;">Editar</button>
-                                <button>Eliminar</button>
+                                <button style="display:block;margin-bottom:10px;" class="btn btn-outline-success">Editar</button>
+                                <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"];?>">   <button class="btn btn-outline-danger   "> Eliminar</button></a>
                             </div>
                             
                     </div>
@@ -64,7 +68,7 @@
 <?php include "footer.php"?>
 <script src="srcs/table.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+<script src="srcs/messages_erros_successful.js"></script>
 </body>
 </html>
 

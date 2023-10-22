@@ -37,5 +37,12 @@ class Apartamentos
         return $tasks;
     }
 
+    public function EliminarApartamento($id){
+        
+        $stm = $this->sql->prepare("delete from apartamentos where ApartamentosId = :id;");
+        $stm->execute([':id' => $id]);
+        
+    }
+
   
 }
