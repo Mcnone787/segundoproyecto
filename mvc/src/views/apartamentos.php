@@ -23,17 +23,20 @@
                     $numHabitaciones = $apartamento['num_habita'];
                     $precioAlt = $apartamento['precioALT'];
                     $precioBaj = $apartamento['PrecioBAJ'];
+                    $apartamentoID = $apartamento['ApartamentosID'];
                     ?>
                     <div class="col">
-                        <div class="card h-100" style="width: 75%;">
-                            <img src="imgs/logo/logo.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"><?= $titulo ?></h5>
-                                <p class="card-text"><?= $descripcion ?></p>
-                                <p class="card-text">Habitaciones: <?= $numHabitaciones ?></p>
-                                <h6 class="card-text">Precio Alto: <?= $precioAlt ?>€ - Precio Bajo: <?= $precioBaj ?>€</h6>
+                        <a class="link-offset-2 link-underline link-underline-opacity-0" href="?r=apartamento&id=<?= $apartamentoID ?>" class="stretched-link">
+                            <div class="card h-100" style="width: 100%;">
+                                <img src="imgs/logo/logo.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?= $titulo ?></h5>
+                                    <p class="card-text"><?= $descripcion ?></p>
+                                    <p class="card-text">Habitaciones: <?= $numHabitaciones ?></p>
+                                    <h6 class="card-text">Precio Alto: <?= $precioAlt ?>€ - Precio Bajo: <?= $precioBaj ?>€</h6>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 <?php endforeach; ?>
             <?php else : ?>
