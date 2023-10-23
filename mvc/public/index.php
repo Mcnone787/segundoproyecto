@@ -27,6 +27,8 @@ include "../src/controllers/gestors.php";
 include "../src/controllers/Ctrldeletedepartamento.php";
 include "../src/controllers/Ctrlanadirapartamento.php";
 include "../src/controllers/apartamentos.php";
+include "../src/controllers/CtrlUserData.php";
+include "../src/controllers/CtrlUserDataUpdate.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -62,6 +64,12 @@ switch ($r) {
         break;
     case "dologout":
         ctrlDoLogout($request, $response, $container);
+        break;
+    case "perfilUser":
+        ctrlUserData($request, $response, $container);
+        break;
+    case "doUpDateUserData":
+        ctrlUserDataUpdate($request, $response, $container);
         break;
     case "ctrldeleteapartamento":
         ctrldeletedepartamento($request, $response, $container);
