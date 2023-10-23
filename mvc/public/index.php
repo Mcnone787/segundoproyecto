@@ -12,8 +12,8 @@
  *
  **/
 
- 
- include "../src/config.php";
+
+include "../src/config.php";
 
 include "../src/controllers/index.php";
 include "../src/controllers/login.php";
@@ -23,9 +23,13 @@ include "../src/controllers/registro.php";
 include "../src/controllers/ctrlDologin.php";
 include "../src/controllers/DoRegister.php";
 include "../src/controllers/ctrlLogout.php";
+<<<<<<< HEAD
 include "../src/controllers/gestors.php";
 include "../src/controllers/Ctrldeletedepartamento.php";
 include "../src/controllers/Ctrlanadirapartamento.php";
+=======
+include "../src/controllers/apartamentos.php";
+>>>>>>> feature-apartaments
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -55,12 +59,13 @@ switch ($r) {
     break;
     case "doregistro":
         ctrlDoRegistro($request, $response, $container);
-    break;
+        break;
     case "dologin":
         ctrlDoLogin($request, $response, $container);
-    break;
+        break;
     case "dologout":
         ctrlDoLogout($request, $response, $container);
+<<<<<<< HEAD
     break;
     case "ctrldeleteapartamento":
         ctrldeletedepartamento($request, $response, $container);
@@ -68,16 +73,18 @@ switch ($r) {
     case "addapartamento":
         ctrladdapartamento($request, $response, $container);
     break;
+=======
+        break;
+    case "apartamentos":
+        ctrlApartamentos($request, $response, $container);
+        break;
+>>>>>>> feature-apartaments
     case "footer":
         ctrlFooter($request, $response, $container);
         break;
     default:
-    ctrlIndex($request, $response, $container);
+        ctrlIndex($request, $response, $container);
         break;
 }
 
 $response->response();
-
-
-
-
