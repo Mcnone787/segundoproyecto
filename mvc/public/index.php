@@ -23,13 +23,10 @@ include "../src/controllers/registro.php";
 include "../src/controllers/ctrlDologin.php";
 include "../src/controllers/DoRegister.php";
 include "../src/controllers/ctrlLogout.php";
-<<<<<<< HEAD
 include "../src/controllers/gestors.php";
 include "../src/controllers/Ctrldeletedepartamento.php";
 include "../src/controllers/Ctrlanadirapartamento.php";
-=======
 include "../src/controllers/apartamentos.php";
->>>>>>> feature-apartaments
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -47,16 +44,16 @@ $r = $_REQUEST["r"];
 switch ($r) {
     case "login":
         ctrlLogin($request, $response, $container);
-    break;
+        break;
     case "gestores":
         ctrlgestores($request, $response, $container);
-    break;
+        break;
     case "index":
         ctrlIndex($request, $response, $container);
-    break;
+        break;
     case "registro":
         ctrlRegistro($request, $response, $container);
-    break;
+        break;
     case "doregistro":
         ctrlDoRegistro($request, $response, $container);
         break;
@@ -65,20 +62,16 @@ switch ($r) {
         break;
     case "dologout":
         ctrlDoLogout($request, $response, $container);
-<<<<<<< HEAD
-    break;
+        break;
     case "ctrldeleteapartamento":
         ctrldeletedepartamento($request, $response, $container);
-    break;
+        break;
     case "addapartamento":
         ctrladdapartamento($request, $response, $container);
-    break;
-=======
         break;
     case "apartamentos":
         ctrlApartamentos($request, $response, $container);
         break;
->>>>>>> feature-apartaments
     case "footer":
         ctrlFooter($request, $response, $container);
         break;
