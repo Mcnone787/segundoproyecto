@@ -27,6 +27,8 @@ include "../src/controllers/gestors.php";
 include "../src/controllers/Ctrldeletedepartamento.php";
 include "../src/controllers/Ctrlanadirapartamento.php";
 include "../src/controllers/apartamentos.php";
+include "../src/controllers/ctrleditaparta.php";
+
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -72,6 +74,9 @@ switch ($r) {
     case "apartamentos":
         ctrlApartamentos($request, $response, $container);
         break;
+        case "ctrleditaparta":
+            ctrleditaparta($request, $response, $container);
+            break;
     case "footer":
         ctrlFooter($request, $response, $container);
         break;

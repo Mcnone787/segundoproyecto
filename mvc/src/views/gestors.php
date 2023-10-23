@@ -40,7 +40,7 @@
                             <p ><?php echo $task["Titulo"]; ?></p>
                             <p><?php echo $task["CP"]; ?></p>
                             <div>
-                                <button style="display:block;margin-bottom:10px;" class="btn btn-outline-success">Editar</button>
+                                <a href="index.php?r=ctrleditaparta&id=<?php echo $task["ApartamentosID"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-success">Editar</button></a>
                                 <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"];?>">   <button class="btn btn-outline-danger   "> Eliminar</button></a>
                             </div>
                             

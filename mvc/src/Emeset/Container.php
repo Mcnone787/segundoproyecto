@@ -71,13 +71,5 @@ class Container
         );
     }
 
-    public function apartamentos()
-    {
-        return new \Daw\Apartamentos(
-            $this->config["db"]["user"],
-            $this->config["db"]["pass"],
-            $this->config["db"]["db"], 
-            $this->config["db"]["host"]
-        );
-    }
+ 
 }
