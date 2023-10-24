@@ -24,7 +24,7 @@
                 </p>
             </div>
             <div class="col-7">     
-            <form class="form-control form_session" action="index.php?r=doeditaparta" method="post">
+            <form class="form-control form_session" action="index.php?r=doeditaparta&id=<?php echo $id;?>" method="post">
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-6" >
@@ -97,11 +97,11 @@
                     </div>
                     <div class="row">
                     <div class="col-6" >
-                               <label for="Laltidud">   </label><input class="form-control" name="precioalt" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["precioALT"];?>">
+                               <label for="Laltidud">  precioALT </label><input class="form-control" name="precioalt" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["precioALT"];?>">
                             </div>
                             <div class="col-6" >
-                            <label for="Longitud">  </label>
-                                <input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["PrecioBAJ"];?>">
+                            <label for="Longitud">PrecioBAJ  </label>
+                                <input class="form-control" type="text" placeholder="Default input" name="preciobaj" value="<?php echo  $informationapartamento["PrecioBAJ"];?>">
                             </div>
                     </div>
                     <div class="row">

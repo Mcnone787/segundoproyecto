@@ -70,4 +70,22 @@ class Apartamentos
             return false;
         }
     }
+    public function setupdateapartamento($id,$Titulo,
+    $CP,
+    $Laltitud ,
+    $Longitud,
+    $descripcion ,
+    $m2,
+    $precioalt,
+    $preciobaj){
+      
+
+       
+        $stm = $this->sql->prepare('UPDATE apartamentos SET  Titulo = :Titulo, CP = :CP, Laltidud = :Laltidud, 
+        Longitud=:Longitud, Descripcion=:Descripcion,m2=:m2,precioALT=:precioALT,PrecioBAJ=:PrecioBAJ
+        WHERE ApartamentosID = :id');
+        $stm->execute([':Titulo' => $Titulo,':CP' => $CP, ':Laltidud' => $Laltitud, ':Longitud' => $Longitud, ':Descripcion' => $descripcion, ':m2' => $m2
+        ,':precioALT' => $precioalt,':PrecioBAJ' => $preciobaj,':id'=>$id]);
+
+    }
 }

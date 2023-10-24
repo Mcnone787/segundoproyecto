@@ -23,11 +23,13 @@ function ctrleditaparta($request, $response, $container){
 
         $id=$request->get(INPUT_GET, "id");
         $informationapartamento=$apartamento->getapartamento($id);
-
+        
         //variables
        $response->set("informationapartamento", $informationapartamento);
        $response->set("servicios",$servicios);
        $response->set("totalservicios",$totalservicios);
+       $response->set("id",$request->get(INPUT_GET,"id"));
+       
         return $response;
     
 }
