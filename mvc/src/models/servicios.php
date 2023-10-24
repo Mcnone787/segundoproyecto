@@ -24,14 +24,17 @@ class servicios
     // }dd
 
 
-    public function getservicioall($id){
-
-
-        $stm = $this->sql->prepare("select * from servicios where idservicios = :id;");
-        $stm->execute([':id' => $id]);
-        $result = $stm->fetch(\PDO::FETCH_ASSOC);
-
-     return $result;
+    public function getApartamentos()
+    {
+        $apartamentos = array();
+        $query = "SELECT * FROM servicios";
+        $stm = $this->sql->prepare($query);
+        $stm->execute();
+    
+        while ($apartamento = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $apartamentos[] = $apartamento;
+        }
+        return $apartamentos;
     }
    
 

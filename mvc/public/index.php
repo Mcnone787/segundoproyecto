@@ -29,6 +29,8 @@ include "../src/controllers/Ctrlanadirapartamento.php";
 include "../src/controllers/apartamentos.php";
 include "../src/controllers/CtrlUserData.php";
 include "../src/controllers/CtrlUserDataUpdate.php";
+include "../src/controllers/ctrleditaparta.php";
+include "../src/controllers/doeditaparta.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -83,9 +85,13 @@ switch ($r) {
         case "ctrleditaparta":
             ctrleditaparta($request, $response, $container);
             break;
+            case "doeditaparta":
+                doeditaparta($request, $response, $container);
+                break;
     case "footer":
         ctrlFooter($request, $response, $container);
         break;
+        
     default:
         ctrlIndex($request, $response, $container);
         break;

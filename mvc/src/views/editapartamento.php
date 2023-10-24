@@ -28,11 +28,11 @@
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-6" >
-                               <label for="Nombre"> Titulo </label><input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["Titulo"];?>">
+                               <label for="Nombre"> Titulo </label><input class="form-control" type="text" placeholder="Default input" name="Titulo" value="<?php echo  $informationapartamento["Titulo"];?>">
                             </div>
                             <div class="col-6" >
                             <label for="Nombre"> CP </label>
-                                <input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["CP"];?>">
+                                <input class="form-control" type="text" placeholder="Default input" name="CP" value="<?php echo  $informationapartamento["CP"];?>">
                             </div>
                         </div>
                     </div>
@@ -40,67 +40,81 @@
                     <div class="mb-3">
                     <div class="row">
                     <div class="col-6" >
-                               <label for="Laltidud"> Laltidud  </label><input class="form-control" type="text" placeholder="Default input"  value="<?php echo  $informationapartamento["Laltidud"];?>">
+                               <label for="Laltidud"> Laltidud  </label><input class="form-control" type="text" placeholder="Default input"  name="Laltitud" value="<?php echo  $informationapartamento["Laltidud"];?>">
                             </div>
                             <div class="col-6" >
                             <label for="Longitud"> Longitud </label>
-                                <input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["Longitud"];?>">
+                                <input class="form-control" type="text" placeholder="Default input" name="Longitud" value="<?php echo  $informationapartamento["Longitud"];?>">
                             </div>
                             
                         </div>
                     </div>
                     <div class="row">
                                 <div class="col-3">
+                                    <p style="text-align:center;">Descripcion</p>
                                 </div>
                                 <div class="col-5">
-                                    <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="<?php echo  $informationapartamento["Descripcion"];?>"></textarea>
+                                    <textarea id="w3review" name="descripcion" rows="4" cols="50" placeholder="<?php echo  $informationapartamento["Descripcion"];?>"></textarea>
                                 </div>
                                 <div class="col-3"></div>
 
                     </div>
                     <div class="row">
                     <div class="col-6" >
-                               <label for="Laltidud"> m2	  </label><input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["m2"];?>">
+                               <label for="Laltidud"> m2	  </label><input class="form-control" type="text" placeholder="Default input" name="m2" value="<?php echo  $informationapartamento["m2"];?>">
                             </div>
                             <div class="col-6" >
                                 <label for="" style="visibility:hidden;">d</label>
                             <div id="accordion">
-  <h3>Lista de servicios</h3>
+  <h3>Quitar  servicios del apartamento</h3>
   <div>
     
     <?php 
-
-    foreach($servicios_nombres as $i => $task){ ?>
-        <input type="checkbox" checked name=" <?php echo $task["idservicios"]; ?>" id=""><label for="d"> <?php echo $task["servicio"]; ?> </label><br>
+    foreach($servicios as $i => $task){ ?>
+    
+        <input type="checkbox"   name="add<?php echo $task["idservicios"]; ?>" id=""><label for="d"> <?php echo $task["servicio"]; ?> </label><br>
     <?php }?>
+    
 </div>
+
+<h3>Añadir servicio al apartamento</h3>
+  <div>
+    
+    <?php 
+    foreach($totalservicios as $i => $task){ 
+        if($task!=1){
+        ?>
+        <input type="checkbox"   name="add<?php echo $task["idservicios"]; ?>" id=""><label for="d"> <?php echo $task["servicio"]; ?> </label><br>
+    <?php }
+ }?>
+    
+</div>
+
+
  
 </div>
                         </div>
                     </div>
                     <div class="row">
                     <div class="col-6" >
-                               <label for="Laltidud"> precioALT  </label><input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["precioALT"];?>">
+                               <label for="Laltidud">   </label><input class="form-control" name="precioalt" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["precioALT"];?>">
                             </div>
                             <div class="col-6" >
-                            <label for="Longitud"> PrecioBAJ </label>
+                            <label for="Longitud">  </label>
                                 <input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["PrecioBAJ"];?>">
                             </div>
                     </div>
                     <div class="row">
                     <div class="col-6" >
-                               <label for="Laltidud"> temporada  </label><input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["temporada"];?>">
+                               <label for="Laltidud"> temporada  </label><input class="form-control" type="text" name="temporada" placeholder="Default input" value="<?php echo  $informationapartamento["temporada"];?>">
                             </div>
                             <div class="col-6" >
                             <label for="Longitud"> Estados </label>
-                                <input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["estados"];?>">
+                                <input class="form-control" type="text" placeholder="Default input" name="estados" value="<?php echo  $informationapartamento["estados"];?>">
                             </div>
                     </div>
                     
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
+                    
                     <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>

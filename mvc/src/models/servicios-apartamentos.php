@@ -26,15 +26,15 @@ class servicios_apartamentos
 
     public function getAll($id){
         
-        $stm = $this->sql->prepare("select servicioid from Apartamentos_servicios where  ApartamentosID= :id;");
+        $stm = $this->sql->prepare("select s.* from Apartamentos_servicios as_ ,apartamentos a,servicios s where as_.ApartamentosID=a.ApartamentosID and as_.servicioid=s.idservicios and a.ApartamentosID=:id; ");   
         $stm->execute([':id' => $id]);
-   
+
         $tasks = array();
         
         while ($task = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $tasks[] = $task;
         }
-        
+
         return $tasks;
     }
 
