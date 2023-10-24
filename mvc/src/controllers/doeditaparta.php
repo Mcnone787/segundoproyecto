@@ -43,7 +43,6 @@ function doeditaparta($request, $response, $container){
     $precioalt,
     $preciobaj
      );
-    die();  
-    //[] => 4 [] => 4 [] => altura 2 [] => dawdad [] => [] => 4 [add1] => on [precioalt] => 4 [temporada] => 4 [estados] => 4 ) d
+     $response->redirect("location: index.php?r=gestores");
     
 }
