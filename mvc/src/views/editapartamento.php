@@ -72,7 +72,7 @@
     <?php 
     foreach($servicios as $i => $task){ ?>
     
-        <input type="checkbox"   name="add<?php echo $task["idservicios"]; ?>" id=""><label for="d"> <?php echo $task["servicio"]; ?> </label><br>
+        <input type="checkbox"   name="rm<?php echo $task["idservicios"]; ?>" id=""><label for="d"> <?php echo $task["servicio"]; ?> </label><br>
     <?php }?>
     
 </div>

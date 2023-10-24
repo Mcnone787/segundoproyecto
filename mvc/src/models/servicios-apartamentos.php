@@ -37,6 +37,18 @@ class servicios_apartamentos
 
         return $tasks;
     }
+    public function add_servicios($id_apar,$idservi)
+    {
+        $stm = $this->sql->prepare('INSERT INTO apartamentos_servicios (ApartamentosID,servicioid)values (:ApartamentoID,:servicioid);');
+        $stm->execute([':ApartamentoID' => $id_apar, ':servicioid' => $idservi]);
+    }
+    public function rm_servicios_apartamento($id_apar,$idservi)
+    {
+    
+        $stm = $this->sql->prepare('delete from apartamentos_servicios where ApartamentosID=:ApartamentosID and servicioid=:servicioid');
+        $stm->execute([':ApartamentosID' => $id_apar, ':servicioid' => $idservi]);
+
+    }
 
    
 
