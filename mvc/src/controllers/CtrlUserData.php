@@ -8,6 +8,9 @@ function ctrlUserData($request, $response, $container)
     $Nombre = $userData["Nombre"];
     $email = $userData["email"];
     $telefono = $userData["Telefono"];
+    $Apellidos = $userData["Apellidos"];
+    $debitcard = $userData["Tarjeta_Credito"];
+
 
     // VARIABLES
     $response->setTemplate("perfil.php");
@@ -15,5 +18,8 @@ function ctrlUserData($request, $response, $container)
     $response->set("nombre", $Nombre);
     $response->set("email", $email);
     $response->set("telefono", $telefono);
+    $response->set("apellidos", $Apellidos);
+    $response->set("debitcard", $debitcard);
+    
     return $response;
 }

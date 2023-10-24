@@ -32,29 +32,29 @@
                         <div class="row mt-2">
                             <div class="col-md-6">
                                 <label class="labels">Nombre</label>
-                                <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre">
+                                <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<?= $nombre?>" required>
                             </div>
                             <div class="col-md-6">
                                 <label class="labels">Apellidos</label>
-                                <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Apellidos">
+                                <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Apellidos" value="<?= $apellidos?>" required>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-12 mb-2">
                                 <label class="labels">Telefóno</label>
-                                <input class="form-control" type="text" name="telefono" id="telefono" placeholder="telefono">
+                                <input class="form-control" type="text" name="telefono" id="telefono" placeholder="telefono" value="<?= $telefono?>" required>
                             </div>
                             <div class="col-md-12 mb-2">
                                 <label class="labels">Contraseña</label>
-                                <input class="form-control" type="text" name="contrasena" id="contrasena" placeholder="contraseña">
+                                <input class="form-control" type="password" name="contrasena" id="contrasena" placeholder="contraseña" required>
                             </div>
                             <div class="col-md-12 mb-2">
                                 <label class="labels">Email</label>
-                                <input class="form-control" type="text" name="email" id="email" placeholder="email">
+                                <input class="form-control" type="text" name="email" id="email" placeholder="email" value="<?= $email?>" required>
                             </div>
                             <div class="col-md-12 mb-2">
                                 <label class="labels">Tarjeta de Credito</label>
-                                <input class="form-control" type="text" name="debitcard" id="debitcard" placeholder="0000/0000/0000/0000">
+                                <input class="form-control" type="text" name="debitcard" id="debitcard" placeholder="0000/0000/0000/0000" value="<?= $debitcard?>" required>
                             </div>
                         </div>
                         <div class="mt-5 text-center">
