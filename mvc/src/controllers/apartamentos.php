@@ -22,7 +22,6 @@ function ctrlApartamentos($request, $response, $container) {
     $paginaAnterior = $paginaActual - 1;
     $paginaSiguiente = $paginaActual + 1;
 
-    // Validations to ensure you don't go to an incorrect page
     if ($paginaAnterior < 1) {
         $paginaAnterior = 1;
     }
@@ -30,7 +29,6 @@ function ctrlApartamentos($request, $response, $container) {
         $paginaSiguiente = $totalPaginas;
     }
 
-    // Pass the necessary data to the template
     $response->set("apartamentosPagina", $apartamentosPagina);
     $response->set("totalPaginas", $totalPaginas);
     $response->set("paginaActual", $paginaActual);
