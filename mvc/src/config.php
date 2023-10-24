@@ -11,4 +11,6 @@ $config=[
 include "../src/models/actionsbd.php";
 include "../src/models/userM.php";
 include "../src/models/apartamentos.php";
-include "../src/models/apartamentosM.php";
+include "../src/models/servicios.php";
+include "../src/models/servicios-apartamentos.php";
+

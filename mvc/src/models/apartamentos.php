@@ -46,5 +46,16 @@ class Apartamentos
        
     }
 
-  
+    public function getapartamento($id){
+      
+
+        $stm = $this->sql->prepare('select * from apartamentos where ApartamentosID=:id;');
+        $stm->execute([':id' => $id]);
+        $result = $stm->fetch(\PDO::FETCH_ASSOC);
+        if(is_array($result)){
+            return $result;
+        } else {
+            return false;
+        }
+    }
 }

@@ -19,7 +19,7 @@
 ?>
 <div class="row row-table" style="margin-bottom:50px;">
     <div class="col-12" style="">
-                    <h3 style="text-align:center;padding:20px;">Tus apartamentos sr/sra/sre:</h3>
+                    <h3 style="text-align:center;padding:20px;">Tus apartamentos sr/sra: <?php echo $_SESSION["user"]["Nombre"]?></h3>
                     <a href="index.php?r=addapartamento"><button style="float:right;">Añadir apartamento</button></a>
                     <table id="myTable" class="display" style="margin-bottom:50px;">
                     

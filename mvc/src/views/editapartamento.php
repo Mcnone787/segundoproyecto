@@ -8,8 +8,13 @@
       <link rel="icon" href="imgs/logo/logo-removebg-preview.png" type="image/x-icon">
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
       <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
 </head>
 <body>
+
     <?php include "nav.php"; ?>
     <div class="container" style="margin-bottom:200px;">
         <div class="row">
@@ -23,38 +28,23 @@
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-6" >
-                               <label for="Nombre"> Nombre apartamento </label><input class="form-control" type="text" placeholder="Default input">
+                               <label for="Nombre"> Titulo </label><input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["Titulo"];?>">
                             </div>
                             <div class="col-6" >
                             <label for="Nombre"> CP </label>
-                                <input class="form-control" type="text" placeholder="Default input">
+                                <input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["CP"];?>">
                             </div>
                         </div>
                     </div>
-                    <!-- 
-ApartamentosID Ascendente 1	
-Titulo	
-CP	
-Laltidud	
-Longitud	
-Descripcion	
-m2	
-num_habita	
-Lista_servicios	
-precioALT	
-PrecioBAJ	
-temporada	
-servicios	
-estados	
-GestorId	 -->
+
                     <div class="mb-3">
                     <div class="row">
                     <div class="col-6" >
-                               <label for="Laltidud"> Laltidud  </label><input class="form-control" type="text" placeholder="Default input">
+                               <label for="Laltidud"> Laltidud  </label><input class="form-control" type="text" placeholder="Default input"  value="<?php echo  $informationapartamento["Laltidud"];?>">
                             </div>
                             <div class="col-6" >
                             <label for="Longitud"> Longitud </label>
-                                <input class="form-control" type="text" placeholder="Default input">
+                                <input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["Longitud"];?>">
                             </div>
                             
                         </div>
@@ -63,45 +53,50 @@ GestorId	 -->
                                 <div class="col-3">
                                 </div>
                                 <div class="col-5">
-                                    <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
+                                    <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="<?php echo  $informationapartamento["Descripcion"];?>"></textarea>
                                 </div>
                                 <div class="col-3"></div>
 
                     </div>
                     <div class="row">
                     <div class="col-6" >
-                               <label for="Laltidud"> m2	  </label><input class="form-control" type="text" placeholder="Default input">
+                               <label for="Laltidud"> m2	  </label><input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["m2"];?>">
                             </div>
                             <div class="col-6" >
-                            <label for="Longitud">  Lista de servicios </label>
-                                <input class="form-control" type="text" placeholder="Default input">
-                            </div>
+                                <label for="" style="visibility:hidden;">d</label>
+                            <div id="accordion">
+  <h3>Lista de servicios</h3>
+  <div>
+    
+    <?php 
+
+    foreach($servicios_nombres as $i => $task){ ?>
+        <input type="checkbox" checked name=" <?php echo $task["idservicios"]; ?>" id=""><label for="d"> <?php echo $task["servicio"]; ?> </label><br>
+    <?php }?>
+</div>
+ 
+</div>
+                        </div>
                     </div>
                     <div class="row">
                     <div class="col-6" >
-                               <label for="Laltidud"> precioALT  </label><input class="form-control" type="text" placeholder="Default input">
+                               <label for="Laltidud"> precioALT  </label><input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["precioALT"];?>">
                             </div>
                             <div class="col-6" >
                             <label for="Longitud"> PrecioBAJ </label>
-                                <input class="form-control" type="text" placeholder="Default input">
+                                <input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["PrecioBAJ"];?>">
                             </div>
                     </div>
                     <div class="row">
                     <div class="col-6" >
-                               <label for="Laltidud"> temporada  </label><input class="form-control" type="text" placeholder="Default input">
+                               <label for="Laltidud"> temporada  </label><input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["temporada"];?>">
                             </div>
                             <div class="col-6" >
-                            <label for="Longitud"> servicios </label>
-                                <input class="form-control" type="text" placeholder="Default input">
+                            <label for="Longitud"> Estados </label>
+                                <input class="form-control" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["estados"];?>">
                             </div>
                     </div>
-                    <div class="row">
-                    <div class="col-6" >
-                               <label for="Laltidud"> Estado  </label><input class="form-control" type="text" placeholder="Default input">
-                            </div>
-                            <div class="col-6" >
-                    </div>
-</div>  
+                    
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
@@ -113,5 +108,12 @@ GestorId	 -->
         </div>
     </div>
     <?php include "footer.php"; ?>
+    <script>
+        $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  } );
+    </script>
 </body>
 </html>
