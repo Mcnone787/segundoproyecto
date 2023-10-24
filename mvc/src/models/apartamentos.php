@@ -45,6 +45,18 @@ class Apartamentos
         $stm->execute([':id' => $id]);
        
     }
+    public function getApartamentos()
+    {
+        $apartamentos = array();
+        $query = "SELECT * FROM apartamentos";
+        $stm = $this->sql->prepare($query);
+        $stm->execute();
+    
+        while ($apartamento = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $apartamentos[] = $apartamento;
+        }
+        return $apartamentos;
+    }
 
   
 }

@@ -13,19 +13,6 @@ class Users
         $this->sql = $sql;
 
     }
-
-    // public function getAll(){
-    //     $tasks = array();
-    //     $query = "select id, user, pass from users;";
-    //     foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $task) {
-    //         $tasks[] = $task;
-    //     }
-
-    //     return $tasks;
-    // }dd
-
-
-
     public function login($user, $pass){
         $stm = $this->sql->prepare('select IDUsuario, Nombre, contrasena,Rol from usuarios where email=:user;');
         $stm->execute([':user' => $user]);
@@ -43,5 +30,20 @@ class Users
         $stm->execute([':Nombre' => $nombre, ':Apellidos' => $apellido, ':Tarjeta_Credito' => $debitcard, ':contrasena' => $contraseña, ':Rol' => 'user', ':email' => $email]);
     }
 
-
+    public function getPersonalData($userID)
+    {
+        $stm = $this->sql->prepare('select * from usuarios where IDUsuario=:id;');
+        $stm ->execute([':id' => $userID]);
+        $result = $stm->fetch(\PDO::FETCH_ASSOC);
+        if($result){
+            return $result;
+        } else {
+            return false;
+        }
+    }
+    public function updateProfile($nombre, $apellido, $debitcard, $email, $contraseña,$telefono,$userID)
+    {
+        $stm = $this->sql->prepare('UPDATE usuarios SET Nombre = :Nombre, Apellidos = :Apellidos, Tarjeta_Credito=:Tarjeta_Credito, telefono=:telefono,contrasena=:contrasena, email=:email WHERE IDUsuario = :id');
+        $stm->execute([':Nombre' => $nombre, ':Apellidos' => $apellido, ':Tarjeta_Credito' => $debitcard, ':contrasena' => $contraseña, ':email' => $email, ':telefono' => $telefono ,':id' => $userID]);
+    }
 }

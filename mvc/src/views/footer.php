@@ -1,4 +1,4 @@
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3  footer_class">
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 footer_class">
     <div class="col-md-3 d-flex justify-content-center align-items-center py-3 ms-3">
         <img src="imgs/logo/logo.png" alt="logo" class="img-thumbnail " width="auto" style="height: 125px;">
         <span class="text-muted" style="font-size: 20px">© Apartaments Figueres, Inc</span>
