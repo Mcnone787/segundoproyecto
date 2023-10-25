@@ -108,14 +108,12 @@
                             </div>
                     </div>
                     <div class="row">
-                    <div class="col-6" >
-                               <label for="Laltidud"> temporada  </label><input class="form-control" type="text" name="temporada" placeholder="Default input" value="<?php echo  $informationapartamento["temporada"];?>">
+                    <div class="col-6" style="margin:0 auto;" >
+                               <label for="Laltidud">  Numero habitaciones </label><input class="form-control" name="numhabita" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["num_habita"];?>">
                             </div>
-                            <div class="col-6" >
-                            <label for="Longitud"> Estados </label>
-                                <input class="form-control" type="text" placeholder="Default input" name="estados" value="<?php echo  $informationapartamento["estados"];?>">
-                            </div>
+                            
                     </div>
+                   
                     
                     
                     <button type="submit" class="btn btn-primary">Submit</button>

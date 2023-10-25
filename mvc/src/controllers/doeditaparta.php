@@ -16,8 +16,8 @@ function doeditaparta($request, $response, $container){
     $rm=[];
     $precioalt = $request->get(INPUT_POST, "precioalt"); 
     $preciobaj = $request->get(INPUT_POST, "preciobaj"); 
-    $temporada = $request->get(INPUT_POST, "temporada"); 
-    $estados = $request->get(INPUT_POST, "estados"); 
+     $numhabita = $request->get(INPUT_POST, "numhabita"); 
+
     $valores = $_POST; 
     // echo $id,$Titulo,
     // $CP,
@@ -50,14 +50,17 @@ function doeditaparta($request, $response, $container){
         $Modelservicio_apartamentos->rm_servicios_apartamento($id,$item);
     }
   
-    $updateaparmeto=$Modaapartameto->setupdateapartamento(  $id,$Titulo,
+    $updateaparmeto=$Modaapartameto->setupdateapartamento(  
+    $id,
+    $Titulo,
     $CP,
     $Laltitud ,
     $Longitud,
     $descripcion ,
     $m2,
     $precioalt,
-    $preciobaj
+    $preciobaj,
+    $numhabita
      );
 
 

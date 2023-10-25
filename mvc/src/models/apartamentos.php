@@ -77,29 +77,41 @@ class Apartamentos
     $descripcion ,
     $m2,
     $precioalt,
-    $preciobaj){
+    $preciobaj,
+    $numhabita){
       
 
        
         $stm = $this->sql->prepare('UPDATE apartamentos SET  Titulo = :Titulo, CP = :CP, Laltidud = :Laltidud, 
-        Longitud=:Longitud, Descripcion=:Descripcion,m2=:m2,precioALT=:precioALT,PrecioBAJ=:PrecioBAJ
+        Longitud=:Longitud, Descripcion=:Descripcion,m2=:m2,num_habita=:num_habita,precioALT=:precioALT,PrecioBAJ=:PrecioBAJ
         WHERE ApartamentosID = :id');
-        $stm->execute([':Titulo' => $Titulo,':CP' => $CP, ':Laltidud' => $Laltitud, ':Longitud' => $Longitud, ':Descripcion' => $descripcion, ':m2' => $m2
-        ,':precioALT' => $precioalt,':PrecioBAJ' => $preciobaj,':id'=>$id]);
+
+        $stm->execute([':Titulo' => $Titulo,':CP' => $CP, ':Laltidud' => $Laltitud, ':Longitud' => $Longitud, ':Descripcion' => $descripcion, ':m2' => $m2,
+        ':num_habita'=>$numhabita,':precioALT' => $precioalt,':PrecioBAJ' => $preciobaj,':id'=>$id]);
 
     }
-    public function setaddapartamento($id,$Titulo,
+    
+    public function setaddapartamento(
+    $id,
+    $Titulo,
     $CP,
     $Laltitud ,
     $Longitud,
     $descripcion ,
     $m2,
     $precioalt,
-    $preciobaj){
+    $preciobaj,
+    $numhabita){
       
 
        
         $stm = $this->sql->prepare('INSERT INTO apartamentos (Titulo,CP,Laltidud,Longitud,Descripcion,m2,num_habita,precioALT,PrecioBAJ,GestorId) values (:Titulo,:CP,:Laltidud,:Longitud,:Descripcion,:m2,:num_habita,:precioALT,:PrecioBAJ,:GestorId);');
-        $stm->execute([':Titulo' => $Titulo,':CP' => $CP, ':Laltidud' => $Laltitud, ':Longitud' =>  $Longitud, ':Descripcion' => $descripcion, ':m2' =>  $m2,':num_habita'=>3,':precioALT' => $precioalt,':PrecioBAJ' => $preciobaj,':GestorId'=>$id]);
+        $stm->execute([':Titulo' => $Titulo,':CP' => $CP, ':Laltidud' => $Laltitud, ':Longitud' =>  $Longitud, ':Descripcion' => $descripcion, ':m2' =>  $m2,':num_habita'=>$numhabita,':precioALT' => $precioalt,':PrecioBAJ' => $preciobaj,':GestorId'=>$id]);
+    }
+    public function ultimoapartamento(){
+        $stm = $this->sql->prepare('select * from apartamentos order by ApartamentosID desc limit 1;');
+        $stm->execute();
+        $apartamento = $stm->fetch(\PDO::FETCH_ASSOC);       
+        return $apartamento;
     }
 }

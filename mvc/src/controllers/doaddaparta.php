@@ -17,8 +17,9 @@ function doanadiraparta($request, $response, $container){
     $rm=[];
     $precioalt = $request->get(INPUT_POST, "precioalt"); 
     $preciobaj = $request->get(INPUT_POST, "preciobaj"); 
-    $temporada = $request->get(INPUT_POST, "temporada"); 
-    $estados = $request->get(INPUT_POST, "estados"); 
+    $numhabita = $request->get(INPUT_POST, "numhabita"); 
+
+
     $valores = $_POST; 
     // echo $id,$Titulo,
     // $CP,
@@ -38,10 +39,8 @@ function doanadiraparta($request, $response, $container){
         }
     }
    
-    
-    foreach($add as $item){
-        $Modelservicio_apartamentos->add_servicios($id,$item);
-    }
+
+
   
   
     $updateaparmeto=$Modaapartameto->setaddapartamento(  $id,$Titulo,
@@ -51,9 +50,13 @@ function doanadiraparta($request, $response, $container){
     $descripcion ,
     $m2,
     $precioalt,
-    $preciobaj
+    $preciobaj,
+    $numhabita
      );
-
+     $ultimo_apartamento=$Modaapartameto->ultimoapartamento();
+     foreach($add as $item){
+        $Modelservicio_apartamentos->add_servicios($ultimo_apartamento["ApartamentosID"],$item);
+    }
 
 
      $response->redirect("location: index.php?r=gestores");
