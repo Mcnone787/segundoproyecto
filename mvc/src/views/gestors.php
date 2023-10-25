@@ -9,6 +9,7 @@
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
       <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
       <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+      
 </head>
 <body>
 <?php include "nav.php"; ?>
@@ -20,7 +21,22 @@
 <div class="row row-table" style="margin-bottom:50px;">
     <div class="col-12" style="">
                     <h3 style="text-align:center;padding:20px;">Tus apartamentos sr/sra: <?php echo $_SESSION["user"]["Nombre"]?></h3>
-                    <a href="index.php?r=addapartamento" > <button style="float:right;" class="btn btn-outline-success">Añadir apartamento</button></a>
+                    <div class="" style="    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+">
+                        <div class="">
+                            <a href="index.php?r=addapartamento" > <button style="float:left;" class="btn btn-outline-success">Temporadas para los apartmentos</button></a> 
+                        </div>
+                        <div class="">
+                            <a href="index.php?r=addapartamento" style="   ;
+}" > <button  class="btn btn-outline-success">Añadir temporada</button></a>
+                        </div>
+                        <div class="">
+                            <a href="index.php?r=addapartamento" > <button style="float:right;" class="btn btn-outline-success">Añadir apartamento</button></a>
+                        </div>
+                    </div>
                     <table id="myTable" class="display" style="margin-bottom:50px;">
                     
     <thead>

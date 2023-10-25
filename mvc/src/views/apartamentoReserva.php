@@ -10,6 +10,11 @@
     <link rel="icon" href="imgs/logo/favicon/logo-removebg-preview.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 
 <body data-bs-theme="light">
@@ -24,11 +29,11 @@
                     <div class="col d-flex rounded-2 p-3 m-3 text-center" style="border: 1px black">
                         <div class="col rounded p-3">
                             <span class="fw-bold">Llegada</span>
-                            <h5 class="text-dark">01/04/2023</h5>
+                            <input class="doi" />
                         </div>
                         <div class="col rounded p-3">
                             <span class="fw-bold">Salida</span>
-                            <h5 class="text-dark">01/04/2023</h5>
+                            <input class="doi" />
                         </div>
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
@@ -100,6 +105,43 @@
             </div>
         </div>
     </div>
+
+<script>
+ var array = [
+   ["2023-10-23","2023-10-25"],
+   ["2023-10-27","2023-10-29"],
+   ["2023-11-01","2023-11-25"]]
+ let empieza=false
+ let arraydias=[]
+
+$('.doi').datepicker({
+    beforeShowDay: function(date){
+      console.log(date)
+        var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+       
+        
+         for(i=0;i<array.length;i++){
+            if(string==array[i][0] ){
+               arraydias.push(string)
+               empieza=true
+            }
+         }
+         for(i2=0;i2<array.length;i2++){
+            if(string==array[i2][1]){
+               arraydias.push(string)
+               empieza=false;
+             }
+         }
+        
+         if(empieza==true){
+           arraydias.push(string)               
+        }
+
+        return [ arraydias.indexOf(string)== -1 ]
+    }
+});
+
+  </script>
     <?php include "footer.php" ?>
 </body>
 

@@ -10,13 +10,13 @@ function ctrladdapartamento($request, $response, $container){
     $totalservicios=$Mdelservicio->getApartamentos();
 
     
-    // for($i=0;$i<count($totalservicios);$i++){
-    //     for($i2=0;$i2<count($servicios);$i2++){
-    //             if($totalservicios[$i]["servicio"]==$servicios[$i2]["servicio"]){
-    //                 $totalservicios[$i]=1;
-    //             }
-    //     }
-    // }
+    for($i=0;$i<count($totalservicios);$i++){
+        for($i2=0;$i2<count($servicios);$i2++){
+                if($totalservicios[$i]["servicio"]==$servicios[$i2]["servicio"]){
+                    $totalservicios[$i]=1;
+                }
+        }
+    }
 
     $id=$request->get(INPUT_GET, "id");
     $informationapartamento=$apartamento->getapartamento($id);
