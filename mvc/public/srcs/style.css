@@ -55,3 +55,13 @@ p{
 .card *{
     text-decoration: none;
 }
+
+.reservabox{
+    box-shadow: 0px 0px 4px 0px rgba(105, 105, 105, 0.75);
+}
+.imgReservaBox{
+    box-shadow: 0px 0px 4px 0px rgba(105, 105, 105, 0.75);
+}
+.infoReservaBox{
+    box-shadow: 0px 0px 4px 0px rgba(105, 105, 105, 0.75);
+}

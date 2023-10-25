@@ -29,6 +29,7 @@ include "../src/controllers/Ctrlanadirapartamento.php";
 include "../src/controllers/apartamentos.php";
 include "../src/controllers/CtrlUserData.php";
 include "../src/controllers/CtrlUserDataUpdate.php";
+include "../src/controllers/CtrlApartamentReservas.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -79,6 +80,9 @@ switch ($r) {
         break;
     case "apartamentos":
         ctrlApartamentos($request, $response, $container);
+        break;
+    case "apartamentoReserva":
+        ctrlApartamentosReservas($request, $response, $container);
         break;
     case "footer":
         ctrlFooter($request, $response, $container);
