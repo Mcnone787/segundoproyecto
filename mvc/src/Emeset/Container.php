@@ -50,6 +50,15 @@ class Container
             $this->config["db"]["host"]
         );
     }
+    public function tasks()
+    {
+        return new \BDM\actionbd(
+            $this->config["db"]["user"],
+            $this->config["db"]["pass"],
+            $this->config["db"]["db"], 
+            $this->config["db"]["host"]
+        );
+    }
 
     public function users()
     {
@@ -63,4 +72,18 @@ class Container
             $this->sql
         );
     }
+    public function servicios()
+    {
+        return new \Daw\servicios(
+            $this->sql
+        );
+    }
+    public function servicios_apartamentos()
+    {
+        return new \Daw\servicios_apartamentos(
+            $this->sql
+        );
+    }
+
+ 
 }

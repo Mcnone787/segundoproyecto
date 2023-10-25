@@ -19,7 +19,7 @@
 ?>
 <div class="row row-table" style="margin-bottom:50px;">
     <div class="col-12" style="">
-                    <h3 style="text-align:center;padding:20px;">Tus apartamentos sr/sra/sre:</h3>
+                    <h3 style="text-align:center;padding:20px;">Tus apartamentos sr/sra: <?php echo $_SESSION["user"]["Nombre"]?></h3>
                     <a href="index.php?r=addapartamento"><button style="float:right;">Añadir apartamento</button></a>
                     <table id="myTable" class="display" style="margin-bottom:50px;">
                     
@@ -40,7 +40,7 @@
                             <p ><?php echo $task["Titulo"]; ?></p>
                             <p><?php echo $task["CP"]; ?></p>
                             <div>
-                                <button style="display:block;margin-bottom:10px;" class="btn btn-outline-success">Editar</button>
+                                <a href="index.php?r=ctrleditaparta&id=<?php echo $task["ApartamentosID"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-success">Editar</button></a>
                                 <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"];?>">   <button class="btn btn-outline-danger   "> Eliminar</button></a>
                             </div>
                             
