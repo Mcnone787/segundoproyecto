@@ -26,7 +26,7 @@
                     $apartamentoID = $apartamento['ApartamentosID'];
                     ?>
                     <div class="col">
-                        <a class="link-offset-2 link-underline link-underline-opacity-0" href="?r=apartamento&id=<?= $apartamentoID ?>" class="stretched-link">
+                        <a class="link-offset-2 link-underline link-underline-opacity-0" href="index.php?r=apartamentoReserva&id=<?= $apartamentoID ?>" class="stretched-link">
                             <div class="card h-100" style="width: 100%;">
                                 <img src="imgs/logo/logo.png" class="card-img-top" alt="...">
                                 <div class="card-body">

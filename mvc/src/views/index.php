@@ -39,6 +39,7 @@
                               <a class='nav-link dropdown-toggle-hide text-dark' type='button' data-bs-toggle='dropdown' aria-expanded='false'><?php echo $_SESSION['user']['Nombre']; ?></a>
                               <ul class='dropdown-menu dropdown-menu-lg-end'>
                                  <li><a class='dropdown-item' href='index.php?r=perfilUser'>Perfil</a></li>
+                                 <li><a class='dropdown-item' href='index.php?r=reservas'>Reservas</a></li>
                                  <li><a class='dropdown-item' href='index.php?r=dologout'>Log Out</a></li>
                                  <?php if($_SESSION["user"]["Rol"]=="gestor" || $_SESSION["user"]["Rol"]=="admin"){?>
                                  <li><a class='dropdown-item' href='index.php?r=gestores'>Apartamentos</a></li>
