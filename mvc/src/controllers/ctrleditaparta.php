@@ -3,7 +3,6 @@
 function ctrleditaparta($request, $response, $container){
     
   
-        $response->setTemplate("editapartamento.php");
         $apartamento=$container->apartamentos();
         
         $servicios_apartamentos=$container->servicios_apartamentos();
@@ -13,13 +12,13 @@ function ctrleditaparta($request, $response, $container){
         $totalservicios=$Mdelservicio->getApartamentos();
 
         
-        for($i=0;$i<count($totalservicios);$i++){
-            for($i2=0;$i2<count($servicios);$i2++){
-                    if($totalservicios[$i]["servicio"]==$servicios[$i2]["servicio"]){
-                        $totalservicios[$i]=1;
-                    }
-            }
-        }
+        // for($i=0;$i<count($totalservicios);$i++){
+        //     for($i2=0;$i2<count($servicios);$i2++){
+        //             if($totalservicios[$i]["servicio"]==$servicios[$i2]["servicio"]){
+        //                 $totalservicios[$i]=1;
+        //             }
+        //     }
+        // }
 
         $id=$request->get(INPUT_GET, "id");
         $informationapartamento=$apartamento->getapartamento($id);
@@ -29,7 +28,8 @@ function ctrleditaparta($request, $response, $container){
        $response->set("servicios",$servicios);
        $response->set("totalservicios",$totalservicios);
        $response->set("id",$request->get(INPUT_GET,"id"));
-       
+       $response->setTemplate("editapartamento.php");
+
         return $response;
     
 }

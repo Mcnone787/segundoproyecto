@@ -31,6 +31,7 @@ include "../src/controllers/CtrlUserData.php";
 include "../src/controllers/CtrlUserDataUpdate.php";
 include "../src/controllers/ctrleditaparta.php";
 include "../src/controllers/doeditaparta.php";
+include "../src/controllers/doaddaparta.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -88,6 +89,9 @@ switch ($r) {
             case "doeditaparta":
                 doeditaparta($request, $response, $container);
                 break;
+                case "doanadiraparta":
+                    doanadiraparta($request, $response, $container);
+                    break;
     case "footer":
         ctrlFooter($request, $response, $container);
         break;
@@ -96,5 +100,4 @@ switch ($r) {
         ctrlIndex($request, $response, $container);
         break;
 }
-
 $response->response();

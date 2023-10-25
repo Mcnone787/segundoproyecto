@@ -54,7 +54,10 @@
                                     <p style="text-align:center;">Descripcion</p>
                                 </div>
                                 <div class="col-5">
-                                    <textarea id="w3review" name="descripcion" rows="4" cols="50" placeholder="<?php echo  $informationapartamento["Descripcion"];?>"></textarea>
+                                    <textarea id="w3review" name="descripcion" rows="5" cols="50" style="text-align:left;" >
+                                    <?php echo  $informationapartamento["Descripcion"];?>
+
+                                    </textarea>
                                 </div>
                                 <div class="col-3"></div>
 

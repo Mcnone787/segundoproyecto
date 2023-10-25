@@ -8,8 +8,13 @@
       <link rel="icon" href="imgs/logo/logo-removebg-preview.png" type="image/x-icon">
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
       <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
 </head>
 <body>
+
     <?php include "nav.php"; ?>
     <div class="container" style="margin-bottom:200px;">
         <div class="row">
@@ -18,22 +23,90 @@
                     Añade tu apartamento con este formulario ^^
                 </p>
             </div>
-            <div class="col-6">     
-            <form>
-                
+            <div class="col-7">     
+            <form class="form-control form_session" action="index.php?r=doanadiraparta&id=<?php echo $id;?>" method="post">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <div class="row">
+                            <div class="col-6" >
+                               <label for="Nombre"> Titulo </label><input class="form-control" type="text" placeholder="Default input" name="Titulo">
+                            </div>
+                            <div class="col-6" >
+                            <label for="Nombre"> CP </label>
+                                <input class="form-control" type="text" placeholder="Default input" name="CP" >
+                            </div>
+                        </div>
                     </div>
+
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    <div class="row">
+                    <div class="col-6" >
+                               <label for="Laltidud"> Laltidud  </label><input class="form-control" type="text" placeholder="Default input"  name="Laltitud" >
+                            </div>
+                            <div class="col-6" >
+                            <label for="Longitud"> Longitud </label>
+                                <input class="form-control" type="text" placeholder="Default input" name="Longitud" >
+                            </div>
+                            
+                        </div>
                     </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <div class="row">
+                                <div class="col-3">
+                                    <p style="text-align:center;">Descripcion</p>
+                                </div>
+                                <div class="col-5">
+                                    <textarea id="w3review" name="descripcion" rows="5" cols="50" style="text-align:left;" >
+                                    <?php echo  $informationapartamento["Descripcion"];?>
+
+                                    </textarea>
+                                </div>
+                                <div class="col-3"></div>
+
                     </div>
+                    <div class="row">
+                    <div class="col-6" >
+                               <label for="Laltidud"> m2	  </label><input class="form-control" type="text" placeholder="Default input" name="m2">
+                            </div>
+                            <div class="col-6" >
+                                <label for="" style="visibility:hidden;">d</label>
+                            <div id="accordion">
+<h3>Añadir servicio al apartamento</h3>
+  <div>
+    
+    <?php 
+    foreach($totalservicios as $i => $task){ 
+        if($task!=1){
+        ?>
+        <input type="checkbox"   name="add<?php echo $task["idservicios"]; ?>" id=""><label for="d"> <?php echo $task["servicio"]; ?> </label><br>
+    <?php }
+ }?>
+    
+</div>
+
+
+ 
+</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-6" >
+                               <label for="Laltidud">  precioALT </label><input class="form-control" name="precioalt" type="text" placeholder="Default input">
+                            </div>
+                            <div class="col-6" >
+                            <label for="Longitud">PrecioBAJ  </label>
+                                <input class="form-control" type="text" placeholder="Default input" name="preciobaj">
+                            </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-6" >
+                               <label for="Laltidud"> temporada  </label><input class="form-control" type="text" name="temporada" placeholder="Default input">
+                            </div>
+                            <div class="col-6" >
+                            <label for="Longitud"> Estados </label>
+                                <input class="form-control" type="text" placeholder="Default input" name="estados">
+                            </div>
+                    </div>
+                    
+                    
                     <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>
@@ -41,5 +114,12 @@
         </div>
     </div>
     <?php include "footer.php"; ?>
+    <script>
+        $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  } );
+    </script>
 </body>
 </html>

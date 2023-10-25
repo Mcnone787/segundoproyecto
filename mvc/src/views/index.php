@@ -9,6 +9,11 @@
       <link rel="stylesheet" href="srcs/style.css">
       <link rel="icon" href="imgs/logo/favicon/logo-removebg-preview.png" type="image/x-icon">
       <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  
    </head>
    <body data-bs-theme="light">
 
@@ -183,28 +188,53 @@
             </div>
       </div>
 
-      <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Datepicker - Restrict date range</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker({ minDate: -20, maxDate: "+1M +10D" });
-  } );
+
+
+
+
+
+
+
+
+<input class="doi" />
+<input class="doi" />
+
+<script>
+ var array = [
+   ["2023-10-23","2023-10-25"],
+   ["2023-10-27","2023-10-29"],
+   ["2023-11-01","2023-11-25"]]
+ let empieza=false
+ let arraydias=[]
+
+$('.doi').datepicker({
+    beforeShowDay: function(date){
+      console.log(date)
+        var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+       
+        
+         for(i=0;i<array.length;i++){
+            if(string==array[i][0] ){
+               arraydias.push(string)
+               empieza=true
+            }
+         }
+         for(i2=0;i2<array.length;i2++){
+            if(string==array[i2][1]){
+               arraydias.push(string)
+               empieza=false;
+             }
+         }
+        
+         if(empieza==true){
+           arraydias.push(string)               
+        }
+
+        return [ arraydias.indexOf(string)== -1 ]
+    }
+});
+
   </script>
-</head>
-<body>
- 
-<p>Date: <input type="text" id="datepicker"></p>
- 
- 
-</body>
-</html>
       <?php include "footer.php";?>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
