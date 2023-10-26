@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  
 </head>
 
 <body data-bs-theme="light">
@@ -107,41 +108,54 @@
     </div>
 
 <script>
+        console.log("dawd")
  var array = [
    ["2023-10-23","2023-10-25"],
-   ["2023-10-27","2023-10-29"],
-   ["2023-11-01","2023-11-25"]]
+   ["2023-10-29","2023-10-30"],
+   ["2023-11-01","2023-11-20"]]
  let empieza=false
+ let ini=false;
+ let final=true;
  let arraydias=[]
+let contador=0
+jQuery(".doi").click(()=>{
+    console.log(arraydias)
+    final=true;
+});
 
-$('.doi').datepicker({
+    $('.doi').datepicker({
     beforeShowDay: function(date){
-      console.log(date)
         var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
-       
-        
-         for(i=0;i<array.length;i++){
-            if(string==array[i][0] ){
-               arraydias.push(string)
-               empieza=true
+     for(i=0;i<array.length;i++){
+            if(string==array[i][0]){
+                console.log(array[i][0])
+                arraydias.push(array[i][0])
+                final=false;
             }
-         }
-         for(i2=0;i2<array.length;i2++){
-            if(string==array[i2][1]){
-               arraydias.push(string)
-               empieza=false;
-             }
-         }
-        
-         if(empieza==true){
+        }
+        if(final==false){
+            console.log("entra")
            arraydias.push(string)               
         }
-
+    for(i=0;i<array.length;i++){
+        if(string==array[i][1]){
+            console.log(array[i][1])
+            arraydias.push(array[i][1])
+            final=true;
+            }
+        
+    }
+      
+        
+       
         return [ arraydias.indexOf(string)== -1 ]
     }
 });
 
+  
+
   </script>
+  
     <?php include "footer.php" ?>
 </body>
 
