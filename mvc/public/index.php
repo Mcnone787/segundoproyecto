@@ -33,7 +33,8 @@ include "../src/controllers/ctrleditaparta.php";
 include "../src/controllers/doeditaparta.php";
 include "../src/controllers/doaddaparta.php";
 include "../src/controllers/CtrlApartamentReservas.php";
-
+include "../src/controllers/temporada.php";
+include "../src/controllers/addtemporada.php";
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
 include "../src/Emeset/Response.php";
@@ -99,7 +100,12 @@ switch ($r) {
     case "footer":
         ctrlFooter($request, $response, $container);
         break;
-        
+    case "temporada":
+        temporada($request, $response, $container);
+        break;
+        case "addtemporada":
+            addtemporada($request, $response, $container);
+            break;
     default:
         ctrlIndex($request, $response, $container);
         break;

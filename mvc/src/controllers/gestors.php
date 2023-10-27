@@ -8,6 +8,7 @@ function ctrlgestores($request, $response, $container){
   
 
   $tasks= $departamentosModel->getAll($_SESSION["user"]["IDUsuario"]);
+ 
   $response->set("tasks",$tasks);
   return $response;
 }

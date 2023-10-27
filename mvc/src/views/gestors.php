@@ -27,10 +27,10 @@
     justify-content: space-around;
 ">
                         <div class="">
-                            <a href="index.php?r=addapartamento" > <button style="float:left;" class="btn btn-outline-success">Temporadas para los apartmentos</button></a> 
+                            <a href="index.php?r=TempoParaApartame" > <button style="float:left;" class="btn btn-outline-success">Temporadas para los apartmentos</button></a> 
                         </div>
                         <div class="">
-                            <a href="index.php?r=addapartamento" style="   ;
+                            <a href="index.php?r=temporada" style="   ;
 }" > <button  class="btn btn-outline-success">Añadir temporada</button></a>
                         </div>
                         <div class="">
