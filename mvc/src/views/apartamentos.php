@@ -13,8 +13,8 @@
 
 <body>
     <?php include 'nav.php'; ?>
-    <div class="container-fluid">
-        <div class="row row-cols-3 row-cols-md-5 g-4 my-5 py-3">
+    <div class="container">
+        <div class="row row-cols-3 row-cols-md-4 g-4 my-5 py-3">
             <?php if (isset($apartamentosPagina) && is_array($apartamentosPagina)) : ?>
                 <?php foreach ($apartamentosPagina as $apartamento) : ?>
                     <?php
