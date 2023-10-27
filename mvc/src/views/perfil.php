@@ -17,14 +17,14 @@
         <div class="row justify-content-center">
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column text-center justify-content-center">
-                        <img src="imgs/logo/logo.png" alt="logo" class="img-thumbnail " width="auto" style="height: auto;">
-                        <span class="font-weight-bold"><?php echo $nombre ?></span>
-                        <span class="text-black-50"><?php echo $email ?></span>
-                        <span class="text-black-50">Telefono: <?php echo $telefono ?></span>
+                    <img src="imgs/logo/logo.png" alt="logo" class="rounded" width="auto" style="height: auto;">
+                    <span class="font-weight-bold"><?php echo $nombre ?></span>
+                    <span class="text-black-50"><?php echo $email ?></span>
+                    <span class="text-black-50">Telefono: <?php echo $telefono ?></span>
                 </div>
             </div>
             <div class="col-md-5 border-right">
-                <form  action="?r=doUpDateUserData" method="post">
+                <form action="?r=doUpDateUserData" method="post">
                     <div class="p-3 py-5">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4 class="text-right">Editar Perfil</h4>
@@ -32,17 +32,17 @@
                         <div class="row mt-2">
                             <div class="col-md-6">
                                 <label class="labels">Nombre</label>
-                                <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<?= $nombre?>" required>
+                                <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<?= $nombre ?>" required>
                             </div>
                             <div class="col-md-6">
                                 <label class="labels">Apellidos</label>
-                                <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Apellidos" value="<?= $apellidos?>" required>
+                                <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Apellidos" value="<?= $apellidos ?>" required>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-12 mb-2">
                                 <label class="labels">Telefóno</label>
-                                <input class="form-control" type="text" name="telefono" id="telefono" placeholder="telefono" value="<?= $telefono?>" required>
+                                <input class="form-control" type="text" name="telefono" id="telefono" placeholder="telefono" value="<?= $telefono ?>" required>
                             </div>
                             <div class="col-md-12 mb-2">
                                 <label class="labels">Contraseña</label>
@@ -50,11 +50,11 @@
                             </div>
                             <div class="col-md-12 mb-2">
                                 <label class="labels">Email</label>
-                                <input class="form-control" type="text" name="email" id="email" placeholder="email" value="<?= $email?>" required>
+                                <input class="form-control" type="text" name="email" id="email" placeholder="email" value="<?= $email ?>" required>
                             </div>
                             <div class="col-md-12 mb-2">
                                 <label class="labels">Tarjeta de Credito</label>
-                                <input class="form-control" type="text" name="debitcard" id="debitcard" placeholder="0000/0000/0000/0000" value="<?= $debitcard?>" required>
+                                <input class="form-control" type="text" name="debitcard" id="debitcard" placeholder="0000/0000/0000/0000" value="<?= $debitcard ?>" required>
                             </div>
                         </div>
                         <div class="mt-5 text-center">

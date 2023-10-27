@@ -4,7 +4,7 @@ function ctrlApartamentos($request, $response, $container) {
     $apartamentosModel = $container->apartamentos();
     $apartamentos = $apartamentosModel->getApartamentos();
 
-    $apartamentosPorPagina = 15;
+    $apartamentosPorPagina = 12;
 
     if (isset($_GET["pagina"])) {
         $paginaActual = $_GET["pagina"];
