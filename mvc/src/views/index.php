@@ -1,85 +1,37 @@
 <!doctype html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Bootstrap demo</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-      <link rel="stylesheet" href="srcs/style.css">
-      <link rel="icon" href="imgs/logo/favicon/logo-removebg-preview.png" type="image/x-icon">
-      <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  
-   </head>
-   <body data-bs-theme="light">
 
-   <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary nav">
-         <div class="container-fluid">
-            <img  src="imgs/logo/logo.png" class="img-thumbnail" alt="logo" width="auto"  style="height:90px;">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-               <div style="margin: 0 auto; width: 50%;">
-                  <form class="d-flex text-dark" role="search">
-                     <input class="form-control me-2 search_nav text-dark" type="search" placeholder="Search" aria-label="Search" style="width: 65%;margin:0 auto;">
-                  </form>
-               </div>
-               <div style="float: right;">
-                  <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="index.php?r=apartamentos">Departamentos</a>
-                     </li>
-                     <li class='nav-item dropdown'>
-                        <?php if($_SESSION['user']){?>
-                              <a class='nav-link dropdown-toggle-hide text-dark' type='button' data-bs-toggle='dropdown' aria-expanded='false'><?php echo $_SESSION['user']['Nombre']; ?></a>
-                              <ul class='dropdown-menu dropdown-menu-lg-end'>
-                                 <li><a class='dropdown-item' href='index.php?r=perfilUser'>Perfil</a></li>
-                                 <li><a class='dropdown-item' href='index.php?r=reservas'>Reservas</a></li>
-                                 <li><a class='dropdown-item' href='index.php?r=dologout'>Log Out</a></li>
-                                 <?php if($_SESSION["user"]["Rol"]=="gestor" || $_SESSION["user"]["Rol"]=="admin"){?>
-                                 <li><a class='dropdown-item' href='index.php?r=gestores'>Apartamentos</a></li>
-                                 <?php
-                                 }
-                                 if($_SESSION["user"]["Rol"]=="admin"){
-                                 ?>
-                                 <li><a class='dropdown-item' href='index.php?r=gestores'>Panel</a></li>
-                                    <?php }?>
-                                 <li><hr class='dropdown-divider'></li>
-                                 <li><div class='form-check form-switch ms-2'>
-                                 <input class='form-check-input btnSwitch' type='checkbox' role='switch' id='flexSwitchCheckDefault'>
-                                 <label class='form-check-label' for='flexSwitchCheckDefault'>Dark Mode</label>
-                               </div></li>
-                              </ul>
-                              <?php }else{
-                                    echo "<li class='nav-item text-dark'>
-                                           <a class='nav-link' href='index.php?r=login' role='button' aria-expanded='false'>Login</a>
-                                    </li>";
-                                 }?>
-                        </li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </nav>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Bootstrap demo</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <link rel="stylesheet" href="srcs/style.css">
+   <link rel="icon" href="imgs/logo/favicon/logo-removebg-preview.png" type="image/x-icon">
+   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+   <link rel="stylesheet" href="/resources/demos/style.css">
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
-      <!-- carrousel -->
-      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-               <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-               <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
-            </div>
-            <div class="carousel-item">
-               <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
-            </div>
+</head>
+
+<body data-bs-theme="light">
+   <?php include "nav.php"; ?>
+   <!-- carrousel -->
+   <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+         <div class="carousel-item active" data-bs-interval="10000">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
          </div>
-         <button class="carousel-control-prev text-light" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+         <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
+         </div>
+         <div class="carousel-item">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
+         </div>
+      </div>
+      <button class="carousel-control-prev text-light" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
          <span class="visually-hidden">Previous</span>
       </button>
