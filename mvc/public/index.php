@@ -41,6 +41,7 @@ include "../src/controllers/gestores_estados.php";
 include "../src/controllers/gestores_temporadas.php";
 include "../src/controllers/deletetemporada.php";
 include "../src/controllers/temporada_apartamentos.php";
+include "../src/controllers/dotemporadaapartamento.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -130,6 +131,9 @@ switch ($r) {
         case "deletetemporada":
             deleteTemporada($request, $response, $container);
             break; 
+            case "dotemporadaapartamento";
+            doeditTempoAparta($request, $response, $container);
+            break;
     default:
         ctrlIndex($request, $response, $container);
         break;

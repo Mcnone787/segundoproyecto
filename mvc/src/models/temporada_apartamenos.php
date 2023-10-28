@@ -38,16 +38,16 @@ class temporada_servicios
 
         return $tasks;
     }
-    public function add_servicios($id_apar,$idservi)
+    public function add_temporada($id_apar,$idtemporadaid)
     {
-        $stm = $this->sql->prepare('INSERT INTO apartamentos_servicios (ApartamentosID,servicioid)values (:ApartamentoID,:servicioid);');
-        $stm->execute([':ApartamentoID' => $id_apar, ':servicioid' => $idservi]);
+        $stm = $this->sql->prepare('INSERT INTO apartamentos_temporada (ApartamentosID,temporadaid) values (:ApartamentosID,:temporadaid);');
+        $stm->execute([':ApartamentosID' => $id_apar, ':temporadaid' => $idtemporadaid]);
     }
-    public function rm_servicios_apartamento($id_apar,$idservi)
+    public function rm_temporada($id_apar,$idtemporadaid )
     {
     
-        $stm = $this->sql->prepare('delete from apartamentos_servicios where ApartamentosID=:ApartamentosID and servicioid=:servicioid');
-        $stm->execute([':ApartamentosID' => $id_apar, ':servicioid' => $idservi]);
+        $stm = $this->sql->prepare('delete from apartamentos_temporada where   ApartamentosID=:ApartamentosID and temporadaid=:temporadaid ');
+        $stm->execute([':ApartamentosID' => $id_apar, ':temporadaid' => $idtemporadaid]);
 
     }
  

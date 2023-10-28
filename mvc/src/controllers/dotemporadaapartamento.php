@@ -1,23 +1,11 @@
 <?php
 
-function doeditaparta($request, $response, $container){
-    $Modaapartameto=$container->apartamentos();
-    $Modelservicio_apartamentos=$container->servicios_apartamentos();
+function doeditTempoAparta($request, $response, $container){
+    $TemporadaApartamentoModel=$container->temporada_servicios();
     $id=$request->get(INPUT_GET, "id"); 
-    $Titulo = $request->get(INPUT_POST, "Titulo"); 
-    $CP = $request->get(INPUT_POST, "CP"); 
-    $Laltitud = $request->get(INPUT_POST, "Laltitud"); 
-    $Longitud = $request->get(INPUT_POST, "Longitud"); 
-    $descripcion = $request->get(INPUT_POST, "descripcion"); 
-    $m2 = $request->get(INPUT_POST, "m2"); 
-    $Longitud = $request->get(INPUT_POST, "Longitud"); 
-    $descripcion = $request->get(INPUT_POST, "descripcion"); 
     $add =[];
     $rm=[];
-    $precioalt = $request->get(INPUT_POST, "precioalt"); 
-    $preciobaj = $request->get(INPUT_POST, "preciobaj"); 
-     $numhabita = $request->get(INPUT_POST, "numhabita"); 
-
+ 
     $valores = $_POST; 
     // echo $id,$Titulo,
     // $CP,
@@ -44,27 +32,14 @@ function doeditaparta($request, $response, $container){
     }
 
     foreach($add as $item){
-        $Modelservicio_apartamentos->add_servicios($id,$item);
+        $TemporadaApartamentoModel->add_temporada($id,$item);
     }
     foreach($rm as $item){
-        $Modelservicio_apartamentos->rm_servicios_apartamento($id,$item);
+        $TemporadaApartamentoModel->rm_temporada($id,$item);
     }
   
-    $updateaparmeto=$Modaapartameto->setupdateapartamento(  
-    $id,
-    $Titulo,
-    $CP,
-    $Laltitud ,
-    $Longitud,
-    $descripcion ,
-    $m2,
-    $precioalt,
-    $preciobaj,
-    $numhabita
-     );
 
 
-
-     $response->redirect("location: index.php?r=gestores");
+     $response->redirect("location: index.php?r=gestores_temporadas");
     
 }

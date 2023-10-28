@@ -8,11 +8,10 @@ function adtemporadaApartamento($request, $response, $container){
     
     $temporadaModel=$container->temporada();
     $totaltemporada=$temporadaModel->getTemporadas($_SESSION["user"]["IDUsuario"]);
-
+    
     for($i=0;$i<count($totaltemporada);$i++){
         for($i2=0;$i2<count($temporadas_apartamentos);$i2++){
-                if($temporadas_apartamentos[$i]["temporadaNombre"]==$totaltemporada[$i2]["temporadaNombre"]){
-                    
+                if($totaltemporada[$i]["idtemporada"]==$temporadas_apartamentos[$i2]["idtemporada"]){
                     $totaltemporada[$i]=1;
                 }
         }
@@ -20,6 +19,7 @@ function adtemporadaApartamento($request, $response, $container){
     
     $response->set("temporadas_apartamentos",$temporadas_apartamentos);
     $response->set("totaltemporada",$totaltemporada);
+    $response->set("id",$request->get(INPUT_GET,"id"));
     $response->setTemplate("addtemporada_apartamento.php");
     $response->set("container",$container);
     return $response;

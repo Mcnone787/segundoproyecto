@@ -24,14 +24,10 @@
                 </p>
             </div>
             <div class="col-7">     
-            <form class="form-control form_session" action="index.php?r=addtemporada" method="post">
+            <form class="form-control form_session" action="index.php?r=dotemporadaapartamento&id=<?php echo $id;?>" method="post">
+          
                     <div class="mb-3">
-                        <div class="row">
-                            <div class="col-12" >
-                               <label for="Nombre"> Nombre de la temporada </label><input class="form-control" type="text" placeholder="Default input" name="temporadaNombre">
-                            </div>
-                            
-                        </div>
+                       <h2>Estas editando el apartamento <?php echo $_GET["Nombre_apartamento"];?></h2>
                     </div>
 
                     <div class="mb-3">
