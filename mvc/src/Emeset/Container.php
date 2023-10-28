@@ -90,6 +90,12 @@ class Container
             $this->sql
         );
     }
+    public function temporada_servicios()
+    {
+        return new \Daw\temporada_servicios(
+            $this->sql
+        );
+    }
     
  
 }

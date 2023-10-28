@@ -40,6 +40,7 @@ include "../src/controllers/gestores_apartamentos.php";
 include "../src/controllers/gestores_estados.php";
 include "../src/controllers/gestores_temporadas.php";
 include "../src/controllers/deletetemporada.php";
+include "../src/controllers/temporada_apartamentos.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";

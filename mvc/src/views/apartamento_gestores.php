@@ -50,7 +50,9 @@
                             <p><?php echo $task["CP"]; ?></p>
                             <div>
                                 <a href="index.php?r=ctrleditaparta&id=<?php echo $task["ApartamentosID"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
-                                <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"];?>">   <button class="btn btn-outline-danger   "> Eliminar</button></a>
+                                <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"];?>">   <button style="display:block;margin-bottom:10px;"   class="btn btn-outline-danger" > Eliminar</button></a>
+                                <a href="index.php?r=TempoParaApartame&id=<?php echo $task["ApartamentosID"];?>">   <button style="display:block;"   class="btn btn-outline-primary" > Temporadas</button></a>
+
                             </div>
                             
                     </div>
