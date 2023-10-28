@@ -42,39 +42,7 @@
                             <a href="index.php?r=addapartamento" > <button style="float:right;" class="btn btn-outline-success">Añadir apartamento</button></a>
                         </div>
                     </div>
-                    <table id="myTable" class="display" style="margin-bottom:50px;">
-                    
-    <thead>
-        <tr>
-            <th>Nombre apartamentos</th>
-            
-        </tr>
-    </thead>
-    <tbody> 
-        <tr class="table-apartamentos">
-            <td>
-            
-            <?php 
-            foreach($tasks as $i => $task) { ?>
-                    <div class="departamentos">
-                        <img src="" alt="imagen">
-                            <p ><?php echo $task["Titulo"]; ?></p>
-                            <p><?php echo $task["CP"]; ?></p>
-                            <div>
-                                <a href="index.php?r=ctrleditaparta&id=<?php echo $task["ApartamentosID"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
-                                <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"];?>">   <button class="btn btn-outline-danger   "> Eliminar</button></a>
-                            </div>
-                            
-                    </div>
-                    
-                    <?php } ?>
-            </td>
-           
-
-        </tr>
-     
-    </tbody>
-</table>
+                   
 
                     </div>
     </div>

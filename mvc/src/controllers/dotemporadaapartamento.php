@@ -40,6 +40,6 @@ function doeditTempoAparta($request, $response, $container){
   
 
 
-     $response->redirect("location: index.php?r=gestores_temporadas");
+     $response->redirect("location: index.php?r=gestores_apartamentos");
     
 }
