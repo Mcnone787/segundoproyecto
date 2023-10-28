@@ -5,3 +5,7 @@ $pruebas=[
 ];
 $prueba2=json_encode($pruebas,true);
 echo $prueba2;
+?>
+
+
+<input type="text">

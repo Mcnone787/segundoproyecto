@@ -25,7 +25,7 @@
     include "menu_gestores.php";
 ?>
 <div class="col-11" style="">
-                    <h3 style="text-align:center;padding:20px;">Tus apartamentos sr/sra: <?php echo $_SESSION["user"]["Nombre"]?></h3>
+                    <h3 style="text-align:center;padding:20px;">Tus temporadas sr/sra: <?php echo $_SESSION["user"]["Nombre"]?></h3>
                     <div class="" style="    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -38,9 +38,7 @@
                             <a href="index.php?r=temporada" style="   ;
 }" > <button  class="btn btn-outline-success">Añadir temporada</button></a>
                         </div>
-                        <div class="">
-                            <a href="index.php?r=addapartamento" > <button style="float:right;" class="btn btn-outline-success">Añadir apartamento</button></a>
-                        </div>
+                        
                     </div>
                     <table id="myTable" class="display" style="margin-bottom:50px;">
                     
@@ -57,12 +55,11 @@
             <?php 
             foreach($tasks as $i => $task) { ?>
                     <div class="departamentos">
-                        <img src="" alt="imagen">
-                            <p ><?php echo $task["Titulo"]; ?></p>
-                            <p><?php echo $task["CP"]; ?></p>
+                            <p ><?php echo $task["temporadaNombre"]; ?></p>
+                            <p><?php echo $task["fechaini"]; ?></p>
+                            <p><?php echo $task["fechasalida"]; ?></p>
                             <div>
-                                <a href="index.php?r=ctrleditaparta&id=<?php echo $task["ApartamentosID"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
-                                <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"];?>">   <button class="btn btn-outline-danger   "> Eliminar</button></a>
+                                <a href="index.php?r=deletetemporada&id=<?php echo $task["idtemporada"];?>">   <button class="btn btn-outline-danger   "> Eliminar</button></a>
                             </div>
                             
                     </div>

@@ -11,9 +11,11 @@ $(document).ready(function () {
  });
 
 
- $.get('../prueba.php',
- {prueba:'90'},
- function(respuesta){
-   alert(respuesta)
- }
- ,"html")
+//  $.get('../prueba.php',
+//  {prueba:'90'},
+//  function(respuesta){
+//    alert(respuesta)
+//  }
+//  ,"html")
+
+// $("body:contains('Lorem')").css("font-weight", "bold");

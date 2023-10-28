@@ -13,4 +13,5 @@ include "../src/models/userM.php";
 include "../src/models/apartamentos.php";
 include "../src/models/servicios.php";
 include "../src/models/servicios-apartamentos.php";
+include "../src/models/temporada.php";
 

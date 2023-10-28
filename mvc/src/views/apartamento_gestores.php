@@ -26,22 +26,10 @@
 ?>
 <div class="col-11" style="">
                     <h3 style="text-align:center;padding:20px;">Tus apartamentos sr/sra: <?php echo $_SESSION["user"]["Nombre"]?></h3>
-                    <div class="" style="    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-">
-                        <div class="">
-                            <a href="index.php?r=TempoParaApartame" > <button style="float:left;" class="btn btn-outline-success">Temporadas para los apartmentos</button></a> 
-                        </div>
-                        <div class="">
-                            <a href="index.php?r=temporada" style="   ;
-}" > <button  class="btn btn-outline-success">Añadir temporada</button></a>
-                        </div>
+                     
                         <div class="">
                             <a href="index.php?r=addapartamento" > <button style="float:right;" class="btn btn-outline-success">Añadir apartamento</button></a>
                         </div>
-                    </div>
                     <table id="myTable" class="display" style="margin-bottom:50px;">
                     
     <thead>

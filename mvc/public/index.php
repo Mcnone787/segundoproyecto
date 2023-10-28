@@ -35,6 +35,12 @@ include "../src/controllers/doaddaparta.php";
 include "../src/controllers/CtrlApartamentReservas.php";
 include "../src/controllers/temporada.php";
 include "../src/controllers/addtemporada.php";
+include "../src/controllers/TempoParaApartame.php";
+include "../src/controllers/gestores_apartamentos.php";
+include "../src/controllers/gestores_estados.php";
+include "../src/controllers/gestores_temporadas.php";
+include "../src/controllers/deletetemporada.php";
+
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
 include "../src/Emeset/Response.php";
@@ -98,16 +104,35 @@ switch ($r) {
         ctrlApartamentosReservas($request, $response, $container);
         break;
     case "footer":
-        ctrlFooter($request, $response, $container);
+            ctrlFooter($request, $response, $container);
         break;
     case "temporada":
-        temporada($request, $response, $container);
+            temporada($request, $response, $container);
         break;
         case "addtemporada":
             addtemporada($request, $response, $container);
-            break;
+        break;
+        case "TempoParaApartame" :
+            adtemporadaApartamento($request, $response, $container);
+        break;
+        case "gestores_apartamentos" :
+            gestores_apartamentos($request, $response, $container);
+        break;
+        case "gestores_estados" :
+            gestores_estados($request, $response, $container);
+
+        break;
+        case "gestores_temporadas" :
+            gestores_temporadas($request, $response, $container);
+
+        break;
+        case "deletetemporada":
+            deleteTemporada($request, $response, $container);
+            break; 
     default:
         ctrlIndex($request, $response, $container);
         break;
 }
+
+
 $response->response();
