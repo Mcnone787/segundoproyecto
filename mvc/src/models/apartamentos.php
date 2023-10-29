@@ -40,11 +40,49 @@ class Apartamentos
 // select apartamentos.*from apartamentos where apartamentos.ApartamentosID not in (select reservas.ApartamentosID from reservas where '2023-10-26'>=reservas.DiaEntrada  AND  '2023-10-27'<=reservas.DiaSalida);
 
 public function getapartamentosdisoponibles($diaini,$diafin,$numhabita,$Titulo){
-      
-    $stm = $this->sql->prepare("select apartamentos.* from apartamentos where apartamentos.ApartamentosID not in (select reservas.ApartamentosID from reservas where :diaini>=reservas.DiaEntrada  AND  :diafin<=reservas.DiaSalida or (
-        (:diaini>=reservas.DiaEntrada or :diafin<=reservas.DiaSalida or :diafin>=reservas.DiaSalida) and :diafin>=reservas.DiaEntrada and :diaini<=reservas.DiaSalida )) 
-        and apartamentos.num_habita=:numhabita and apartamentos.Titulo like :Titulo;");
-    $stm->execute([':diaini' => $diaini,':diafin'=>$diafin,'numhabita'=>$numhabita,"Titulo"=>"%".$Titulo."%"]);
+    
+    $condiciondias="apartamentos.ApartamentosID not in (select reservas.ApartamentosID from reservas where :diaini>=reservas.DiaEntrada  AND  :diafin<=reservas.DiaSalida or (
+        (:diaini>=reservas.DiaEntrada or :diaini=reservas.DiaSalida or :diafin<=reservas.DiaSalida or :diafin>=reservas.DiaSalida) and :diafin>=reservas.DiaEntrada and :diaini<reservas.DiaSalida ))";
+    $condicionnumhabita="apartamentos.num_habita=:numhabita";
+    $condiciontitulo="apartamentos.Titulo like :Titulo";
+    if($Titulo==""){
+        $condiciontitulo="";
+    }
+    if($diaini=="" || $diafin==""){
+        $condiciondias="";
+    }
+    if($numhabita==""){
+        $numhabita=1;
+        $condicionnumhabita="apartamentos.num_habita>=:numhabita";
+    }
+    if($diaini =="" && $Titulo==""){
+        
+    }
+    if($diaini!=""){
+        $condicionnumhabita=" and ".$condicionnumhabita;
+    }
+    if($Titulo!=""){
+        $condicionnumhabita=$condicionnumhabita." and ";
+    }
+
+    $stm = $this->sql->prepare("select apartamentos.* from apartamentos where ".$condiciondias." ".$condicionnumhabita."  ".$condiciontitulo.";");
+ 
+    if($condiciondias=="" && $condiciontitulo==""){
+        $stm->execute([':numhabita'=>$numhabita]);
+
+    }else if($condiciondias!="" && $condiciontitulo!=""){
+        $stm->execute([':diaini' => $diaini,':diafin'=>$diafin,':numhabita'=>$numhabita,":Titulo"=>"%".$Titulo."%"]);
+    }
+    
+    else if($condiciondias!=""){
+       
+        $stm->execute([':diaini' => $diaini,':diafin'=>$diafin,':numhabita'=>$numhabita]);
+
+    }else if($condiciontitulo!=""){
+
+        $stm->execute([':numhabita'=>$numhabita,":Titulo"=>"%".$Titulo."%"]);
+
+    }
 
     $tasks = array();
     

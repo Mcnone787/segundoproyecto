@@ -120,17 +120,17 @@ jQuery("#buscarbtn").click(()=>{
     let fechafin=jQuery("#to").val()
      let titulo=jQuery("#titulo").val()
     let numhabita=jQuery("#numhabita").val()
-    fechaini
+    
     $.ajax({
     type:"POST", // la variable type guarda el tipo de la peticion GET,POST,..
     url:"index.php", //url guarda la ruta hacia donde se hace la peticion
     data:{r:"prueba",diaini:fechaini,diafin:fechafin,titulo:titulo,numhabita:numhabita}, // data recive un objeto con la informacion que se enviara al servidor
     success:function(datos){ //success es una funcion que se utiliza si el servidor retorna informacion
-        
         let apartamentos=JSON.parse(datos)
+     
         jQuery("#cosas").html("")
        apartamentos.forEach(element => {
-            console.log(element.Titulo)
+           
            
             jQuery("#cosas").append(
         `
