@@ -15,23 +15,30 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  
 </head>
 
 <body>
     <?php include 'nav.php'; ?>
     <div class="container">
         <div class="row">
-            <div class="form-inline" style="display: flex;justify-content: center;">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width:50%;" name="titulo" id="titulo">
-                <label for="from">From</label>
-                <input type="text" id="from" name="from">
-                <label for="to">to</label>
-                <input type="text" id="to" name="to">
-                <input type="number" name="numhabita" min="1" id="numhabita">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="buscarbtn">Buscar</button>
-            </div>
+  <div class="form-inline" style="    display: flex;
+    justify-content: center;">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width:50%;" name="titulo" id="titulo">  
+    <label for="from">From</label>
+    <input type="text" id="from" name="from">
+    <label for="to">to</label>
+    <input type="text" id="to" name="to">
+    <input type="number" name="numhabita" min="1" id="numhabita">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="buscarbtn">Buscar</button>
+
+</div>
         </div>
-        <div class="row row-cols-3 row-cols-md-4 g-4 my-5 py-3">
+        <div class="row row-cols-3 row-cols-md-4 g-4 my-5 py-3" id="cosas">
             <?php if (isset($apartamentosPagina) && is_array($apartamentosPagina)) : ?>
                 <?php foreach ($apartamentosPagina as $apartamento) : ?>
                     <?php

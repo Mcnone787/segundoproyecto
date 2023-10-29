@@ -50,14 +50,12 @@
                         </div>
                     </div>
                     <div class="row">
-                                <div class="col-3">
-                                    <p style="text-align:center;">Descripcion</p>
-                                </div>
+                              
                                 <div class="col-5">
-                                    <textarea id="w3review" name="descripcion" rows="5" cols="50" style="text-align:left;" >
-                                    <?php echo  $informationapartamento["Descripcion"];?>
-
-                                    </textarea>
+                                <div class="form-group">
+    <label for="exampleFormControlTextarea1">Descripcion del apartamento</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  style=" white-space: pre;" name="descripcion"><?php echo  $informationapartamento["Descripcion"];?></textarea>
+  </div>
                                 </div>
                                 <div class="col-3"></div>
 
