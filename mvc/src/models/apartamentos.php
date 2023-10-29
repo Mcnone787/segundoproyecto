@@ -37,7 +37,23 @@ class Apartamentos
         
         return $tasks;
     }
+// select apartamentos.*from apartamentos where apartamentos.ApartamentosID not in (select reservas.ApartamentosID from reservas where '2023-10-26'>=reservas.DiaEntrada  AND  '2023-10-27'<=reservas.DiaSalida);
 
+public function getapartamentosdisoponibles($diaini,$diafin,$numhabita,$Titulo){
+      
+    $stm = $this->sql->prepare("select apartamentos.* from apartamentos where apartamentos.ApartamentosID not in (select reservas.ApartamentosID from reservas where :diaini>=reservas.DiaEntrada  AND  :diafin<=reservas.DiaSalida or (
+        (:diaini>=reservas.DiaEntrada or :diafin<=reservas.DiaSalida or :diafin>=reservas.DiaSalida) and :diafin>=reservas.DiaEntrada and :diaini<=reservas.DiaSalida )) 
+        and apartamentos.num_habita=:numhabita and apartamentos.Titulo like :Titulo;");
+    $stm->execute([':diaini' => $diaini,':diafin'=>$diafin,'numhabita'=>$numhabita,"Titulo"=>"%".$Titulo."%"]);
+
+    $tasks = array();
+    
+    while ($task = $stm->fetch(\PDO::FETCH_ASSOC)) {
+        $tasks[] = $task;
+    }
+    
+    return $tasks;
+}
     public function EliminarApartamento($id){
         
         $stm = $this->sql->prepare("delete from apartamentos where ApartamentosId = :id;");

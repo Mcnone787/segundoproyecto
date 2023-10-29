@@ -42,6 +42,7 @@ include "../src/controllers/gestores_temporadas.php";
 include "../src/controllers/deletetemporada.php";
 include "../src/controllers/temporada_apartamentos.php";
 include "../src/controllers/dotemporadaapartamento.php";
+include "../src/controllers/prueba.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -57,6 +58,9 @@ $r = $_REQUEST["r"];
 // $session = new Daw\Session();
 // $images = new Daw\Images()dd;
 switch ($r) {
+    case "prueba":
+        pruebas($request, $response, $container);
+    break;
     case "login":
         ctrlLogin($request, $response, $container);
         break;
