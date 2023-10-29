@@ -22,18 +22,38 @@ function doanadiraparta($request, $response, $container){
   
 
     $valores = $_FILES;
-    $nombreImagen="";
-    $rutaimagen="";
-
+    $rutaimagen=[];
+    $ruta_json="../src/jsons/img.json";
+    $jsoninfoimgs=file_get_contents($ruta_json);
+    $jsoninfoimgsdecode=json_decode($jsoninfoimgs,true);
+    
     if(isset($_FILES["fichero_usuario"])){
         for($i=0;$i<count($_FILES["fichero_usuario"]["name"]);$i++){
             $tmp_nameimg = $_FILES["fichero_usuario"]["tmp_name"][$i];
             $url_img = "imgs/" . $_FILES["fichero_usuario"]["name"][$i];
+            $rutaimagen[]=$url_img;
             move_uploaded_file($tmp_nameimg, $url_img);
         }
         
     }
+  $idUltimoapartamento=($Modaapartameto->ultimoapartamento());
+  $id_=$idUltimoapartamento["ApartamentosID"]+1;
+  echo $id_;
+
+    $prueba=[
+        $id_=>"d"
+    ];
+
+    $jsoninfoimgsdecode["src"][$id_]=[
+        "src_imagen"=>$rutaimagen
+    ];
+ 
+
+    
+  $guardar=json_encode($jsoninfoimgsdecode);
+  file_put_contents($ruta_json,$guardar);
   
+
     // echo $id,$Titulo,
     // $CP,
     // $Laltitud ,
@@ -71,20 +91,6 @@ function doanadiraparta($request, $response, $container){
         $Modelservicio_apartamentos->add_servicios($ultimo_apartamento["ApartamentosID"],$item);
     }
 
-    function reArrayFiles(&$file_post) {
-
-        $file_ary = array();
-        $file_count = count($file_post['name']);
-        $file_keys = array_keys($file_post);
-    
-        for ($i=0; $i<$file_count; $i++) {
-            foreach ($file_keys as $key) {
-                $file_ary[$i][$key] = $file_post[$key][$i];
-            }
-        }
-    
-        return $file_ary;
-    }
      $response->redirect("location: index.php?r=gestores");
     
 }
