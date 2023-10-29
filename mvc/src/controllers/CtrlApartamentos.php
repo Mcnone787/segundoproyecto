@@ -1,6 +1,7 @@
 <?php
 
-function ctrlApartamentos($request, $response, $container) {
+function ctrlApartamentos($request, $response, $container)
+{
     $apartamentosModel = $container->apartamentos();
     $apartamentos = $apartamentosModel->getApartamentos();
 

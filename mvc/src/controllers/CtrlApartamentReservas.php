@@ -3,7 +3,7 @@
 function ctrlApartamentosReservas($request, $response, $container)
 {
     $apartamentosModal = $container->apartamentos();
-    $apartamentos = $apartamentosModal->getApartamentos();
+    $apartamentos = $apartamentosModal->getapartamentos();
 
     $precioAlt = $apartamentos["precioALT"];
     $precioBaj = $apartamentos["PrecioBAJ"];
@@ -24,8 +24,5 @@ function ctrlApartamentosReservas($request, $response, $container)
     $response-> set("latitud", $latitud);
     $response-> set("longitud", $longitud);
     $response-> set("lista_servicios", $lista_servicios);
-    
-    $response-> setTemplate("apartamentoReserva.php");
-    $response-> set("container", $container);
     return $response;
 }
