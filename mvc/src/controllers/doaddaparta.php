@@ -21,7 +21,19 @@ function doanadiraparta($request, $response, $container){
     
   
 
-    $valores = $_POST; 
+    $valores = $_FILES;
+    $nombreImagen="";
+    $rutaimagen="";
+
+    if(isset($_FILES["fichero_usuario"])){
+        for($i=0;$i<count($_FILES["fichero_usuario"]["name"]);$i++){
+            $tmp_nameimg = $_FILES["fichero_usuario"]["tmp_name"][$i];
+            $url_img = "imgs/" . $_FILES["fichero_usuario"]["name"][$i];
+            move_uploaded_file($tmp_nameimg, $url_img);
+        }
+        
+    }
+  
     // echo $id,$Titulo,
     // $CP,
     // $Laltitud ,

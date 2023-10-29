@@ -11,6 +11,7 @@
       <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  
 
 </head>
 <body>
@@ -102,11 +103,14 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                        <div class="mb-3">
-  <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-  <input class="form-control" name="fichero_usuario[]" type="file" id="formFileMultiple" >
-  <input class="form-control" name="fichero_usuario[]" type="file" id="formFileMultiple" >
-  
+                        <div class="mb-3" style="margin:0 auto; ">
+                        <div style="">
+                            <h3 style="text-align:center;">Añadir imagenes del apartamento</h3>
+                        </div>
+                        <button type="button" class="btn btn-success" id="addimg" style="float:right;">Añadir imagen</button>
+            <div id="imgs">
+                <input class="form-control" name="fichero_usuario[]" type="file" id="formFileMultiple" >
+  </div>
 </div>
                         </div>
                     </div>
@@ -125,11 +129,6 @@
     });
   } );
     </script>
-    <form action="file-upload.php" method="post" enctype="multipart/form-data">
-  Enviar estos ficheros:<br />
-  <input name="fichero_usuario[]" type="file" /><br />
-  <input name="fichero_usuario[]" type="file" /><br />
-  <input type="submit" value="Enviar ficheros" />
-</form>
+   <script src="srcs/addmoreimg.js"></script>
 </body>
 </html>
