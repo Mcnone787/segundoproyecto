@@ -24,7 +24,7 @@
                 </p>
             </div>
             <div class="col-7">     
-            <form class="form-control form_session" action="index.php?r=doanadiraparta&id=<?php echo $id;?>" method="post">
+            <form class="form-control form_session" action="index.php?r=doanadiraparta&id=<?php echo $id;?>" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-6" >
@@ -50,14 +50,12 @@
                         </div>
                     </div>
                     <div class="row">
-                                <div class="col-3">
-                                    <p style="text-align:center;">Descripcion</p>
-                                </div>
-                                <div class="col-5">
-                                    <textarea id="w3review" name="descripcion" rows="5" cols="50" style="text-align:left;" >
-                                    <?php echo  $informationapartamento["Descripcion"];?>
-
-                                    </textarea>
+                               
+                                <div class="col-12">
+                                <div class="form-group">
+    <label for="exampleFormControlTextarea1">Descripcion del apartamento</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="descripcion"><?php echo  $informationapartamento["Descripcion"];?></textarea>
+  </div>
                                 </div>
                                 <div class="col-3"></div>
 
@@ -102,7 +100,16 @@
                             </div>
                             
                     </div>
-                    
+                    <div class="row">
+                        <div class="col-12">
+                        <div class="mb-3">
+  <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+  <input class="form-control" name="fichero_usuario[]" type="file" id="formFileMultiple" >
+  <input class="form-control" name="fichero_usuario[]" type="file" id="formFileMultiple" >
+  
+</div>
+                        </div>
+                    </div>
                     
                     <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -118,5 +125,11 @@
     });
   } );
     </script>
+    <form action="file-upload.php" method="post" enctype="multipart/form-data">
+  Enviar estos ficheros:<br />
+  <input name="fichero_usuario[]" type="file" /><br />
+  <input name="fichero_usuario[]" type="file" /><br />
+  <input type="submit" value="Enviar ficheros" />
+</form>
 </body>
 </html>

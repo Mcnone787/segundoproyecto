@@ -18,7 +18,8 @@ function doanadiraparta($request, $response, $container){
     $precioalt = $request->get(INPUT_POST, "precioalt"); 
     $preciobaj = $request->get(INPUT_POST, "preciobaj"); 
     $numhabita = $request->get(INPUT_POST, "numhabita"); 
-
+    
+  
 
     $valores = $_POST; 
     // echo $id,$Titulo,
@@ -58,7 +59,20 @@ function doanadiraparta($request, $response, $container){
         $Modelservicio_apartamentos->add_servicios($ultimo_apartamento["ApartamentosID"],$item);
     }
 
+    function reArrayFiles(&$file_post) {
 
+        $file_ary = array();
+        $file_count = count($file_post['name']);
+        $file_keys = array_keys($file_post);
+    
+        for ($i=0; $i<$file_count; $i++) {
+            foreach ($file_keys as $key) {
+                $file_ary[$i][$key] = $file_post[$key][$i];
+            }
+        }
+    
+        return $file_ary;
+    }
      $response->redirect("location: index.php?r=gestores");
     
 }

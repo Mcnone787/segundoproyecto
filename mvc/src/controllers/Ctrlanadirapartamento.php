@@ -8,7 +8,6 @@ function ctrladdapartamento($request, $response, $container){
 
     $Mdelservicio=$container->servicios();
     $totalservicios=$Mdelservicio->getApartamentos();
-
     
     for($i=0;$i<count($totalservicios);$i++){
         for($i2=0;$i2<count($servicios);$i2++){
@@ -17,7 +16,7 @@ function ctrladdapartamento($request, $response, $container){
                 }
         }
     }
-
+    
     $id=$request->get(INPUT_GET, "id");
     $informationapartamento=$apartamento->getapartamento($id);
     
