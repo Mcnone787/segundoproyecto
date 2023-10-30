@@ -13,8 +13,8 @@
 
 <body>
     <?php include "nav.php" ?>
-    <div class="container rounded mt-5 mb-5">
-        <div class="row justify-content-center">
+    <div class="container rounded mt-5 mb-5" style="height: 100vh">
+        <div class="row py-5 justify-content-center">
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column text-center justify-content-center">
                     <img src="imgs/logo/logo.png" alt="logo" class="rounded" width="auto" style="height: auto;">

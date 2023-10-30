@@ -65,30 +65,28 @@ function doanadiraparta($request, $response, $container){
     // $preciobaj,
     // $temporada,
     // $estados;
-    foreach($valores as $i=> $item){
+    foreach ($valores as $i => $item) {
         // echo $i;
-        if(str_contains($i, 'add')){
-            $add[]=str_replace("add","",$i);
+        if (str_contains($i, 'add')) {
+            $add[] = str_replace("add", "", $i);
         }
     }
-   
 
-
-  
-  
-    $updateaparmeto=$Modaapartameto->setaddapartamento(  $id,$Titulo,
-    $CP,
-    $Laltitud ,
-    $Longitud,
-    $descripcion ,
-    $m2,
-    $precioalt,
-    $preciobaj,
-    $numhabita
-     );
-     $ultimo_apartamento=$Modaapartameto->ultimoapartamento();
-     foreach($add as $item){
-        $Modelservicio_apartamentos->add_servicios($ultimo_apartamento["ApartamentosID"],$item);
+    $updateaparmeto = $Modaapartameto->setaddapartamento(
+        $id,
+        $Titulo,
+        $CP,
+        $Laltitud,
+        $Longitud,
+        $descripcion,
+        $m2,
+        $precioalt,
+        $preciobaj,
+        $numhabita
+    );
+    $ultimo_apartamento = $Modaapartameto->ultimoapartamento();
+    foreach ($add as $item) {
+        $Modelservicio_apartamentos->add_servicios($ultimo_apartamento["ApartamentosID"], $item);
     }
 
      $response->redirect("location: index.php?r=gestores");

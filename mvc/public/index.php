@@ -26,13 +26,12 @@ include "../src/controllers/ctrlLogout.php";
 include "../src/controllers/gestors.php";
 include "../src/controllers/Ctrldeletedepartamento.php";
 include "../src/controllers/Ctrlanadirapartamento.php";
-include "../src/controllers/apartamentos.php";
+include "../src/controllers/CtrlApartamentos.php";
 include "../src/controllers/CtrlUserData.php";
 include "../src/controllers/CtrlUserDataUpdate.php";
 include "../src/controllers/ctrleditaparta.php";
 include "../src/controllers/doeditaparta.php";
 include "../src/controllers/doaddaparta.php";
-include "../src/controllers/CtrlApartamentReservas.php";
 include "../src/controllers/temporada.php";
 include "../src/controllers/addtemporada.php";
 include "../src/controllers/TempoParaApartame.php";
@@ -97,51 +96,45 @@ switch ($r) {
     case "apartamentos":
         ctrlApartamentos($request, $response, $container);
         break;
-        case "ctrleditaparta":
-            ctrleditaparta($request, $response, $container);
-            break;
-            case "doeditaparta":
-                doeditaparta($request, $response, $container);
-                break;
-                case "doanadiraparta":
-                    doanadiraparta($request, $response, $container);
-                    break;
-    case "apartamentoReserva":
-        ctrlApartamentosReservas($request, $response, $container);
+    case "ctrleditaparta":
+        ctrleditaparta($request, $response, $container);
+        break;
+    case "doeditaparta":
+        doeditaparta($request, $response, $container);
+        break;
+    case "doanadiraparta":
+        doanadiraparta($request, $response, $container);
         break;
     case "footer":
-            ctrlFooter($request, $response, $container);
+        ctrlFooter($request, $response, $container);
         break;
     case "temporada":
-            temporada($request, $response, $container);
+        temporada($request, $response, $container);
         break;
-        case "addtemporada":
-            addtemporada($request, $response, $container);
+    case "addtemporada":
+        addtemporada($request, $response, $container);
         break;
-        case "TempoParaApartame" :
-            adtemporadaApartamento($request, $response, $container);
+    case "TempoParaApartame":
+        adtemporadaApartamento($request, $response, $container);
         break;
-        case "gestores_apartamentos" :
-            gestores_apartamentos($request, $response, $container);
+    case "gestores_apartamentos":
+        gestores_apartamentos($request, $response, $container);
         break;
-        case "gestores_estados" :
-            gestores_estados($request, $response, $container);
-
+    case "gestores_estados":
+        gestores_estados($request, $response, $container);
         break;
-        case "gestores_temporadas" :
-            gestores_temporadas($request, $response, $container);
-
+    case "gestores_temporadas":
+        gestores_temporadas($request, $response, $container);
         break;
-        case "deletetemporada":
-            deleteTemporada($request, $response, $container);
-            break; 
-            case "dotemporadaapartamento";
-            doeditTempoAparta($request, $response, $container);
-            break;
+    case "deletetemporada":
+        deleteTemporada($request, $response, $container);
+        break;
+    case "dotemporadaapartamento";
+        doeditTempoAparta($request, $response, $container);
+        break;
     default:
         ctrlIndex($request, $response, $container);
         break;
 }
-
 
 $response->response();

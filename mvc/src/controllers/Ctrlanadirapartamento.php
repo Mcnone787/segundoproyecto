@@ -1,10 +1,8 @@
 <?php
 
-function ctrladdapartamento($request, $response, $container){
-    $apartamento=$container->apartamentos();
-        
-    $servicios_apartamentos=$container->servicios_apartamentos();
-    $servicios=$servicios_apartamentos->getAll($request->get(INPUT_GET,"id"));
+function ctrladdapartamento($request, $response, $container)
+{
+    $apartamento = $container->apartamentos();
 
     $Mdelservicio=$container->servicios();
     $totalservicios=$Mdelservicio->getApartamentos();
@@ -21,12 +19,9 @@ function ctrladdapartamento($request, $response, $container){
     $informationapartamento=$apartamento->getapartamento($id);
     
     //variables
-   $response->set("informationapartamento", $informationapartamento);
-   $response->set("servicios",$servicios);
-   $response->set("totalservicios",$totalservicios);
-   $response->set("id",$request->get(INPUT_GET,"id"));
+    $response->set("informationapartamento", $informationapartamento);
+    $response->set("servicios", $servicios);
+    $response->set("totalservicios", $totalservicios);
+    $response->set("id", $request->get(INPUT_GET, "id"));
     $response->setTemplate("anadirapartamento.php");
-
-
-
 }
