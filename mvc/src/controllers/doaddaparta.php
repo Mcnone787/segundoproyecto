@@ -30,7 +30,7 @@ function doanadiraparta($request, $response, $container){
     if(isset($_FILES["fichero_usuario"])){
         for($i=0;$i<count($_FILES["fichero_usuario"]["name"]);$i++){
             $tmp_nameimg = $_FILES["fichero_usuario"]["tmp_name"][$i];
-            $url_img = "imgs/" . $_FILES["fichero_usuario"]["name"][$i];
+            $url_img = "imgs/" . $Titulo."".$i;
             $rutaimagen[]=$url_img;
             move_uploaded_file($tmp_nameimg, $url_img);
         }

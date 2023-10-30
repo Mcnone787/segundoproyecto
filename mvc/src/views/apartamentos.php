@@ -32,8 +32,9 @@
 
 </div>
         </div>
-        <div class="row row-cols-3 row-cols-md-4 g-4 my-5 py-3" id="cosas">
+        <div class="row row-cols-1   row-cols-md-2 row-cols-xl-4  g-4 my-5 py-3" id="cosas">
             <?php if (isset($apartamentosPagina) && is_array($apartamentosPagina)) : ?>
+             
                 <?php foreach ($apartamentosPagina as $apartamento) : ?>
                     <?php
                     $titulo = $apartamento['Titulo'];
@@ -127,7 +128,7 @@ jQuery("#buscarbtn").click(()=>{
     data:{r:"prueba",diaini:fechaini,diafin:fechafin,titulo:titulo,numhabita:numhabita}, // data recive un objeto con la informacion que se enviara al servidor
     success:function(datos){ //success es una funcion que se utiliza si el servidor retorna informacion
         let apartamentos=JSON.parse(datos)
-     
+        return console.log(datos)
         jQuery("#cosas").html("")
        apartamentos.forEach(element => {
            
@@ -141,8 +142,9 @@ jQuery("#buscarbtn").click(()=>{
                                 <div class="card-body">
                                     <h5 class="card-title">${element.Titulo}</h5>
                                     <p class="card-text">${element.ApartamentosID}</p>
-                                    <p class="card-text">Habitaciones: <?= $numHabitaciones ?></p>
-                                    <h6 class="card-text">Precio Alto: <?= $precioAlt ?>€ - Precio Bajo: <?= $precioBaj ?>€</h6>
+                                    <p class="card-text">Habitaciones: ${element.num_habita} </p>
+                                    <h6 class="card-text">Precio Alto: ${element.precioALT}€ - Precio Bajo: ${element.PrecioBAJ
+}€</h6>
                                 </div>
                             </div>
                         </a>
