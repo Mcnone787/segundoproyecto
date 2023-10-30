@@ -18,9 +18,7 @@ function doanadiraparta($request, $response, $container){
     $precioalt = $request->get(INPUT_POST, "precioalt"); 
     $preciobaj = $request->get(INPUT_POST, "preciobaj"); 
     $numhabita = $request->get(INPUT_POST, "numhabita"); 
-    
-  
-
+ 
     $valores = $_FILES;
     $rutaimagen=[];
     $ruta_json="../src/jsons/img.json";
@@ -38,7 +36,7 @@ function doanadiraparta($request, $response, $container){
     }
   $idUltimoapartamento=($Modaapartameto->ultimoapartamento());
   $id_=$idUltimoapartamento["ApartamentosID"]+1;
-  echo $id_;
+  
 
     $prueba=[
         $id_=>"d"
@@ -85,6 +83,9 @@ function doanadiraparta($request, $response, $container){
         $numhabita
     );
     $ultimo_apartamento = $Modaapartameto->ultimoapartamento();
+   
+    print_r($add);
+    die();
     foreach ($add as $item) {
         $Modelservicio_apartamentos->add_servicios($ultimo_apartamento["ApartamentosID"], $item);
     }
