@@ -32,7 +32,6 @@ include "../src/controllers/CtrlUserDataUpdate.php";
 include "../src/controllers/ctrleditaparta.php";
 include "../src/controllers/doeditaparta.php";
 include "../src/controllers/doaddaparta.php";
-include "../src/controllers/CtrlApartamentReservas.php";
 include "../src/controllers/temporada.php";
 include "../src/controllers/addtemporada.php";
 include "../src/controllers/TempoParaApartame.php";
@@ -105,9 +104,6 @@ switch ($r) {
         break;
     case "doanadiraparta":
         doanadiraparta($request, $response, $container);
-        break;
-    case "apartamentoReserva":
-        ctrlApartamentosReservas($request, $response, $container);
         break;
     case "footer":
         ctrlFooter($request, $response, $container);
