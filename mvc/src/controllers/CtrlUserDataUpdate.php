@@ -11,6 +11,7 @@ function ctrlUserDataUpdate($request, $response, $container){
 
     if($userModel){
         $userModel->updateProfile($name, $lastname, $debitCard, $email, $pass, $telefono, $_SESSION["user"]["IDUsuario"]);
+        $response -> setSession("user", $userModel->getPersonalData($_SESSION["user"]["IDUsuario"]));
         $response->redirect("Location: index.php?r=perfilUser");
     } else {
         $response->redirect("Location: index.php?r=perfilUser");

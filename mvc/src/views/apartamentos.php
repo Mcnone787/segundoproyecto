@@ -90,11 +90,11 @@
                                                 <div class="col d-flex rounded-2 p-3 m-3 text-center" style="border: 1px black">
                                                     <div class="col rounded p-3">
                                                         <span class="fw-bold">Llegada</span>
-                                                        <input class="doi" />
+                                                        <p id="Llegada"></p>
                                                     </div>
                                                     <div class="col rounded p-3">
                                                         <span class="fw-bold">Salida</span>
-                                                        <input class="doi" />
+                                                        <p id="Salida"></p>
                                                     </div>
                                                 </div>
                                                 <div class="d-grid gap-2 col-6 mx-auto">
@@ -108,11 +108,11 @@
                                                 </div>
                                                 <div class="mb-3">
                                                     <span class="text-dark">Precio por noche:</span>
-                                                    <span class="text-dark fw-bold" style="float: right;">100€</span>
+                                                    <span id="Precio" class="text-dark fw-bold" style="float: right;"></span>
                                                 </div>
                                                 <div class="border-top mb-3">
                                                     <span class="text-dark">TOTAL:</span>
-                                                    <span class="text-dark fw-bold" style="float: right;">100€</span>
+                                                    <span id="Total" class="text-dark fw-bold" style="float: right;"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -126,19 +126,19 @@
                                         <div class="col p-3 m-2">
                                             <div>
                                                 <span class="fw-bold">Titulo:</span>
-                                                <span class="text-dark">Titulo</span>
+                                                <span id="titulo" class="text-dark">Titulo</span>
                                             </div>
                                             <div>
                                                 <span class="fw-bold">Descripcion:</span>
-                                                <span class="text-dark">Descripcion</span>
+                                                <span id="descripcion" class="text-dark">Descripcion</span>
                                             </div>
                                             <div>
                                                 <span class="fw-bold">M2:</span>
-                                                <span class="text-dark"> M2</span>
+                                                <span id="m2" class="text-dark"> M2</span>
                                             </div>
                                             <div>
                                                 <span class="fw-bold">Numero Habitaciones:</span>
-                                                <span class="text-dark"> Habitaciones</span>
+                                                <span id="habita" class="text-dark"> Habitaciones</span>
                                             </div>
                                         </div>
                                     </div>
