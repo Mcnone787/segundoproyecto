@@ -34,14 +34,13 @@ class servicios_apartamentos
         while ($task = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $tasks[] = $task;
         }
-        print_r($tasks);
+        
 
         return $tasks;
     }
     public function add_servicios($id_apar,$idservi)
     {
-        echo $id_apar." dawdw".$idservi;
-        die();
+   
         $stm = $this->sql->prepare('INSERT INTO apartamentos_servicios (ApartamentosID,servicioid)values (:ApartamentoID,:servicioid);');
         $stm->execute([':ApartamentoID' => $id_apar, ':servicioid' => $idservi]);
     }
