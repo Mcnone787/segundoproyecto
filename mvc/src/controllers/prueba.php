@@ -7,6 +7,6 @@ function pruebas($request, $response, $container){
 $pruebas=[
     "prueba1"=>1
 ];
-$prueba2=json_encode($pruebas,true);
-echo json_encode(["d"=>[1,2,3],"d2"=>[1,2,3]],true);
+$prueba2=json_encode($apartamentosdisponibles,true);
+echo $prueba2;
 }
