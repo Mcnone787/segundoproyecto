@@ -4,15 +4,27 @@ $(document).ready(function () {
     var modal = $(this);
     modal.find(".modal-title").text("Reservar Apartamento");
 
+    var fechaini = $("#from").val();
+    var fechafin = $("#to").val();
+    var numHabita = $("#numhabita").val();
+
     $.ajax({
       url: "apartamentos.php",
       method: "POST",
-      data:{r:"apartamentos", fechaini:$("#from").val(), fechafin:$("#to").val(), numHabita:$("#numhabita").val()},
-      success: function (data) {
-        data.array.forEach(element => {
-          console.log(element.Titulo) 
-        });
+      data: {
+        r: "apartamentos",
+        fechaini: fechaini,
+        fechafin: fechafin,
+        numHabita: numHabita
       },
+      success: function (data) {
+        // Assuming data contains details about the apartment
+        // Update the modal content with the received details
+        if (data && data.html) {
+          modal.find(".modal-body").html(data.html);
+        }
+      }
     });
   });
+
 });
