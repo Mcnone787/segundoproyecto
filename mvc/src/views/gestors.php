@@ -15,39 +15,18 @@
 
 <body>
     <?php include "nav.php"; ?>
-
     <?php
     if ($_GET["delete"] == "1") {
         include "deletebien.php";
-    }
-    ?>
-
-    <div class="row row-table" style="">
-        <?php
-        include "menu_gestores.php";
-        ?>
-        <div class="col-11" style="">
-            <h3 style="text-align:center;padding:20px;">Tus apartamentos sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
-            <div class="" style="    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-">
-                <div class="">
-                    <a href="index.php?r=TempoParaApartame"> <button style="float:left;" class="btn btn-outline-success">Temporadas para los apartmentos</button></a>
-                </div>
-                <div class="">
-                    <a href="index.php?r=temporada" style=""><button class="btn btn-outline-success">Añadir temporada</button></a>
-                </div>
-                <div class="">
-                    <a href="index.php?r=addapartamento"> <button style="float:right;" class="btn btn-outline-success">Añadir apartamento</button></a>
-                </div>
-            </div>
-
-
+    } ?>
+    <div class="row row-table">
+        <?php include "menu_gestores.php"; ?>
+        <div class="col-10 p-3" style="height: 100vh;">
+            <h3 style="text-align:center;padding:20px;">Bienvenido sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+            <img class="rounded-circle mx-auto d-block shadow-lg adminShadow" src="imgs/logo/logo.png" alt="user">
         </div>
     </div>
-    </div>
+
 
     <script>
         console.log($("body"))

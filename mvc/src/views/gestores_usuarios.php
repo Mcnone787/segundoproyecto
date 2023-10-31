@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,47 +16,34 @@
 
 <body>
     <?php include "nav.php"; ?>
-    <?php
-    if ($_GET["delete"] == "1") {
-        include "deletebien.php";
-    }?>
     <div class="row row-table">
-        <?php include "menu_gestores.php";?>
-        <div class="col-10" style="height: 100vh;">
+        <?php include "menu_gestores.php"; ?>
+        <div class="col-10">
             <h3 style="text-align:center;padding:20px;">Tus apartamentos sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
             <div class="" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around;">
                 <div class="">
-                    <a href="index.php?r=TempoParaApartame"> <button style="float:left;" class="btn btn-outline-success">Temporadas para los apartmentos</button></a>
-                </div>
-                <div class="">
-                    <a href="index.php?r=temporada"> <button class="btn btn-outline-success">Añadir temporada</button></a>
-                </div>
-                <div class="">
-                    <a href="index.php?r=addapartamento"> <button style="float:right;" class="btn btn-outline-success">Añadir apartamento</button></a>
+                    <a href="index.php?r=TempoParaApartame"> <button style="float:left;" class="btn btn-outline-success">Crear Usuario</button></a>
                 </div>
             </div>
             <table id="myTable" class="display" style="margin-bottom:50px;">
                 <thead>
-                    <tr>
-                        <th>Nombre apartamentos</th>
-
-                    </tr>
+                    <tr><th>Usuarios</th></tr>
                 </thead>
                 <tbody>
-                    <tr class="table-apartamentos">
+                    <tr class="table-departamentos">
                         <td>
-
                             <?php
-                            foreach ($tasks as $i => $task) { ?>
+                            foreach ($usuarios as $i => $usuario) { ?>
                                 <div class="departamentos">
-                                    <img src="" alt="imagen">
-                                    <p><?php echo $task["Titulo"]; ?></p>
-                                    <p><?php echo $task["CP"]; ?></p>
+                                    <p><?php echo $usuario["Nombre"]; ?></p>
+                                    <p><?php echo $usuario["Apellidos"]; ?></p>
+                                    <p><?php echo $usuario["email"]; ?></p>
+                                    <p><?php echo $usuario["Telefono"]; ?></p>
+                                    <p><?php echo $usuario["Rol"]; ?></p>
                                     <div>
-                                        <a href="index.php?r=ctrleditaparta&id=<?php echo $task["ApartamentosID"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
-                                        <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"]; ?>"> <button class="btn btn-outline-danger   "> Eliminar</button></a>
+                                        <a href="index.php?r=edituser&id=<?php echo $usuario["IDUsuario"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
+                                        <a href="index.php?r=deleteuser&id=<?php echo $usuario["IDUsuario"]; ?>"> <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger"> Eliminar</button></a>
                                     </div>
-
                                 </div>
                             <?php } ?>
                         </td>
@@ -64,14 +52,15 @@
             </table>
         </div>
     </div>
-    
+
     <script>
         console.log($("body"))
         $(document).ready(function() {
             $('#myTable').DataTable();
         });
     </script>
-    <?php include "footer.php" ?>
+
+    <?php include "footer.php"; ?>
     <script src="srcs/table.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="srcs/messages_erros_successful.js"></script>

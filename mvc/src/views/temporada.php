@@ -19,7 +19,7 @@
     <div class="container" style="margin-bottom:200px;">
         <div class="row">
             <div class="col-5">
-                <p style="color:black; text-align:left;flotar:none;">
+                <p style="color:black; text-align:left;float :none;">
                     Añade tu apartamento con este formulario ^^
                 </p>
             </div>

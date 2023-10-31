@@ -50,15 +50,15 @@ class Container
             $this->config["db"]["host"]
         );
     }
-    public function tasks()
-    {
-        return new \BDM\actionbd(
-            $this->config["db"]["user"],
-            $this->config["db"]["pass"],
-            $this->config["db"]["db"], 
-            $this->config["db"]["host"]
-        );
-    }
+    // public function tasks()
+    // {
+    //     return new \BDM\actionbd(
+    //         $this->config["db"]["user"],
+    //         $this->config["db"]["pass"],
+    //         $this->config["db"]["db"], 
+    //         $this->config["db"]["host"]
+    //     );
+    // }
 
     public function users()
     {

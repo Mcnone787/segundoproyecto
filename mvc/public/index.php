@@ -42,6 +42,10 @@ include "../src/controllers/deletetemporada.php";
 include "../src/controllers/temporada_apartamentos.php";
 include "../src/controllers/dotemporadaapartamento.php";
 include "../src/controllers/prueba.php";
+include "../src/controllers/gestores_usuarios.php";
+include "../src/controllers/deleteuser.php";
+include "../src/controllers/doedituser.php";
+include "../src/controllers/doadduser.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -117,6 +121,12 @@ switch ($r) {
     case "TempoParaApartame":
         adtemporadaApartamento($request, $response, $container);
         break;
+    case "ctrledituser":
+        edituser($request, $response, $container);
+        break;
+    case "ctrldeleteuser":
+        deleteuser($request, $response, $container);
+        break;
     case "gestores_apartamentos":
         gestores_apartamentos($request, $response, $container);
         break;
@@ -125,6 +135,18 @@ switch ($r) {
         break;
     case "gestores_temporadas":
         gestores_temporadas($request, $response, $container);
+        break;
+    case "gestores_usuarios":
+        gestores_usuarios($request, $response, $container);
+        break;
+    case "edituser":
+        edituser($request, $response, $container);
+        break;
+    case "deleteuser":
+        deleteuser($request, $response, $container);
+        break;
+    case "adduser":
+        adduser($request, $response, $container);
         break;
     case "deletetemporada":
         deleteTemporada($request, $response, $container);

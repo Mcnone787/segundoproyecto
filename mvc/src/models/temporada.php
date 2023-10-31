@@ -28,7 +28,7 @@ class temporada
     {   
 
         $stm = $this->sql->prepare('INSERT INTO temporada (fechaini,fechasalida,temporadaNombre,GestorId) values (:fechasalida, :fechasalida, :temporadaNombre,:GestorId);');
-        $stm->execute([':fechasalida' => $fechasalida, ':fechasalida' => $fechasalida, ':temporadaNombre' => $temporadaNombre,':GestorId'=>$id_gestor]);
+        $stm->execute([':fechaini' => $fechaini, ':fechasalida' => $fechasalida, ':temporadaNombre' => $temporadaNombre,':GestorId'=>$id_gestor]);
     }
     public function deletetemporada($id){
       

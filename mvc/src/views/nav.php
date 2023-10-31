@@ -27,13 +27,13 @@
                   <ul class='dropdown-menu dropdown-menu-lg-end'>
                      <li><a class='dropdown-item' href='index.php?r=perfilUser'>Perfil</a></li>
                      <li><a class='dropdown-item' href='index.php?r=reservas'>Reservas</a></li>
-                     <li><a class='dropdown-item' href='index.php?r=dologout'>Log Out</a></li>
                      <?php if ($_SESSION["user"]["Rol"] == "gestor" || $_SESSION["user"]["Rol"] == "admin") { ?>
                         <li><a class='dropdown-item' href='index.php?r=gestores'>Apartamentos</a></li>
                      <?php }
                      if ($_SESSION["user"]["Rol"] == "admin") { ?>
                         <li><a class='dropdown-item' href='index.php?r=gestores'>Panel</a></li>
                      <?php } ?>
+                     <li><a class='dropdown-item' href='index.php?r=dologout'>Log Out</a></li>
                      <li>
                         <hr class='dropdown-divider'>
                      </li>

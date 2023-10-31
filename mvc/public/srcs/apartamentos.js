@@ -18,8 +18,6 @@ $(document).ready(function () {
         numHabita: numHabita
       },
       success: function (data) {
-        // Assuming data contains details about the apartment
-        // Update the modal content with the received details
         if (data && data.html) {
           modal.find(".modal-body").html(data.html);
         }

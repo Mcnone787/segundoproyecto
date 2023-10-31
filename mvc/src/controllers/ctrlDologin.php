@@ -9,7 +9,6 @@ function ctrlDoLogin($request, $response, $container){
     $userModel = $userModel->login($user, $pass);
     
     if($userModel) {
-
         $response->setSession("user", $userModel);
         $response->setSession("logged", true);
         $response->redirect("location: index.php");

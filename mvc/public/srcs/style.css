@@ -2,6 +2,10 @@
     
 }
 
+a{
+    text-decoration: none;
+}
+
 .row {
     /* margin-top: 50px; */
 }
@@ -63,3 +67,6 @@
 .infoReservaBox{
     box-shadow: 0px 0px 4px 0px rgba(105, 105, 105, 0.75);
 }
+/* .adminShadow{
+    box-shadow: 10px 10px 18px px aqua;
+} */
