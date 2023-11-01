@@ -13,6 +13,7 @@ class Users
         $this->sql = $sql;
 
     }
+
     public function login($user, $pass){
         $stm = $this->sql->prepare('select IDUsuario, Nombre, contrasena, Rol from usuarios where email=:user;');
         $stm->execute([':user' => $user]);
@@ -41,6 +42,7 @@ class Users
             return false;
         }
     }
+
     public function updateProfile($nombre, $apellido, $debitcard, $email, $contraseña,$telefono,$userID)
     {
         $stm = $this->sql->prepare('UPDATE usuarios SET Nombre = :Nombre, Apellidos = :Apellidos, Tarjeta_Credito=:Tarjeta_Credito, telefono=:telefono,contrasena=:contrasena, email=:email WHERE IDUsuario = :id');
@@ -59,10 +61,10 @@ class Users
         }
     }
 
-    public function editUser($nombre,$apellido,$debitcard,$contrasena,$email,$telefono,$userID)
+    public function editUser($nombre, $apellidos, $contrasena, $email, $rol, $id)
     {
-        $stm = $this->sql->prepare('UPDATE usuarios SET Nombre = :Nombre, Apellidos = :Apellidos, Tarjeta_Credito=:Tarjeta_Credito, telefono=:telefono,contrasena=:contrasena, email=:email WHERE IDUsuario = :id');
-        $stm->execute([':Nombre' => $nombre, ':Apellidos' => $apellido, ':Tarjeta_Credito' => $debitcard, ':contrasena' => $contrasena, ':email' => $email, ':telefono' => $telefono]);
+        $stm = $this->sql->prepare('UPDATE usuarios SET Nombre = :Nombre, Apellidos = :Apellidos, Contrasena = :Contrasena, email = :email, Rol = :rol WHERE IDUsuario = :id');
+        $stm->execute([':Nombre' => $nombre, ':Apellidos' => $apellidos, ':Contrasena' => $contrasena, ':email' => $email, ':id' => $id ,':rol' => $rol]);
     }
 
     public function deleteUser($userID)
@@ -72,9 +74,9 @@ class Users
 
     }
 
-    public function addUser($nombre,$apellido,$debitcard,$contrasena,$email,$telefono)
+    public function setUser($nombre, $apellido, $contrasena, $email, $rol)
     {
-        $stm = $this->sql->prepare('INSERT INTO usuarios (Nombre, Apellidos, Tarjeta_Credito, contrasena, Rol, email, telefono) values (:Nombre, :Apellidos, :Tarjeta_Credito, :contrasena, :Rol, :email, :telefono);');
-        $stm -> xexecute([':nombre' => $nombre, ':Apellidos' => $apellido, ':Tarjeta_Credito' => $debitcard, ':contrasena' => $contrasena, ':email' => $email, ':telefono' => $telefono]);
+        $stm = $this->sql->prepare('INSERT INTO usuarios (Nombre, Apellidos, contrasena, Rol, email) values (:Nombre, :Apellidos, :contrasena, :Rol, :email);');
+        $stm->execute([':Nombre' => $nombre, ':Apellidos' => $apellido, ':contrasena' => $contrasena, ':Rol' => $rol, ':email' => $email]);
     }
 }

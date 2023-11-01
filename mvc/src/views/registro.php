@@ -30,21 +30,21 @@
                     <div class="mb-2">
                         <label class="col-form-label-lg" for="debit-card">Tarjeta de Debito</label>
                         <input class="form-control" type="text" name="debit-card" id="dbCard" placeholder="0000/0000/0000/0000" required>
-                        <div class="mb-2">
-                            <label class="col-form-label-lg" for="email">Correo Electronico</label>
-                            <input class="form-control" type="text" name="email" id="email" placeholder="Correo Electronico" required>
-                        </div>
-                        <div class="mb-4">
-                            <label class="col-form-label-lg" for="password">Contraseña</label>
-                            <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" required>
-                        </div>
-                        <div class="mb-2">
-                            <button class="btn btn-primary btn-lg" type="submit" value="DoRegistrar">Registrar</button>
-                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <label class="col-form-label-lg" for="email">Correo Electronico</label>
+                        <input class="form-control" type="text" name="email" id="email" placeholder="Correo Electronico" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="col-form-label-lg" for="password">Contraseña</label>
+                        <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" required>
+                    </div>
+                    <div class="mb-2">
+                        <button class="btn btn-primary btn-lg" type="submit" value="DoRegistrar">Registrar</button>
+                    </div>
                 </form>
             </div>
         </div>
-    </div>
     </div>
     <?php include "footer.php"; ?>
 </body>

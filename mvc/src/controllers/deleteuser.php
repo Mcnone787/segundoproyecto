@@ -7,5 +7,4 @@ function deleteuser($request, $response, $container)
     $userModel = $container->users();
     $userModel->deleteUser($id);
     $response->redirect("location: index.php?r=gestores_usuarios");
-    return $response;
 }

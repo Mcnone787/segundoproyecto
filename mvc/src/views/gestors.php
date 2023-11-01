@@ -15,25 +15,13 @@
 
 <body>
     <?php include "nav.php"; ?>
-    <?php
-    if ($_GET["delete"] == "1") {
-        include "deletebien.php";
-    } ?>
     <div class="row row-table">
         <?php include "menu_gestores.php"; ?>
         <div class="col-10 p-3" style="height: 100vh;">
-            <h3 style="text-align:center;padding:20px;">Bienvenido sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
             <img class="rounded-circle mx-auto d-block shadow-lg adminShadow" src="imgs/logo/logo.png" alt="user">
+            <h3 style="text-align:center;padding:20px;">Bienvenido sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
         </div>
     </div>
-
-
-    <script>
-        console.log($("body"))
-        $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
-    </script>
     <?php include "footer.php" ?>
     <script src="srcs/table.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

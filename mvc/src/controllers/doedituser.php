@@ -1,12 +1,22 @@
-<?php 
+<?php
 
 function edituser($request, $response, $container)
 {
-    if(isset($_GET['id'])){
+    $userModel = $container->users();
+
+    if (isset($_GET['id'])) {
         $id = $_GET['id'];
     }
-    $userModel = $container->users();
-    $userModel->editUser($id);
-     $response->redirect("location: index.php?r=gestores_usuarios");
-    return $response;
+    $nombre = $request->get(INPUT_POST, "nombre");
+    $apellidos = $request->get(INPUT_POST, "apellido");
+    $contrasena = $request->get(INPUT_POST, "contrasena");
+    $email = $request->get(INPUT_POST, "email");
+    $rol = $request->get(INPUT_POST, "rol");
+
+    if ($userModel) {
+        $userModel->edituser($nombre, $apellidos, $contrasena, $email, $rol, $id);
+        $response->redirect("Location: index.php?r=gestores_usuarios");
+    } else {
+        $response->redirect("Location: index.php?r=gestores_usuarios");
+    }
 }

@@ -140,17 +140,6 @@
       </div>
    </div>
 
-
-
-
-
-
-
-
-
-   <input class="doi" />
-   <input class="doi" />
-
    <script>
       var array = [
          ["2023-10-23", "2023-10-25"],

@@ -17,8 +17,6 @@ include "../src/config.php";
 
 include "../src/controllers/index.php";
 include "../src/controllers/login.php";
-include "../src/controllers/footer.php";
-include "../src/controllers/nav.php";
 include "../src/controllers/registro.php";
 include "../src/controllers/ctrlDologin.php";
 include "../src/controllers/DoRegister.php";
@@ -29,6 +27,7 @@ include "../src/controllers/Ctrlanadirapartamento.php";
 include "../src/controllers/CtrlApartamentos.php";
 include "../src/controllers/CtrlUserData.php";
 include "../src/controllers/CtrlUserDataUpdate.php";
+include "../src/controllers/CtrlReservas.php";
 include "../src/controllers/ctrleditaparta.php";
 include "../src/controllers/doeditaparta.php";
 include "../src/controllers/doaddaparta.php";
@@ -38,14 +37,16 @@ include "../src/controllers/TempoParaApartame.php";
 include "../src/controllers/gestores_apartamentos.php";
 include "../src/controllers/gestores_estados.php";
 include "../src/controllers/gestores_temporadas.php";
+include "../src/controllers/gestores_usuarios.php";
+include "../src/controllers/gestores_reserva.php";
 include "../src/controllers/deletetemporada.php";
-include "../src/controllers/temporada_apartamentos.php";
 include "../src/controllers/dotemporadaapartamento.php";
 include "../src/controllers/prueba.php";
-include "../src/controllers/gestores_usuarios.php";
 include "../src/controllers/deleteuser.php";
 include "../src/controllers/doedituser.php";
 include "../src/controllers/doadduser.php";
+include "../src/controllers/CtrlAddUser.php";
+include "../src/controllers/CtrlEditUser.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -91,6 +92,9 @@ switch ($r) {
     case "doUpDateUserData":
         ctrlUserDataUpdate($request, $response, $container);
         break;
+    case "reservas":
+        ctrlReservas($request, $response, $container);
+        break;
     case "ctrldeleteapartamento":
         ctrldeletedepartamento($request, $response, $container);
         break;
@@ -109,9 +113,6 @@ switch ($r) {
     case "doanadiraparta":
         doanadiraparta($request, $response, $container);
         break;
-    case "footer":
-        ctrlFooter($request, $response, $container);
-        break;
     case "temporada":
         temporada($request, $response, $container);
         break;
@@ -122,10 +123,13 @@ switch ($r) {
         adtemporadaApartamento($request, $response, $container);
         break;
     case "ctrledituser":
-        edituser($request, $response, $container);
+        CtrlEditUser($request, $response, $container);
         break;
     case "ctrldeleteuser":
         deleteuser($request, $response, $container);
+        break;
+    case "ctrladduser":
+        CtrlAddUser($request, $response, $container);
         break;
     case "gestores_apartamentos":
         gestores_apartamentos($request, $response, $container);
@@ -139,13 +143,16 @@ switch ($r) {
     case "gestores_usuarios":
         gestores_usuarios($request, $response, $container);
         break;
+    case "gestores_reserva":
+        gestores_reserva($request, $response, $container);
+        break;
     case "edituser":
         edituser($request, $response, $container);
         break;
     case "deleteuser":
         deleteuser($request, $response, $container);
         break;
-    case "adduser":
+    case "doadduser":
         adduser($request, $response, $container);
         break;
     case "deletetemporada":

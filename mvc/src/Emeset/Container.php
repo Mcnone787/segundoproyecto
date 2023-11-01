@@ -96,6 +96,12 @@ class Container
             $this->sql
         );
     }
+    public function reservas()
+    {
+        return new \Daw\reservas(
+            $this->sql
+        );
+    }
     
  
 }

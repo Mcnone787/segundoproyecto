@@ -19,30 +19,30 @@
     <div class="row row-table">
         <?php include "menu_gestores.php"; ?>
         <div class="col-10" style="height: 100vh">
-            <h3 style="text-align:center;padding:20px;">Lista de Usuarios sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
-            <div class="" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around;">
+            <h3 style="text-align:center;padding:20px;">Lista de Reservas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+            <!-- <div class="" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around;">
                 <div class="">
                     <a href="index.php?r=ctrladduser"> <button style="float:left;" class="btn btn-outline-success">Crear Usuario</button></a>
                 </div>
-            </div>
+            </div> -->
             <table id="myTable" class="display" style="margin-bottom:50px;">
                 <thead>
-                    <tr><th>Usuarios</th></tr>
+                    <tr><th>Reservas</th></tr>
                 </thead>
                 <tbody>
                     <tr class="table-departamentos">
                         <td>
                             <?php
-                            foreach ($usuarios as $i => $usuario) { ?>
+                            foreach ($reservas as $i => $reserva) { ?>
                                 <div class="departamentos">
-                                    <p><?php echo $usuario["Nombre"]; ?></p>
-                                    <p><?php echo $usuario["Apellidos"]; ?></p>
-                                    <p><?php echo $usuario["email"]; ?></p>
-                                    <p><?php echo $usuario["Telefono"]; ?></p>
-                                    <p><?php echo $usuario["Rol"]; ?></p>
+                                    <p><?php echo $reserva["ClienteId"]; ?></p>
+                                    <p><?php echo $reserva["ApartamentosID"]; ?></p>
+                                    <p><?php echo $reserva["DiaEntrada"]; ?></p>
+                                    <p><?php echo $reserva["DiaSalida"]; ?></p>
+                                    <p><?php echo $reserva["Precio"]; ?></p>
                                     <div>
-                                        <a href="index.php?r=ctrledituser&id=<?php echo $usuario["IDUsuario"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
-                                        <a href="index.php?r=deleteuser&id=<?php echo $usuario["IDUsuario"]; ?>"> <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger"> Eliminar</button></a>
+                                        <a href="index.php?r=ctrleditreserva&id=<?php echo $usuario["IDUsuario"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
+                                        <a href="index.php?r=deletereserva&id=<?php echo $usuario["IDUsuario"]; ?>"> <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger"> Eliminar</button></a>
                                     </div>
                                 </div>
                             <?php } ?>
