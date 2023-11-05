@@ -135,11 +135,12 @@
                     $precioAlt = $apartamento['precioALT'];
                     $precioBaj = $apartamento['PrecioBAJ'];
                     $apartamentoID = $apartamento['ApartamentosID'];
+                    $imgApartamento=$imgjsondecode["src"][$apartamentoID]["src_imagen"][0];
                     ?>
-                    <div class="col">
+                    <div class="col apartamento_" id="<?php echo   $apartamentoID;?>">
                         <a class="link-offset-2 link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#apartamentoReserva" class="stretched-link">
                             <div class="card h-100" style="width: 100%;">
-                                <img src="imgs/<?php echo $imagenesjson[$apartamentoID]->src_imagen[0]; ?>" class="card-img-top" alt="...">
+                                <img src="<?php echo $imgApartamento;?>" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">
                                         <?= $titulo ?>
@@ -354,9 +355,14 @@
             let temporada_baja_defaultfin = new Date(ano + "-06-30");
             let temporada_alta_defaultini = new Date(ano + "-07-01");
             let temporada_alta_defaultfin = new Date(ano + "-12-31");
+            let fechaini
+            let fechafin
+            prueba()
             jQuery("#buscarbtn").click(() => {
-                let fechaini = jQuery("#from").val();
-                let fechafin = jQuery("#to").val();
+                let fechaini_ = jQuery("#from").val();
+                let fechafin_ = jQuery("#to").val();
+                fechaini=fechaini_
+                fechafin=fechafin_
                 let titulo = jQuery("#titulo").val();
                 let numhabita = jQuery("#numhabita").val();
                 formfeiniglobal = new Date(fechaini)
@@ -401,9 +407,21 @@
                             </div>
                         </a>
                     </div>`);
-
+                    prueba()
                         });
-                        jQuery(".apartamento_").each((element, obje) => {
+                        
+                        //  datos.forEach(element => {
+                        //     console.log(element.Titulo)
+                        //  });
+                    },
+
+                    dataType: "html", // El tipo de datos esperados del servidor. Valor predeterminado: Intelligent Guess (xml, json, script, text, html).
+                });
+
+
+            });
+                function prueba(){
+                    jQuery(".apartamento_").each((element, obje) => {
                             obje.addEventListener("click", () => {
 
                                 id_ = obje.id
@@ -554,17 +572,7 @@
                                 //aqui
                             })
                         });
-                        //  datos.forEach(element => {
-                        //     console.log(element.Titulo)
-                        //  });
-                    },
-
-                    dataType: "html", // El tipo de datos esperados del servidor. Valor predeterminado: Intelligent Guess (xml, json, script, text, html).
-                });
-
-
-            });
-
+                }
             jQuery("#reserva").click(function() {
 
             })
