@@ -56,9 +56,8 @@ class Apartamentos
             $numhabita = 1;
             $condicionnumhabita = "apartamentos.num_habita>=:numhabita";
         }
-        if ($diaini == "" && $Titulo == "") {
-        }
-        if ($diaini != "") {
+       
+        if ($diaini != "" && $diafin!="") {
             $condicionnumhabita = " and " . $condicionnumhabita;
         }
         if ($Titulo != "") {
@@ -168,4 +167,5 @@ class Apartamentos
 
         return $apartamento;
     }
+    
 }

@@ -148,45 +148,7 @@
 
 
 
-   <input class="doi" />
-   <input class="doi" />
-
-   <script>
-      var array = [
-         ["2023-10-23", "2023-10-25"],
-         ["2023-10-27", "2023-10-29"],
-         ["2023-11-01", "2023-11-25"]
-      ]
-      let empieza = false
-      let arraydias = []
-
-      $('.doi').datepicker({
-         beforeShowDay: function(date) {
-            console.log(date)
-            var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
-
-
-            for (i = 0; i < array.length; i++) {
-               if (string == array[i][0]) {
-                  arraydias.push(string)
-                  empieza = true
-               }
-            }
-            for (i2 = 0; i2 < array.length; i2++) {
-               if (string == array[i2][1]) {
-                  arraydias.push(string)
-                  empieza = false;
-               }
-            }
-
-            if (empieza == true) {
-               arraydias.push(string)
-            }
-
-            return [arraydias.indexOf(string) == -1]
-         }
-      });
-   </script>
+   
    <?php include "footer.php"; ?>
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

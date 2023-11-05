@@ -42,6 +42,9 @@ include "../src/controllers/deletetemporada.php";
 include "../src/controllers/temporada_apartamentos.php";
 include "../src/controllers/dotemporadaapartamento.php";
 include "../src/controllers/prueba.php";
+include "../src/controllers/prueba2.php";
+include "../src/controllers/getapartamentoajax.php";
+include "../src/controllers/img_apartamentos_ajax.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -59,6 +62,9 @@ $r = $_REQUEST["r"];
 switch ($r) {
     case "prueba":
         pruebas($request, $response, $container);
+    break;
+    case "prueba2":
+        pruebas2($request, $response, $container);
     break;
     case "login":
         ctrlLogin($request, $response, $container);
@@ -132,9 +138,16 @@ switch ($r) {
     case "dotemporadaapartamento";
         doeditTempoAparta($request, $response, $container);
         break;
+    case "apartamentoAJAX":
+        getapartamentoAJAX($request, $response, $container);
+        break;
+    case "img_apartamentos_ajax":
+        img_apartamentos_ajax($request, $response, $container);
+        break;
     default:
         ctrlIndex($request, $response, $container);
         break;
 }
 
 $response->response();
+

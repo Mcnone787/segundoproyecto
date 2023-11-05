@@ -22,7 +22,6 @@ function ctrladdapartamento($request, $response, $container){
     
     //variables
    $response->set("informationapartamento", $informationapartamento);
-   $response->set("servicios",$servicios);
    $response->set("totalservicios",$totalservicios);
    $response->set("id",$request->get(INPUT_GET,"id"));
     $response->setTemplate("anadirapartamento.php");

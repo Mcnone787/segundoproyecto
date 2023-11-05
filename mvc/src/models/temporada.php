@@ -37,6 +37,8 @@ class temporada
         $stm->execute([':id' => $id]);
        
     }
+
+
     public function getTemporadas($id_gestor)
     {
         $temporadas = array();
@@ -49,6 +51,8 @@ class temporada
         }
         return $temporadas;
     }
+
+    
   
  
 }

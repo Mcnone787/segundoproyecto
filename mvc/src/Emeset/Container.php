@@ -92,7 +92,7 @@ class Container
     }
     public function temporada_servicios()
     {
-        return new \Daw\temporada_servicios(
+        return new \Daw\temporada_apartamenos(
             $this->sql
         );
     }

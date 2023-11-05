@@ -28,7 +28,7 @@ function doanadiraparta($request, $response, $container){
     if(isset($_FILES["fichero_usuario"])){
         for($i=0;$i<count($_FILES["fichero_usuario"]["name"]);$i++){
             $tmp_nameimg = $_FILES["fichero_usuario"]["tmp_name"][$i];
-            $url_img = "imgs/" . $Titulo."".time()."".$i;
+            $url_img = "imgs/" . $Titulo."".time()."".$i.".png";
             $rutaimagen[]=$url_img;
             move_uploaded_file($tmp_nameimg, $url_img);
         }
@@ -43,7 +43,9 @@ function doanadiraparta($request, $response, $container){
     ];
 
     $jsoninfoimgsdecode["src"][$id_]=[
+        "id"=>$id_,
         "src_imagen"=>$rutaimagen
+        
     ];
  
 

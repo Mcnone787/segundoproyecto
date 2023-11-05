@@ -2,7 +2,7 @@
 
 namespace Daw;
 
-class temporada_servicios
+class temporada_apartamenos
 {
 
     public $sql;
@@ -50,5 +50,17 @@ class temporada_servicios
         $stm->execute([':ApartamentosID' => $id_apar, ':temporadaid' => $idtemporadaid]);
 
     }
- 
+    public function daysinrangetemporada($fecha,$id)
+    {
+        $temporadas = array();
+        $query = "select * from temporada where temporada.idtemporada in (select apartamentos_temporada.temporadaid from apartamentos_temporada where apartamentos_temporada.ApartamentosID=:id) and :fecha>=temporada.fechaini AND :fecha<temporada.fechasalida;";
+        
+        $stm = $this->sql->prepare($query);
+        $stm->execute([':fecha'=>$fecha,":id"=>$id]);
+    
+        while ($temporada = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $temporadas[] = $temporada;
+        }
+        return $temporadas;
+    }
 }

@@ -7,6 +7,11 @@ function pruebas($request, $response, $container){
 $pruebas=[
     "prueba1"=>1
 ];
-$prueba2=json_encode($apartamentosdisponibles,true);
-echo $prueba2;
+$ruta_json="../src/jsons/img.json";
+$jsoninfoimgs=file_get_contents($ruta_json);
+$jsoninfoimgsdecode=json_decode($jsoninfoimgs,true);
+
+$prueba2=$apartamentosdisponibles;
+$informacion=[$prueba2,$jsoninfoimgsdecode];
+echo json_encode($informacion,true);
 }

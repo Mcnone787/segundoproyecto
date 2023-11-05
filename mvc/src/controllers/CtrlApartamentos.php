@@ -6,7 +6,9 @@ function ctrlApartamentos($request, $response, $container)
     $apartamentos = $apartamentosModel->getApartamentos();
 
     $apartamentosPorPagina = 12;
-
+    $jsonfichero=file_get_contents("../src/jsons/img.json");
+    $jsondecode=json_decode($jsonfichero,true);
+    
     if (isset($_GET["pagina"])) {
         $paginaActual = $_GET["pagina"];
     } else {
@@ -35,7 +37,7 @@ function ctrlApartamentos($request, $response, $container)
     $response->set("paginaActual", $paginaActual);
     $response->set("paginaAnterior", $paginaAnterior);
     $response->set("paginaSiguiente", $paginaSiguiente);
-
+    $response->set("imagenesjson",$jsondecode );
     $response->setTemplate("apartamentos.php");
     $response->set("container", $container);
     return $response;
