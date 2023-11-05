@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,36 +16,30 @@
 
 <body>
     <?php include "nav.php"; ?>
-    <?php
-    if ($_GET["delete"] == "1") {
-        include "deletebien.php";
-    }?>
     <div class="row row-table">
-        <?php include "menu_gestores.php";?>
-        <div class="col-10" style="height: 100vh;">
-            <h3 style="text-align:center;padding:20px;">Tus apartamentos sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
-            <div class="">
-                <a href="index.php?r=addapartamento"> <button style="float:right;" class="btn btn-outline-success">Añadir apartamento</button></a>
-            </div>
-            <table id="myTable" class="display" style="margin-bottom:50px;">
+        <?php include "menu_gestores.php"; ?>
+        <div class="col-10" style="height: 100vh">
+            <h3 style="text-align:center;padding:20px;">Lista de Reservas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+            <table id="myTable" class="display"  style="margin-bottom:50px;">
                 <thead>
                     <tr>
-                        <th>Nombre apartamentos</th>
+                        <th>Reservas</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="table-apartamentos">
+                <tbody >
+                    <tr class="table-departamentos">
                         <td>
                             <?php
-                            foreach ($tasks as $i => $task) { ?>
+                            foreach ($reservas as $i => $reserva) { ?>
                                 <div class="departamentos">
-                                    <img src="" alt="imagen">
-                                    <p><?php echo $task["Titulo"]; ?></p>
-                                    <p><?php echo $task["CP"]; ?></p>
+                                    <p><?php echo $reserva["ClienteId"]; ?></p>
+                                    <p><?php echo $reserva["ApartamentosID"]; ?></p>
+                                    <p><?php echo $reserva["DiaEntrada"]; ?></p>
+                                    <p><?php echo $reserva["DiaSalida"]; ?></p>
+                                    <p><?php echo $reserva["Precio"]; ?></p>
                                     <div>
-                                        <a href="index.php?r=ctrleditaparta&id=<?php echo $task["ApartamentosID"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
-                                        <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"]; ?>"> <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger"> Eliminar</button></a>
-                                        <a href="index.php?r=TempoParaApartame&id=<?php echo $task["ApartamentosID"]; ?>&Nombre_apartamento=<?php echo $task["Titulo"]; ?>"> <button style="display:block;" class="btn btn-outline-primary"> Temporadas</button></a>
+                                        <a href="index.php?r=ctrleditreserva&id=<?php echo $usuario["IDUsuario"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
+                                        <a href="index.php?r=deletereserva&id=<?php echo $usuario["IDUsuario"]; ?>"> <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger"> Eliminar</button></a>
                                     </div>
                                 </div>
                             <?php } ?>
@@ -61,7 +56,8 @@
             $('#myTable').DataTable();
         });
     </script>
-    <?php include "footer.php" ?>
+
+    <?php include "footer.php"; ?>
     <script src="srcs/index.js"></script>
     <script src="srcs/table.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

@@ -50,15 +50,15 @@ class Container
             $this->config["db"]["host"]
         );
     }
-    public function tasks()
-    {
-        return new \BDM\actionbd(
-            $this->config["db"]["user"],
-            $this->config["db"]["pass"],
-            $this->config["db"]["db"], 
-            $this->config["db"]["host"]
-        );
-    }
+    // public function tasks()
+    // {
+    //     return new \BDM\actionbd(
+    //         $this->config["db"]["user"],
+    //         $this->config["db"]["pass"],
+    //         $this->config["db"]["db"], 
+    //         $this->config["db"]["host"]
+    //     );
+    // }
 
     public function users()
     {
@@ -93,6 +93,12 @@ class Container
     public function temporada_servicios()
     {
         return new \Daw\temporada_apartamenos(
+            $this->sql
+        );
+    }
+    public function reservas()
+    {
+        return new \Daw\reservas(
             $this->sql
         );
     }

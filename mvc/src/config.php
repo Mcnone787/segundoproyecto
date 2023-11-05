@@ -15,3 +15,9 @@ include "../src/models/servicios.php";
 include "../src/models/servicios-apartamentos.php";
 include "../src/models/temporada.php";
 include "../src/models/temporada_apartamenos.php";
+<<<<<<< HEAD
+=======
+include "../src/models/reservas.php";
+
+
+>>>>>>> feature-reserva-2

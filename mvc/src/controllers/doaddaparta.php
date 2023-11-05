@@ -25,6 +25,20 @@ function doanadiraparta($request, $response, $container){
     $jsoninfoimgs=file_get_contents($ruta_json);
     $jsoninfoimgsdecode=json_decode($jsoninfoimgs,true);
     
+
+    if($Titulo == null || $CP == null || $Laltitud == null || $Longitud == null || $descripcion == null || $m2 == null || $precioalt == null || $preciobaj == null || $numhabita == null){
+        echo "Algun campo esta vacio";
+    }
+    if($m2 == -1 || $precioalt == -1 || $preciobaj == -1 || $numhabita == -1){
+        echo "Campo no valido";
+    }
+    if($precioalt < $preciobaj){
+        echo "El precio alto no puede ser menor que el precio bajo";
+    }
+    $valores = $_FILES;
+    $nombreImagen="";
+    $rutaimagen="";
+
     if(isset($_FILES["fichero_usuario"])){
         for($i=0;$i<count($_FILES["fichero_usuario"]["name"]);$i++){
             $tmp_nameimg = $_FILES["fichero_usuario"]["tmp_name"][$i];

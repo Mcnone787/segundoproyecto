@@ -1,5 +1,6 @@
 <?php
-function ctrlUserDataUpdate($request, $response, $container){
+function ctrlUserDataUpdate($request, $response, $container)
+{
     $userModel = $container->users();
 
     $name = $request->get(INPUT_POST, "nombre");
@@ -9,14 +10,11 @@ function ctrlUserDataUpdate($request, $response, $container){
     $email = $request->get(INPUT_POST, "email");
     $pass = $request->get(INPUT_POST, "contrasena");
 
-    if($userModel){
-        $userModel->updateProfile($name, $lastname, $debitCard, $email, $pass, $telefono, $_SESSION["user"]["IDUsuario"]);
+    $userModel->updateProfile($name, $lastname, $debitCard, $email, $pass, $telefono, $_SESSION["user"]["IDUsuario"]);
+    if ($userModel) {
         $response->redirect("Location: index.php?r=perfilUser");
     } else {
         $response->redirect("Location: index.php?r=perfilUser");
     }
-
     return $response;
-
-
 }
