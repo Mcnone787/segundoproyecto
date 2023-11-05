@@ -114,14 +114,33 @@
     </div> -->
     <div class="container">
         <div class="row">
-            <div class="form-inline" style="display: flex; justify-content: center;">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width:50%;" name="titulo" id="titulo">
-                <label for="from">From</label>
-                <input type="text" id="from" name="from">
-                <label for="to">to</label>
-                <input type="text" id="to" name="to">
-                <input type="number" name="numhabita" min="1" id="numhabita">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="buscarbtn">Buscar</button>
+            <div class="form-inline row" style="
+    margin-top: 50px;
+    background: #8ec7eb59;
+    padding: 20px;
+    border-radius:27px;
+ ">
+            <div class="col-12 col-lg-5">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width:100%;border-radius:20px;" name="titulo" id="titulo" >
+                </div>  
+                <div class="col-12 col-lg-4">
+                    <div class="btn-group dropend " style="left:50%;">
+                        
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mas opciones
+                    </button>
+                    <ul class="dropdown-menu" >
+                        <div class=" "style="display:flex;">
+                            <input type="text" id="from" name="from" placeholder="From">
+                            <input type="text" id="to" name="to" placeholder="to">
+                        </div>
+                        <input type="number" name="numhabita" min="1" id="numhabita" placeholder="Num. de habitaciones">
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <button class="btn btn-outline-success my-2 my-sm-0 " style="float:right;width:60%;" type="submit" id="buscarbtn">Buscar</button>
+                </div>
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2  row-cols-xl-4 g-4 my-5 py-3" id="cosas">
