@@ -22,11 +22,11 @@
     <div class="container" style="margin-bottom:200px;">
         <div class="row">
             <div class="col-5">
-                <p style="color:black; text-align:left;float: none;">
+                <p style=" text-align:left;float: none;">
                     Añade tu apartamento con este formulario ^^
                 </p>
             </div>
-            <div class="col-7">
+            <div class="col-7" style="height: 100vh;">
                 <form class="form-control form_session" action="index.php?r=doanadiraparta&id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <div class="row">

@@ -16,37 +16,45 @@
 
 <body>
     <?php include "nav.php"; ?>
-    <div class="row row-table">
-        <?php include "menu_gestores.php"; ?>
-        <div class="col-10" style="height: 100vh">
-            <h3 style="text-align:center;padding:20px;">Lista de Reservas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
-            <table id="myTable" class="display"  style="margin-bottom:50px;">
-                <thead>
-                    <tr>
-                        <th>Reservas</th>
-                    </tr>
-                </thead>
-                <tbody >
-                    <tr class="table-departamentos">
-                        <td>
-                            <?php
-                            foreach ($reservas as $i => $reserva) { ?>
-                                <div class="departamentos">
-                                    <p><?php echo $reserva["ClienteId"]; ?></p>
-                                    <p><?php echo $reserva["ApartamentosID"]; ?></p>
-                                    <p><?php echo $reserva["DiaEntrada"]; ?></p>
-                                    <p><?php echo $reserva["DiaSalida"]; ?></p>
-                                    <p><?php echo $reserva["Precio"]; ?></p>
-                                    <div>
-                                        <a href="index.php?r=ctrleditreserva&id=<?php echo $usuario["IDUsuario"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
-                                        <a href="index.php?r=deletereserva&id=<?php echo $usuario["IDUsuario"]; ?>"> <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger"> Eliminar</button></a>
-                                    </div>
-                                </div>
+    <div class="container-fluid">
+        <div class="row">
+            <?php include "menu_gestores.php"; ?>
+            <div class="col-10">
+                <h3 style="text-align:center;padding:20px;">Lista de Reservas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+                <div class="row row-table">
+                    <table id="myTable" class="display border rounded-2" style="width: 100%; margin-bottom: 15%; max-height: 100vh;">
+                        <thead>
+                            <tr>
+                                <th>ClienteID</th>
+                                <th>ApartamentosID</th>
+                                <th>Dia Entrada</th>
+                                <th>Dia Salida</th>
+                                <th>Precio</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($reservas as $i => $reserva) { ?>
+                                <tr>
+                                    <td><?php echo $reserva["ClienteId"]; ?></td>
+                                    <td><?php echo $reserva["ApartamentosID"]; ?></td>
+                                    <td><?php echo $reserva["DiaEntrada"]; ?></td>
+                                    <td><?php echo $reserva["DiaSalida"]; ?></td>
+                                    <td><?php echo $reserva["Precio"]; ?></td>
+                                    <td>
+                                        <a href="index.php?r=ctrleditreserva&id=<?php echo $usuario["IDUsuario"]; ?>">
+                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button>
+                                        </a>
+                                        <a href="index.php?r=deletereserva&id=<?php echo $usuario["IDUsuario"]; ?>">
+                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger">Eliminar</button>
+                                        </a>
+                                    </td>
+                                </tr>
                             <?php } ?>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
