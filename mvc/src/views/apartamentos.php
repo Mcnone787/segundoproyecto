@@ -159,7 +159,7 @@
                     <div class="col apartamento_" id="<?php echo   $apartamentoID;?>">
                         <a class="link-offset-2 link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#apartamentoReserva" class="stretched-link">
                             <div class="card h-100" style="width: 100%;">
-                                <img src="<?php echo $imgApartamento;?>" class="card-img-top" alt="...">
+                                <img src="<?php echo $imgApartamento==null ? 'imgs/logo/logo.png' : $imgApartamento ?>" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">
                                         <?= $titulo ?>
