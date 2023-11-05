@@ -9,16 +9,16 @@
             <a class="nav-link text-dark" href="index.php">Home</a>
          </li>
          <li class="nav-item">
-            <a class="nav-link text-dark" href="index.php?r=apartamentos">Departamentos</a>
+            <a class="nav-link text-dark" href="index.php?r=apartamentos">Apartamentos</a>
          </li>
       </ul>
-      <div class="collapse navbar-collapse" id="navbarScroll">
+      <!-- <div class="collapse navbar-collapse" id="navbarScroll">
          <div style="width: 70%;">
             <form class="d-flex text-dark" role="search">
                <input class="form-control me-2 search_nav text-dark" type="search" placeholder="Search" aria-label="Search" style="width: 65%;margin:0 auto;">
             </form>
          </div>
-      </div>
+      </div> -->
       <div style="float: right;">
          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
             <li class='nav-item dropdown'>
@@ -31,7 +31,7 @@
                      <li><a class='dropdown-item' href='index.php?r=perfilUser'>Perfil</a></li>
                      <li><a class='dropdown-item' href='index.php?r=reservas'>Reservas</a></li>
                      <?php if ($_SESSION["user"]["Rol"] == "gestor" || $_SESSION["user"]["Rol"] == "admin") { ?>
-                        <li><a class='dropdown-item' href='index.php?r=gestores'>Apartamentos</a></li>
+                        <li><a class='dropdown-item' href='index.php?r=gestores_apartamentos'>Apartamentos</a></li>
                      <?php }
                      if ($_SESSION["user"]["Rol"] == "admin") { ?>
                         <li><a class='dropdown-item' href='index.php?r=gestores'>Panel</a></li>
@@ -49,7 +49,7 @@
                   </ul>
                <?php } else { ?>
             <li class='nav-item'>
-               <a class='nav-link' href='index.php?r=login' role='button' aria-expanded='false'>Login</a>
+               <a class='nav-link' href='index.php?r=login' role='button' aria-expanded='false'><button class="btn ">Login</button></a>
             </li>
          <?php } ?>
          </li>

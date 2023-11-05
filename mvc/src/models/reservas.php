@@ -26,9 +26,21 @@ class Reservas
 
     public function getReservas($userId)
     {
-        $stm = $this->sql->prepare("SELECT * FROM reservas WHERE ClienteId = :user_id;");
+        $stm = $this->sql->prepare("SELECT * FROM reservas WHERE ClienteId = :user_id;)");
         $stm->execute([':user_id' => $userId]);
 
+        $reservas = array();
+
+        while ($reserva = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $reservas[] = $reserva;
+        }
+        return $reservas;
+    }
+    public function getReservasById($reservaID)
+    {
+        $stm = $this->sql->prepare("SELECT * FROM reservas WHERE ReservaID = :reservas_id;)");
+        $stm->execute([':reservas_id' => $reservaID]);
+        
         $reservas = array();
 
         while ($reserva = $stm->fetch(\PDO::FETCH_ASSOC)) {
@@ -43,10 +55,10 @@ class Reservas
         $stm->execute([':user_id' => $userId, ':apartamento_id' => $apartamentoId, ':dia_entrada' => $diaEntrada, ':dia_salida' => $diaSalida]);
     }
 
-    public function deleteReserva($userId)
+    public function deleteReserva($reservaId,$userId)
     {
-        $stm = $this->sql->prepare("DELETE FROM reservas WHERE ClienteId = :user_id;");
-        $stm->execute([':user_id' => $userId]);
+        $stm = $this->sql->prepare("DELETE FROM reservas WHERE ClienteId = :user_id and ReservaID = :reserva_id;");
+        $stm->execute([':user_id' => $userId, ':reserva_id' => $reservaId]);
     }
 
     public function updateReserva($userId, $apartamentoId, $diaEntrada, $diaSalida)

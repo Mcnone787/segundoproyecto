@@ -10,7 +10,7 @@ function CtrlEditUser($request, $response, $container)
     $Nombre = $userData["Nombre"];
     $Apellidos = $userData["Apellidos"];
     $email = $userData["email"];
-    $contrasena = $userData["Contrasena"];
+    $contrasena = $userData["contrasena"];
     $rol = $userData["Rol"];
 
     $response->setTemplate("editUser.php");

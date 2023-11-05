@@ -18,9 +18,16 @@ function doanadiraparta($request, $response, $container){
     $precioalt = $request->get(INPUT_POST, "precioalt"); 
     $preciobaj = $request->get(INPUT_POST, "preciobaj"); 
     $numhabita = $request->get(INPUT_POST, "numhabita"); 
-    
-  
 
+    if($Titulo == null || $CP == null || $Laltitud == null || $Longitud == null || $descripcion == null || $m2 == null || $precioalt == null || $preciobaj == null || $numhabita == null){
+        echo "Algun campo esta vacio";
+    }
+    if($m2 == -1 || $precioalt == -1 || $preciobaj == -1 || $numhabita == -1){
+        echo "Campo no valido";
+    }
+    if($precioalt < $preciobaj){
+        echo "El precio alto no puede ser menor que el precio bajo";
+    }
     $valores = $_FILES;
     $nombreImagen="";
     $rutaimagen="";

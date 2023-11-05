@@ -47,10 +47,12 @@ include "../src/controllers/doedituser.php";
 include "../src/controllers/doadduser.php";
 include "../src/controllers/CtrlAddUser.php";
 include "../src/controllers/CtrlEditUser.php";
+include "../src/controllers/deletereserva.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
 include "../src/Emeset/Response.php";
+
 $request = new \Emeset\Request();
 $response = new \Emeset\Response();
 $container = new \Emeset\Container($config);
@@ -61,10 +63,12 @@ $r = $_REQUEST["r"];
 // /* Creem els diferents models */
 // $session = new Daw\Session();
 // $images = new Daw\Images()dd;
+
+// Front Controller
 switch ($r) {
     case "prueba":
         pruebas($request, $response, $container);
-    break;
+        break;
     case "login":
         ctrlLogin($request, $response, $container);
         break;
@@ -154,6 +158,9 @@ switch ($r) {
         break;
     case "doadduser":
         adduser($request, $response, $container);
+        break;
+    case "deletereserva":
+        deletereserva($request, $response, $container);
         break;
     case "deletetemporada":
         deleteTemporada($request, $response, $container);

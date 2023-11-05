@@ -25,11 +25,13 @@
                     <a href="index.php?r=ctrladduser"> <button style="float:left;" class="btn btn-outline-success">Crear Usuario</button></a>
                 </div>
             </div> -->
-            <table id="myTable" class="display" style="margin-bottom:50px;">
+            <table id="myTable" class="display"  style="margin-bottom:50px;">
                 <thead>
-                    <tr><th>Reservas</th></tr>
+                    <tr>
+                        <th>Reservas</th>
+                    </tr>
                 </thead>
-                <tbody>
+                <tbody >
                     <tr class="table-departamentos">
                         <td>
                             <?php
