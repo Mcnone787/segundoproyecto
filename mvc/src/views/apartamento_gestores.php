@@ -18,40 +18,39 @@
     <?php
     if ($_GET["delete"] == "1") {
         include "deletebien.php";
-    }?>
-    <div class="row row-table">
-        <?php include "menu_gestores.php";?>
-        <div class="col-10" style="height: 100vh;">
-            <h3 style="text-align:center;padding:20px;">Tus apartamentos sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
-            <div class="">
-                <a href="index.php?r=addapartamento"> <button style="float:right;" class="btn btn-outline-success">Añadir apartamento</button></a>
-            </div>
-            <table id="myTable" class="display" style="margin-bottom:50px;">
-                <thead>
-                    <tr>
-                        <th>Nombre apartamentos</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="table-apartamentos">
-                        <td>
-                            <?php
-                            foreach ($tasks as $i => $task) { ?>
-                                <div class="departamentos">
-                                    <img src="" alt="imagen">
-                                    <p><?php echo $task["Titulo"]; ?></p>
-                                    <p><?php echo $task["CP"]; ?></p>
-                                    <div>
+    } ?>
+    <div class="container-fluid">
+        <div class="row">
+            <?php include "menu_gestores.php"; ?>
+            <div class="col-10">
+                <h3 style="text-align:center;padding:20px;">Lista de Temporadas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+                <div class="row row-table">
+                    <table id="myTable" class="display border rounded-2" style="width: 100%; margin-bottom: 15%; max-height: 100vh;">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Titulo</th>
+                                <th>Codigo Postal</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($tasks as $i => $task) { ?>
+                                <tr>
+                                    <td><?php $i + 1 ?></td>
+                                    <td><?php echo $task["Titulo"]; ?></td>
+                                    <td><?php echo $task["CP"]; ?></td>
+                                    <td>
                                         <a href="index.php?r=ctrleditaparta&id=<?php echo $task["ApartamentosID"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
                                         <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"]; ?>"> <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger"> Eliminar</button></a>
                                         <a href="index.php?r=TempoParaApartame&id=<?php echo $task["ApartamentosID"]; ?>&Nombre_apartamento=<?php echo $task["Titulo"]; ?>"> <button style="display:block;" class="btn btn-outline-primary"> Temporadas</button></a>
-                                    </div>
-                                </div>
+                                    </td>
+                                </tr>
                             <?php } ?>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 

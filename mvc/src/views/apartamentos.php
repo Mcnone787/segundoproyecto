@@ -112,7 +112,7 @@
         </g>
     </svg>
     </div> -->
-    <div class="container">
+    <div class="container" style="height: 100vh;">
         <div class="row">
             <div class="form-inline" style="display: flex; justify-content: center;">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width:50%;" name="titulo" id="titulo">
@@ -138,7 +138,7 @@
                     ?>
                     <div class="col">
                         <a class="link-offset-2 link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#apartamentoReserva" class="stretched-link">
-                            <div class="card h-100" style="width: 100%;">
+                            <div class="card h-100 cardApartamentos" style="width: 100%;">
                                 <img src="imgs/<?php echo $imagenesjson[$apartamentoID]->src_imagen[0]; ?>" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">

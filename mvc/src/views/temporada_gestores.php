@@ -19,40 +19,40 @@
     if ($_GET["delete"] == "1") {
         include "deletebien.php";
     } ?>
-    <div class="row row-table">
-        <?php include "menu_gestores.php"; ?>
-        <div class="col-10" style="height: 100vh;">
-            <h3 style="text-align:center;padding:20px;">Tus temporadas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
-            <div class="" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around;">
-                <div class="">
-                    <a href="index.php?r=temporada"> <button class="btn btn-outline-success">Añadir temporada</button></a>
+    <div class="container-fluid">
+        <div class="row">
+            <?php include "menu_gestores.php"; ?>
+            <div class="col-10">
+                <h3 style="text-align:center;padding:20px;">Lista de Temporadas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+                <div class="row row-table">
+                    <table id="myTable" class="display border rounded-2" style="width: 100%; margin-bottom: 15%; max-height: 100vh;">
+                        <thead>
+                            <tr>
+                                <th>Temporada Nombre</th>
+                                <th>Fecha Inicio</th>
+                                <th>Fecha Salida</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($tasks as $i => $task) { ?>
+                                <tr>
+                                    <td><?php echo $task["temporadaNombre"]; ?></td>
+                                    <td><?php echo $task["fechaini"]; ?></td>
+                                    <td><?php echo $task["fechasalida"]; ?></td>
+                                    <td>
+                                        <a href="index.php?r=deletetemporada&id=<?php echo $task["idtemporada"];?>">
+                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger">Eliminar</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <table id="myTable" class="display" style="margin-bottom:50px;">
-                <thead>
-                    <tr>
-                        <th>Nombre apartamentos</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="table-apartamentos">
-                        <td>
-                            <?php
-                            foreach ($tasks as $i => $task) { ?>
-                                <div class="departamentos">
-                                    <p><?php echo $task["temporadaNombre"]; ?></p>
-                                    <p><?php echo $task["fechaini"]; ?></p>
-                                    <p><?php echo $task["fechasalida"]; ?></p>
-                                    <div>
-                                        <a href="index.php?r=deletetemporada&id=<?php echo $task["idtemporada"]; ?>"><button class="btn btn-outline-danger"> Eliminar</button></a>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
+    </div>
 
     <script>
         console.log($("body"))
