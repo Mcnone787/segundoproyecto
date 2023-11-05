@@ -125,8 +125,8 @@
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2  row-cols-xl-4 g-4 my-5 py-3" id="cosas">
-            <?php if (isset($apartamentosPagina) && is_array($apartamentosPagina)) : ?>
-                <?php foreach ($apartamentosPagina as $apartamento) : ?>
+            <?php if (isset($apartamentos) && is_array($apartamentos)) : ?>
+                <?php foreach ($apartamentos as $apartamento) : ?>
                     <?php
 
                     $titulo = $apartamento['Titulo'];
