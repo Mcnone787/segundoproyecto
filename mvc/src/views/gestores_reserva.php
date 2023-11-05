@@ -20,11 +20,6 @@
         <?php include "menu_gestores.php"; ?>
         <div class="col-10" style="height: 100vh">
             <h3 style="text-align:center;padding:20px;">Lista de Reservas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
-            <!-- <div class="" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around;">
-                <div class="">
-                    <a href="index.php?r=ctrladduser"> <button style="float:left;" class="btn btn-outline-success">Crear Usuario</button></a>
-                </div>
-            </div> -->
             <table id="myTable" class="display"  style="margin-bottom:50px;">
                 <thead>
                     <tr>
@@ -63,6 +58,7 @@
     </script>
 
     <?php include "footer.php"; ?>
+    <script src="srcs/index.js"></script>
     <script src="srcs/table.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="srcs/messages_erros_successful.js"></script>

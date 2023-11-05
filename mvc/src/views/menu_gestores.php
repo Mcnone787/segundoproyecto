@@ -1,5 +1,5 @@
 <div class="col-2 border">
-    <a href="index.php?r=gestores"><h2 class="link-body-emphasis text-center">Menus</h2></a>
+    <h2 class="text-center">Menus</h2>
     <ul class="list-group list-group-flush">
         <li class="list-group-item"><a class="link-body-emphasis" href="index.php?r=gestores_apartamentos"><p>Apartamentos</p></a></li>
         <li class="list-group-item"><a class="link-body-emphasis" href="index.php?r=gestores_temporadas"><p>Temporadas</p></a></li>

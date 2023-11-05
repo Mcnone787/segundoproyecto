@@ -110,6 +110,7 @@
             });
         });
     </script>
+    <script src="srcs/index.js"></script>
 </body>
 
 </html>

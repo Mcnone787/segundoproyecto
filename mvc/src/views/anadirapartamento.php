@@ -71,7 +71,7 @@
                                 <div>
                                     <?php
                                     foreach ($totalservicios as $i => $task) {
-                                        if ($task != 1) {?>
+                                        if ($task != 1) { ?>
                                             <input type="checkbox" name="add<?php echo $task["idservicios"]; ?>" id=""><label for="d"> <?php echo $task["servicio"]; ?> </label><br>
                                     <?php }
                                     } ?>
@@ -119,6 +119,7 @@
             });
         });
     </script>
+    <script src="srcs/index.js"></script>
     <script src="srcs/addmoreimg.js"></script>
 </body>
 

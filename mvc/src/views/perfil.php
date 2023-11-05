@@ -16,11 +16,11 @@
     <div class="container rounded mt-5 mb-5" style="height: 100vh">
         <div class="row py-5 justify-content-center">
             <div class="col-md-3 border-right">
-                <div class="d-flex flex-column text-center justify-content-center">
-                    <img src="imgs/logo/logo.png" alt="logo" class="rounded" width="auto" style="height: auto;">
-                    <span class="font-weight-bold"><?php echo $nombre ?></span>
-                    <span class="text-black-50"><?php echo $email ?></span>
-                    <span class="text-black-50">Telefono: <?php echo $telefono ?></span>
+                <div class="d-flex flex-column border text-center rounded-5 justify-content-center">
+                    <img src="imgs/logo/logo.png" alt="logo" class="rounded" width="auto">
+                    <span class="font-weight-bold mt-5"><?php echo $nombre ?></span>
+                    <span class=""><?php echo $email ?></span>
+                    <span class="mb-5">Telefono: <?php echo $telefono ?></span>
                 </div>
             </div>
             <div class="col-md-5 border-right">

@@ -21,7 +21,7 @@ include "../src/controllers/registro.php";
 include "../src/controllers/ctrlDologin.php";
 include "../src/controllers/DoRegister.php";
 include "../src/controllers/ctrlLogout.php";
-include "../src/controllers/gestors.php";
+include "../src/controllers/CtrlAdmin.php";
 include "../src/controllers/Ctrldeletedepartamento.php";
 include "../src/controllers/Ctrlanadirapartamento.php";
 include "../src/controllers/CtrlApartamentos.php";
@@ -72,8 +72,8 @@ switch ($r) {
     case "login":
         ctrlLogin($request, $response, $container);
         break;
-    case "gestores":
-        ctrlgestores($request, $response, $container);
+    case "panelAdmin":
+        ctrlAdmin($request, $response, $container);
         break;
     case "index":
         ctrlIndex($request, $response, $container);

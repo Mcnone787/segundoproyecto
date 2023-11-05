@@ -20,9 +20,7 @@ a{
     margin-bottom: 50px;
 
 }
-.table-apartamentos td div{
-    /* margin-bottom: 20px; */
-}
+
 .menu{
     text-align:center !important;color:white !important;
 }
@@ -49,14 +47,19 @@ a{
 
 .card *{
     text-decoration: none;
+    cursor: pointer;
 }
 
 .reservabox{
     box-shadow: 0px 0px 4px 0px rgba(105, 105, 105, 0.75);
 }
-.imgReservaBox{
-    box-shadow: 0px 0px 4px 0px rgba(105, 105, 105, 0.75);
+
+.card:hover{
+    box-shadow:  0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
-.infoReservaBox{
-    box-shadow: 0px 0px 4px 0px rgba(105, 105, 105, 0.75);
+
+.shadowCircularBoxes:hover{
+    box-shadow:  0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
