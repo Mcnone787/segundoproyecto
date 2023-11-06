@@ -21,20 +21,20 @@
     } ?>
     <div class="container-fluid">
         <div class="row">
-            <?php include "menu_gestores.php"; ?>
+        <?php include "menu_gestores.php"; ?>
             <div class="col-10">
-                <h3 style="text-align:center;padding:20px;">Lista de apartamentos sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+                <h3 style="text-align:center;padding:20px;">Lista de Temporadas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
                 <div class="m-3">
-                    <a href="index.php?r=addapartamento"><button class="btn btn-outline-success">Añadir apartamento</button></a>
+                    <a href="index.php?r=temporada"> <button class="btn btn-outline-success">Añadir temporada</button></a>
                 </div>
                 <div class="row row-table">
                     <table id="myTable" class="display border rounded-2" style="width: 100%; margin-bottom: 15%; max-height: 100vh;">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Titulo</th>
-                                <th>Codigo Postal</th>
-                                <th>Descripcion</th>
+                                <th>Temporada Nombre</th>
+                                <th>Fecha Inicio</th>
+                                <th>Fecha Salida</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -42,13 +42,13 @@
                             <?php foreach ($tasks as $i => $task) { ?>
                                 <tr>
                                     <td><?php echo $i + 1 ?></td>
-                                    <td><?php echo $task["Titulo"]; ?></td>
-                                    <td><?php echo $task["CP"]; ?></td>
-                                    <td><?php echo $task["Descripcion"]; ?></td>
+                                    <td><?php echo $task["temporadaNombre"]; ?></td>
+                                    <td><?php echo $task["fechaini"]; ?></td>
+                                    <td><?php echo $task["fechasalida"]; ?></td>
                                     <td>
-                                        <a href="index.php?r=ctrleditaparta&id=<?php echo $task["ApartamentosID"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
-                                        <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"]; ?>"> <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger"> Eliminar</button></a>
-                                        <a href="index.php?r=TempoParaApartame&id=<?php echo $task["ApartamentosID"]; ?>&Nombre_apartamento=<?php echo $task["Titulo"]; ?>"> <button style="display:block;" class="btn btn-outline-primary"> Temporadas</button></a>
+                                        <a href="index.php?r=deletetemporada&id=<?php echo $task["idtemporada"];?>">
+                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger">Eliminar</button>
+                                        </a>
                                     </td>
                                 </tr>
                             <?php } ?>

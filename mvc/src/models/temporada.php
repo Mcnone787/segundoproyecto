@@ -52,7 +52,15 @@ class temporada
         return $temporadas;
     }
 
+    public function getAllTemporadas(){
+        $temporadas = array();
+        $query = "SELECT * FROM temporada";
+        $stm = $this->sql->prepare($query);
+        $stm->execute();
     
-  
- 
+        while ($temporada = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $temporadas[] = $temporada;
+        }
+        return $temporadas;
+    }
 }

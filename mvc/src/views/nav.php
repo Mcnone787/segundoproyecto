@@ -23,8 +23,8 @@
                   <ul class='dropdown-menu dropdown-menu-lg-end'>
                      <li><a class='dropdown-item' href='index.php?r=perfilUser'>Perfil</a></li>
                      <li><a class='dropdown-item' href='index.php?r=reservas'>Reservas</a></li>
-                     <?php if ($_SESSION["user"]["Rol"] == "gestor" || $_SESSION["user"]["Rol"] == "admin") { ?>
-                        <li><a class='dropdown-item' href='index.php?r=gestores_apartamentos'>Apartamentos</a></li>
+                     <?php if ($_SESSION["user"]["Rol"] == "gestor") { ?>
+                        <li><a class='dropdown-item' href='index.php?r=gestores_apartamentos'>Gestion Apartmentos</a></li>
                      <?php }
                      if ($_SESSION["user"]["Rol"] == "admin") { ?>
                         <li><a class='dropdown-item' href='index.php?r=panelAdmin'>Panel</a></li>
@@ -42,7 +42,7 @@
                   </ul>
                <?php } else { ?>
             <li class='nav-item'>
-               <a class='nav-link' href='index.php?r=login' role='button' aria-expanded='false'><button class="btn ">Login</button></a>
+               <a class='nav-link text-dark' href='index.php?r=login' role='button' aria-expanded='false'><button class="btn text-dark">Login</button></a>
             </li>
          <?php } ?>
          </li>

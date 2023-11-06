@@ -16,5 +16,6 @@ include "../src/models/servicios-apartamentos.php";
 include "../src/models/temporada.php";
 include "../src/models/temporada_apartamenos.php";
 include "../src/models/reservas.php";
+include "../src/models/estados.php";
 
 

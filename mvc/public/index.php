@@ -37,7 +37,6 @@ include "../src/controllers/TempoParaApartame.php";
 include "../src/controllers/gestores_apartamentos.php";
 include "../src/controllers/gestores_estados.php";
 include "../src/controllers/gestores_temporadas.php";
-include "../src/controllers/gestores_usuarios.php";
 include "../src/controllers/gestores_reserva.php";
 include "../src/controllers/deletetemporada.php";
 include "../src/controllers/dotemporadaapartamento.php";
@@ -51,6 +50,12 @@ include "../src/controllers/doadduser.php";
 include "../src/controllers/CtrlAddUser.php";
 include "../src/controllers/CtrlEditUser.php";
 include "../src/controllers/deletereserva.php";
+include "../src/controllers/CtrlAdminApartamento.php";
+include "../src/controllers/CtrlAdminTemporada.php";
+include "../src/controllers/CtrlAdminReserva.php";
+include "../src/controllers/CtrlAdminUsuarios.php";
+include "../src/controllers/CtrlAdminEstados.php";
+
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -75,12 +80,26 @@ switch ($r) {
     case "prueba2":
         pruebas2($request, $response, $container);
         break;
-        break;
     case "login":
         ctrlLogin($request, $response, $container);
         break;
     case "panelAdmin":
         ctrlAdmin($request, $response, $container);
+        break;
+    case "adminApartamento":
+        ctrlAdminApartamento($request, $response, $container);
+        break;
+    case "adminTemporada":
+        ctrlAdminTemporada($request, $response, $container);
+        break;
+    case "adminReservas":
+        ctrlAdminReserva($request, $response, $container);
+        break;
+    case "adminUsuarios":
+        ctrlAdminUsuarios($request, $response, $container);
+        break;
+    case "adminEstados":
+        ctrlAdminEstado($request, $response, $container);
         break;
     case "index":
         ctrlIndex($request, $response, $container);
@@ -150,9 +169,6 @@ switch ($r) {
         break;
     case "gestores_temporadas":
         gestores_temporadas($request, $response, $container);
-        break;
-    case "gestores_usuarios":
-        gestores_usuarios($request, $response, $container);
         break;
     case "gestores_reserva":
         gestores_reserva($request, $response, $container);

@@ -13,6 +13,7 @@
    <link rel="stylesheet" href="/resources/demos/style.css">
    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" ></script>
 
 </head>
 
@@ -136,6 +137,19 @@
 
          <div class="col-6">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.2256160229385!2d2.962094874992734!3d42.273707040554356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ba8dd91251e3ff%3A0xe8dfb11cd9cdef78!2sInstitut%20Cendrassos!5e0!3m2!1ses!2ses!4v1697476156936!5m2!1ses!2ses" width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         </div>
+      </div>
+   </div>
+   <!-- Cookies -->
+   <div id="AceptoCookies">
+      <div class="container">
+         <div class="row shadow border rounded-2">
+            <div class="col-12">
+               <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios. Si continúa navegando, consideramos que acepta su uso. Puede obtener más información, o bien conocer cómo cambiar la configuración, en nuestra <a href="#">Política de cookies.</a></p>
+            </div>
+            <div class="col-12 m-2">
+               <button class="btn btn-primary" id="btnAceptarCookies">Aceptar cookies</button>
+            </div>
          </div>
       </div>
    </div>
