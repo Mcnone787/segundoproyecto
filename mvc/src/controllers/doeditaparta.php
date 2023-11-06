@@ -20,13 +20,16 @@ function doeditaparta($request, $response, $container)
     $numhabita = $request->get(INPUT_POST, "numhabita");
 
     if($Titulo == null || $CP == null || $Laltitud == null || $Longitud == null || $descripcion == null || $m2 == null || $precioalt == null || $preciobaj == null || $numhabita == null){
-        echo "Algun campo esta vacio";
+        $response->redirect("Location: index.php?r=ctrleditaparta&error=1");
+        return;
     }
     if($m2 == -1 || $precioalt == -1 || $preciobaj == -1 || $numhabita == -1){
-        echo "Campo no valido";
+        $response->redirect("Location: index.php?r=ctrleditaparta&error=2");
+        return;
     }
     if($precioalt < $preciobaj){
-        echo "El precio alto no puede ser menor que el precio bajo";
+        $response->redirect("Location: index.php?r=ctrleditaparta&errorApartamento=1");
+        return;
     }
 
     $valores = $_POST;

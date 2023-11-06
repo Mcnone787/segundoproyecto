@@ -27,13 +27,16 @@ function doanadiraparta($request, $response, $container){
     
 
     if($Titulo == null || $CP == null || $Laltitud == null || $Longitud == null || $descripcion == null || $m2 == null || $precioalt == null || $preciobaj == null || $numhabita == null){
-        echo "Algun campo esta vacio";
+        $response->redirect("Location: index.php?r=gestores&error=1");
+        return;
     }
     if($m2 == -1 || $precioalt == -1 || $preciobaj == -1 || $numhabita == -1){
-        echo "Campo no valido";
+        $response->redirect("Location: index.php?r=gestores&error=2");
+        return;
     }
     if($precioalt < $preciobaj){
-        echo "El precio alto no puede ser menor que el precio bajo";
+        $response->redirect("Location: index.php?r=gestores&errorApartamento=1");
+        return;
     }
     $valores = $_FILES;
     $nombreImagen="";

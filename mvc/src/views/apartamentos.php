@@ -46,6 +46,7 @@
 
 <body>
     <?php include 'nav.php'; ?>
+    <?php include 'ERROR_MANAGMENT.php'; ?>
     <!-- <div id="spiner">
     <svg   class="house spiner" viewBox="0 0 200 160" width="200px" height="160px" role="img" aria-label="Animated outline drawing of a house spinning">
         <g fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(30,0)">

@@ -16,6 +16,7 @@
 
 <body>
     <?php include "nav.php"; ?>
+    <?php include "ERROR_MANAGMENT.php"; ?>
     <div class="container-fluid">
         <div class="row">
             <?php include "menu_gestores.php"; ?>

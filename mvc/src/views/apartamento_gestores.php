@@ -15,6 +15,7 @@
 
 <body>
     <?php include "nav.php"; ?>
+    <?php include "ERROR_MANAGMENT.php"; ?>
     <?php
     if ($_GET["delete"] == "1") {
         include "deletebien.php";

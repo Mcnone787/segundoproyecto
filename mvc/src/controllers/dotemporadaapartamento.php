@@ -4,6 +4,15 @@ function doeditTempoAparta($request, $response, $container)
 {
     $TemporadaApartamentoModel = $container->temporada_servicios();
     $id = $request->get(INPUT_GET, "id");
+
+    if($id == null){
+        $response->redirect("Location: index.php?r=gestores_apartamentos&error=1");
+        return;
+    }
+    if($id == -1){
+        $response->redirect("Location: index.php?r=gestores_apartamentos&error=2");
+        return;
+    }
     $add = [];
     $rm = [];
 

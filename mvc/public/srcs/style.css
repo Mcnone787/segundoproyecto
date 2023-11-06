@@ -20,6 +20,9 @@ a{
     margin-bottom: 50px;
 
 }
+.row{
+    --bs-gutter-x: 0;
+}
 
 .menu{
     text-align:center !important;color:white !important;

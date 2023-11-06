@@ -10,7 +10,16 @@ function ctrlDoRegistro($request, $response, $container){
     $contrasena = $request->get(INPUT_POST, "password");
 
     if($nombre == null || $apellido == null || $debitCard == null || $email == null || $contrasena == null){
-        echo "Algun campo esta vacio";
+        $response->redirect("Location: index.php?r=registro&error=1");
+        return;
+    }
+    if($nombre == -1 || $apellido == -1 || $debitCard == -1 || $email == -1 || $contrasena == -1){
+        $response->redirect("Location: index.php?r=registro&error=2");
+        return;
+    }
+    if($userModel->validationEmail($email)){
+        $response->redirect("Location: index.php?r=registro&errorUsuario=2");
+        return;
     }
     if($userModel){
         $userModel->register($nombre, $apellido, $debitCard, $email, $contrasena);

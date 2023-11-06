@@ -11,7 +11,12 @@ function edituser($request, $response, $container)
     $rol = $request->get(INPUT_POST, "rol");
 
     if($id == null || $nombre == null || $apellidos == null || $contrasena == null || $email == null || $rol == null){
-        echo "Algun campo esta vacio";
+        $response->redirect("Location: index.php?r=ctrledituser&error=1");
+        return;
+    }
+    if($id == -1 || $nombre == -1 || $apellidos == -1 || $contrasena == -1 || $email == -1 || $rol == -1){
+        $response->redirect("Location: index.php?r=ctrledituser&error=2");
+        return;
     }
 
     if ($userModel) {

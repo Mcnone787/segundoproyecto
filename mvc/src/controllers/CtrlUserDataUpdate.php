@@ -10,8 +10,16 @@ function ctrlUserDataUpdate($request, $response, $container)
     $email = $request->get(INPUT_POST, "email");
     $pass = $request->get(INPUT_POST, "contrasena");
 
-    $userModel->updateProfile($name, $lastname, $debitCard, $email, $pass, $telefono, $_SESSION["user"]["IDUsuario"]);
+    if ($name == null || $lastname == null || $telefono == null || $debitCard == null || $email == null || $pass == null) {
+        $response->redirect("Location: index.php?r=perfilUser&error=1");
+        return;
+    }
+    if ($debitCard == -1 || $telefono == -1) {
+        $response->redirect("Location: index.php?r=perfilUser&error=2");
+        return;
+    }
     if ($userModel) {
+        $userModel->updateProfile($name, $lastname, $debitCard, $email, $pass, $telefono, $_SESSION["user"]["IDUsuario"]);
         $response->redirect("Location: index.php?r=perfilUser");
     } else {
         $response->redirect("Location: index.php?r=perfilUser");

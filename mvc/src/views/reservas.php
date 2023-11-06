@@ -13,6 +13,7 @@
 
 <body>
     <?php include "nav.php" ?>
+    <?php include "ERROR_MANAGMENT.php" ?>
     <div class="container" style="height: 100vh">
         <div class="col mb-5">
             <h1>Tus Reservas</h1>

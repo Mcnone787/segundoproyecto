@@ -19,6 +19,7 @@
 
 <body data-bs-theme="light">
    <?php include "nav.php"; ?>
+   <?php include "ERROR_MANAGMENT.php"; ?>
    <!-- carrousel -->
    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">

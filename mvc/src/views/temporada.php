@@ -16,8 +16,8 @@
 </head>
 
 <body>
-
     <?php include "nav.php"; ?>
+    <?php include "ERROR_MANAGMENT.php"; ?>
     <div class="container" style="margin-bottom:200px;">
         <div class="row">
             <div class="col-5">

@@ -13,6 +13,7 @@
 
 <body>
     <?php include "nav.php" ?>
+    <?php include "ERROR_MANAGMENT.php" ?>
     <div class="container rounded mt-5 mb-5" style="height: 100vh">
         <div class="row py-5 justify-content-center">
             <div class="col-md-3 border-right">

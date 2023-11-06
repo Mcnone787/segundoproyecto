@@ -15,6 +15,7 @@
 
 <body>
     <?php include "nav.php"; ?>
+    <?php include "ERROR_MANAGMENT.php"; ?>
     <div class="container text-center">
         <div class="row justify-content-center">
             <div class="col-10 m-3 p-3">

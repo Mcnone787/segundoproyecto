@@ -15,6 +15,7 @@
 
 <body>
     <?php include "nav.php"; ?>
+    <?php include "ERROR_MANAGMENT.php"; ?>
     <div class="row row-table">
         <?php include "menu_gestores.php"; ?>
         <div class="col-10 p-3" style="height: 100vh;">

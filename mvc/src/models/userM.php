@@ -51,11 +51,22 @@ class Users
 
     public function getUsers()
     {
-        $stm = $this->sql->prepare('select * from usuarios;');
+        $stm = $this->sql->prepare('select * from usuarios');
         $stm->execute();
         $result = $stm->fetchAll(\PDO::FETCH_ASSOC);
         if($result){
             return $result;
+        } else {
+            return false;
+        }
+    }
+    public function validationEmail($email)
+    {
+        $stm = $this->sql->prepare('select * from usuarios where Email = :email;');
+        $stm->execute([':email' => $email]);
+        $result = $stm->fetchAll(\PDO::FETCH_ASSOC);
+        if(is_Array($result)){
+            return true;
         } else {
             return false;
         }
