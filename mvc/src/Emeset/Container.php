@@ -102,6 +102,12 @@ class Container
             $this->sql
         );
     }
+    public function estados()
+    {
+        return new \Daw\Estados(
+            $this->sql
+        );
+    }
     
  
 }

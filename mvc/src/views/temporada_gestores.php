@@ -24,6 +24,9 @@
             <?php include "menu_gestores.php"; ?>
             <div class="col-10">
                 <h3 style="text-align:center;padding:20px;">Lista de Temporadas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+                <div class="m-3">
+                    <a href="index.php?r=temporada"><button class="btn btn-outline-success">Añadir temporada</button></a>
+                </div>
                 <div class="row row-table">
                     <table id="myTable" class="display border rounded-2" style="width: 100%; margin-bottom: 15%; max-height: 100vh;">
                         <thead>

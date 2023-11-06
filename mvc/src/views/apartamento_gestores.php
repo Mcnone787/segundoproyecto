@@ -23,7 +23,10 @@
         <div class="row">
             <?php include "menu_gestores.php"; ?>
             <div class="col-10">
-                <h3 style="text-align:center;padding:20px;">Lista de Temporadas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+                <h3 style="text-align:center;padding:20px;">Lista de apartamentos sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+                <div class="m-3">
+                    <a href="index.php?r=addapartamento"><button class="btn btn-outline-success">Añadir apartamento</button></a>
+                </div>
                 <div class="row row-table">
                     <table id="myTable" class="display border rounded-2" style="width: 100%; margin-bottom: 15%; max-height: 100vh;">
                         <thead>
@@ -31,15 +34,17 @@
                                 <th>#</th>
                                 <th>Titulo</th>
                                 <th>Codigo Postal</th>
+                                <th>Descripcion</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($tasks as $i => $task) { ?>
                                 <tr>
-                                    <td><?php $i + 1 ?></td>
+                                    <td><?php echo $i + 1 ?></td>
                                     <td><?php echo $task["Titulo"]; ?></td>
                                     <td><?php echo $task["CP"]; ?></td>
+                                    <td><?php echo $task["Descripcion"]; ?></td>
                                     <td>
                                         <a href="index.php?r=ctrleditaparta&id=<?php echo $task["ApartamentosID"]; ?>"><button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button></a>
                                         <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"]; ?>"> <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger"> Eliminar</button></a>

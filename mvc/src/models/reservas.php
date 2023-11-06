@@ -11,7 +11,7 @@ class Reservas
         $this->sql = $sql;
     }
 
-    public function getAll()
+    public function getAllReservas()
     {
         $stm = $this->sql->prepare("SELECT * FROM reservas;");
         $stm->execute();
