@@ -12,7 +12,7 @@
         <li class="list-group-item"><a class="link-body-emphasis" href="index.php?r=adminApartamento"><p>Apartamentos</p></a></li>
         <li class="list-group-item"><a class="link-body-emphasis" href="index.php?r=adminTemporada"><p>Temporadas</p></a></li>
         <li class="list-group-item"><a class="link-body-emphasis" href="index.php?r=adminEstados"><p>Estados</p></a></li>
-        <li class="list-group-item"><a class="link-body-emphasis" href="index.php?r=adminReserva"><p>Reserva</p></a></li>
+        <li class="list-group-item"><a class="link-body-emphasis" href="index.php?r=adminReservas"><p>Reserva</p></a></li>
         <?php endif; ?>
     </ul>
 </div>

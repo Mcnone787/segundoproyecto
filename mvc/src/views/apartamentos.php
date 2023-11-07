@@ -155,6 +155,7 @@
                     $precioBaj = $apartamento['PrecioBAJ'];
                     $apartamentoID = $apartamento['ApartamentosID'];
                     $imgApartamento=$imgjsondecode["src"][$apartamentoID]["src_imagen"][0];
+                 
                     ?>
                     <div class="col apartamento_" id="<?php echo   $apartamentoID;?>">
                         <a class="link-offset-2 link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#apartamentoReserva" class="stretched-link">
@@ -407,6 +408,7 @@
                             let nombre = element.ApartamentosID
                             let src = ""
                             if (apartamentos[1].src.hasOwnProperty(nombre)) {
+                                console.log(apartamentos[1].src)
                                 src = apartamentos[1].src[nombre].src_imagen[0]
 
                             } else {

@@ -24,30 +24,27 @@ function doanadiraparta($request, $response, $container){
     $ruta_json="../src/jsons/img.json";
     $jsoninfoimgs=file_get_contents($ruta_json);
     $jsoninfoimgsdecode=json_decode($jsoninfoimgs,true);
-    
-
-    if($Titulo == null || $CP == null || $Laltitud == null || $Longitud == null || $descripcion == null || $m2 == null || $precioalt == null || $preciobaj == null || $numhabita == null){
-        echo "Algun campo esta vacio";
-    }
-    if($m2 == -1 || $precioalt == -1 || $preciobaj == -1 || $numhabita == -1){
-        echo "Campo no valido";
-    }
-    if($precioalt < $preciobaj){
-        echo "El precio alto no puede ser menor que el precio bajo";
-    }
+   
+   
     $valores = $_FILES;
     $nombreImagen="";
-    $rutaimagen="";
-
+    $rutaimagen=[];
+   
     if(isset($_FILES["fichero_usuario"])){
         for($i=0;$i<count($_FILES["fichero_usuario"]["name"]);$i++){
             $tmp_nameimg = $_FILES["fichero_usuario"]["tmp_name"][$i];
             $url_img = "imgs/" . $Titulo."".time()."".$i.".png";
-            $rutaimagen[]=$url_img;
+            if($_FILES["fichero_usuario"]["tmp_name"][$i]!=""){
+                $rutaimagen[]=$url_img;
+          
             move_uploaded_file($tmp_nameimg, $url_img);
+            }      
+            
+            
         }
         
     }
+
   $idUltimoapartamento=($Modaapartameto->ultimoapartamento());
   $id_=$idUltimoapartamento["ApartamentosID"]+1;
   

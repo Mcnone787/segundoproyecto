@@ -56,6 +56,7 @@ include "../src/controllers/CtrlAdminTemporada.php";
 include "../src/controllers/CtrlAdminReserva.php";
 include "../src/controllers/CtrlAdminUsuarios.php";
 include "../src/controllers/CtrlAdminEstados.php";
+include "../src/controllers/modifygalery.php";
 
 
 include "../src/Emeset/Container.php";
@@ -201,6 +202,9 @@ switch ($r) {
     case "galeriaima":
         ctrlgaleriaima($request, $response, $container);
         break;
+        case "modifygalery":
+            modifygalery($request, $response, $container);
+            break;
     default:
         ctrlIndex($request, $response, $container);
         break;
