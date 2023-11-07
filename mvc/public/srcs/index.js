@@ -3,8 +3,6 @@ $(document).ready(function () {
    const switchButton = $('.btnSwitch');
    const darkModeCheckbox = $('#flexSwitchCheckDefault');
 
-
-
    // Obtener el tema guardado en el localStorage
    const savedTheme = localStorage.getItem('themePreference');
    if (savedTheme === 'dark') {
@@ -51,8 +49,6 @@ $(document).ready(function () {
       let id_ = this.id
       $("#reservaIDhref").attr("href", "index.php?r=deletereserva&id=" + id_);
    });
-
-
 });
 
 

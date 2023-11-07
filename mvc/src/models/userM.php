@@ -71,6 +71,17 @@ class Users
             return false;
         }
     }
+    public function validationPass($pass)
+    {
+        $stm = $this->sql->prepare('select * from usuarios where contrasena = :pass;');
+        $stm->execute([':pass' => $pass]);
+        $result = $stm->fetchAll(\PDO::FETCH_ASSOC);
+        if(is_Array($result)){
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function editUser($nombre, $apellidos, $contrasena, $email, $rol, $id)
     {
