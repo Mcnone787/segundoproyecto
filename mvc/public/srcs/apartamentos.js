@@ -1,83 +1,20 @@
-// $(document).ready(function () {
-//   // Reserva de apartamento
-//   // $("#formReservaApartamento").submit(function (event) {
-//   //   event.preventDefault();
-//   //   var id = $("#id").val();
-//   //   var fechaInicio = $("#fechaInicio").val();
-//   //   var fechaFin = $("#fechaFin").val();
-//   //   var precio = $("#precio").val();
-//   //   var token = $("#token").val();
-//   //   var url = "/apartamentos/reservar";
-//   //   $.ajax({
-//   //     url: url,
-//   //     headers: { "X-CSRF-TOKEN": token },
-//   //     type: "POST",
-//   //     dataType: "json",
-//   //     data: {
-//   //       id: id,
-//   //       fechaInicio: fechaInicio,
-//   //       fechaFin: fechaFin,
-//   //       precio: precio,
-//   //     },
-//   //     success: function (data) {
-//   //       if (data["status"] == "success") {
-//   //         $("#apartamentoReserva").modal("hide");
-//   //         Swal.fire({
-//   //           icon: "success",
-//   //           title: "Reserva realizada",
-//   //           text: "Se ha realizado la reserva correctamente",
-//   //         });
-//   //       } else {
-//   //         Swal.fire({
-//   //           icon: "error",
-//   //           title: "Error",
-//   //           text: "No se ha podido realizar la reserva",
-//   //         });
-//   //       }
-//   //     },
-//   //     error: function (data) {
-//   //       Swal.fire({
-//   //         icon: "error",
-//   //         title: "Error",
-//   //         text: "No se ha podido realizar la reserva",
-//   //       });
-//   //     },
-//   //   });
-//   // });
-
-//   // Modal de reserva de apartamento
-//   $("#apartamentoReserva").on("show.bs.modal", function (event) {
-//     var button = $(event.relatedTarget);
-//     var id = button.data("id");
-//     var modal = $(this);
-//     modal.find(".modal-title").text("Reservar Apartamento");
-//   });
-// });
-// $(document).ready(function () {
-//   // Modal de reserva de apartamento
-//   $("#apartamentoReserva").on("show.bs.modal", function (event) {
-//     var modal = $(this);
-//     modal.find(".modal-title").text("Reservar Apartamento");
-
-//     var fechaini = $("#from").val();
-//     var fechafin = $("#to").val();
-//     var numHabita = $("#numhabita").val();
-
-//     $.ajax({
-//       url: "apartamentos.php",
-//       method: "POST",
-//       data: {
-//         r: "apartamentos",
-//         fechaini: fechaini,
-//         fechafin: fechafin,
-//         numHabita: numHabita
-//       },
-//       success: function (data) {
-//         if (data && data.html) {
-//           modal.find(".modal-body").html(data.html);
-//         }
-//       }
-//     });
-//   });
-
-// });
+const { jsPDF } = window.jspdf;
+$(document).ready(function () {
+    let x = Math.random();
+    var tituloapa = $('#tituloapa').val();
+    $("#btnPDF").click(function () {
+        var doc = new jsPDF();
+        doc.addImage('../imgs/logo/logo.png', 'PNG', 150, 25, 50, 50);
+        doc.text(20, 30, 'Recibo de Pago');
+        doc.text(20, 40, 'Recibo con IVA INCLUIDO!');
+        doc.text(20, 50, 'Este es el recibo de pago de su reserva :)');
+        doc.text(20, 60, 'Gracias por su preferencia');
+        doc.text(20, 70, 'Apartamento: ' + tituloapa);
+        doc.text(20, 80, 'Llegada: ' + fechaini);
+        doc.text(20, 90, 'Salida: ' + fechafin);
+        doc.text(20, 100, 'Total: ' + precioTotal);
+        doc.text(20, 110, 'El pago se realizo con exito!');
+        doc.text(20, 120, 'Gracias por confiar en Moya y Marcelo para sus vacaciones...!');
+        doc.save('recibo'+ x +'.pdf');
+    });
+});

@@ -3,8 +3,6 @@ $(document).ready(function () {
    const switchButton = $('.btnSwitch');
    const darkModeCheckbox = $('#flexSwitchCheckDefault');
 
-
-
    // Obtener el tema guardado en el localStorage
    const savedTheme = localStorage.getItem('themePreference');
    if (savedTheme === 'dark') {
@@ -34,25 +32,12 @@ $(document).ready(function () {
       darkModeCheckbox.prop('checked', newTheme === 'dark');
    }
 
-   if($.cookie('cookieAceptada') == null){
-      $('#AceptoCookies').addClass("display");
-   }
-   $("#btnAceptarCookies").click(function(){ 
-      event.preventDefault();
-      console.log("entrando");
-      $("#AceptoCookies").slideUp("slow");
-      //guardamos que ya se aceptaron las cookies para no volver a mostrar mensaje
-      $.cookie("aceptoCookies", "2");
-    });
-
    // Funcion para mostrar el modal de confirmacion de borrado de reserva
    $('.btnDeleteReserva').click(function () {
       $('#modalDeleteReserva').modal('show');
       let id_ = this.id
       $("#reservaIDhref").attr("href", "index.php?r=deletereserva&id=" + id_);
    });
-
-
 });
 
 

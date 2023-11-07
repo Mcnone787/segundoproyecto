@@ -49,10 +49,10 @@ class Reservas
         return $reservas;
     }
 
-    public function setReserva ($userId, $apartamentoId, $diaEntrada, $diaSalida)
+    public function setReserva ($userId, $apartamentoId, $diaEntrada, $diaSalida, $precio)
     {
-        $stm = $this->sql->prepare("INSERT INTO reservas (ClienteId, ApartamentosID, DiaEntrada, DiaSalida) VALUES (:user_id, :apartamento_id, :dia_entrada, :dia_salida);");
-        $stm->execute([':user_id' => $userId, ':apartamento_id' => $apartamentoId, ':dia_entrada' => $diaEntrada, ':dia_salida' => $diaSalida]);
+        $stm = $this->sql->prepare("INSERT INTO reservas (ClienteId, ApartamentosID, DiaEntrada, DiaSalida, Precio) VALUES (:user_id, :apartamento_id, :dia_entrada, :dia_salida, :precio);");
+        $stm->execute([':user_id' => $userId, ':apartamento_id' => $apartamentoId, ':dia_entrada' => $diaEntrada, ':dia_salida' => $diaSalida, ':precio' => $precio]);
     }
 
     public function deleteReserva($reservaId,$userId)
