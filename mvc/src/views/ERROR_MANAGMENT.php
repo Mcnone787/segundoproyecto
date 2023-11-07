@@ -1,6 +1,6 @@
 <?php
 if ($_GET["error"] == 1) { ?>
-
+    
     <div class='alert alert-danger alert-dismissible fade show' role='alert'>
         <strong>Error!</strong> No se pudo actualizar los datos, hay campos vacios.
         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>

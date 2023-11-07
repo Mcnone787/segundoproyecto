@@ -16,7 +16,6 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
     <style>
         .house {
             display: block;
@@ -270,6 +269,9 @@
                             </div>
                         </div>
                     </div>
+                    <div id="alertReserva" class="alert alert-success" role="alert">Reserva realizada correctamente. 
+                        <button type="button" class="btn btn-primary" id="btnPDF">Descargar PDF</button>
+                    </div>
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
@@ -401,6 +403,7 @@
         });
 
         function prueba() {
+            $('#alertReserva').hide();
             jQuery(".apartamento_").each((element, obje) => {
                 obje.addEventListener("click", () => {
 
@@ -572,11 +575,8 @@
                         $('#spiner').show();
                         setTimeout(() => {
                             $('#spiner').hide();
-                            $('#modalBody').html(
-                                `<div class="alert alert-success" role="alert">Reserva realizada correctamente
-                                    <button type="button" id="downloadPDF" class="btn btn-primary">Descargar PDF</button>
-                                </div>`
-                                );
+                            $('#modalBody').hide();
+                            $('#alertReserva').show();
                         }, 3000);
                     } else {
                         alert("No se ha podido reservar")
@@ -586,16 +586,21 @@
                     alert("No se ha podido reservar");
                 },
             });
+
+            function reciboPDF() {
+                var doc = new jsPDF();
+                doc.text(20, 20, 'Hello world!');
+                doc.save('reserva.pdf');
+            }
         });
     </script>
 
     <?php include "footer.php"; ?>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <script src="srcs/index.js"></script>
     <script src="srcs/apartamentos.js"></script>
+    <script src="srcs/index.js"></script>
 </body>
 
 </html>
