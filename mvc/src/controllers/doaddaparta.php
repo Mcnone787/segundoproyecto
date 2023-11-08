@@ -18,12 +18,13 @@ function doanadiraparta($request, $response, $container){
     $precioalt = $request->get(INPUT_POST, "precioalt"); 
     $preciobaj = $request->get(INPUT_POST, "preciobaj"); 
     $numhabita = $request->get(INPUT_POST, "numhabita"); 
-    $valores=$_POST;
+    $valores3=$_POST;
     $valores2 = $_FILES;
     $rutaimagen=[];
     $ruta_json="../src/jsons/img.json";
     $jsoninfoimgs=file_get_contents($ruta_json);
     $jsoninfoimgsdecode=json_decode($jsoninfoimgs,true);
+<<<<<<< HEAD
     
 
     if($Titulo == null || $CP == null || $Laltitud == null || $Longitud == null || $descripcion == null || $m2 == null || $precioalt == null || $preciobaj == null || $numhabita == null){
@@ -38,26 +39,31 @@ function doanadiraparta($request, $response, $container){
         $response->redirect("Location: index.php?r=gestores&errorApartamento=1");
         return;
     }
+=======
+   
+   
+>>>>>>> 4c6fdcfad26691774b29859e7d73af971e515f2d
     $valores = $_FILES;
     $nombreImagen="";
-    $rutaimagen="";
-
+    $rutaimagen=[];
+   
     if(isset($_FILES["fichero_usuario"])){
         for($i=0;$i<count($_FILES["fichero_usuario"]["name"]);$i++){
             $tmp_nameimg = $_FILES["fichero_usuario"]["tmp_name"][$i];
             $url_img = "imgs/" . $Titulo."".time()."".$i.".png";
-            $rutaimagen[]=$url_img;
+            if($_FILES["fichero_usuario"]["tmp_name"][$i]!=""){
+                $rutaimagen[]=$url_img;
+          
             move_uploaded_file($tmp_nameimg, $url_img);
+            }      
+            
+            
         }
         
     }
+
   $idUltimoapartamento=($Modaapartameto->ultimoapartamento());
   $id_=$idUltimoapartamento["ApartamentosID"]+1;
-  
-
-    $prueba=[
-        $id_=>"d"
-    ];
 
     $jsoninfoimgsdecode["src"][$id_]=[
         "id"=>$id_,
@@ -83,7 +89,7 @@ function doanadiraparta($request, $response, $container){
     // $temporada,
     // $estados;
 
-    foreach ($valores as $i => $item) {
+    foreach ($valores3 as $i => $item) {
         
         if (str_contains($i, 'add')) {
             $add[] = str_replace("add", "", $i);
@@ -103,8 +109,7 @@ function doanadiraparta($request, $response, $container){
         $numhabita
     );
     $ultimo_apartamento = $Modaapartameto->ultimoapartamento();
-   
-    
+
     foreach ($add as $item) {
         $Modelservicio_apartamentos->add_servicios($ultimo_apartamento["ApartamentosID"], $item);
     }

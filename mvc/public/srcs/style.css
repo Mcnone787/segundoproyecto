@@ -75,3 +75,6 @@ a{
     box-shadow:  0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     cursor: pointer;
 }
+.row{
+    --bs-gutter-x:0 !important;
+}

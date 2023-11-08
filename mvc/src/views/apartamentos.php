@@ -89,7 +89,7 @@
                     $precioAlt = $apartamento['precioALT'];
                     $precioBaj = $apartamento['PrecioBAJ'];
                     $apartamentoID = $apartamento['ApartamentosID'];
-                    $imgApartamento = $imgjsondecode["src"][$apartamentoID]["src_imagen"][0];
+                    $imgApartamento=$imgjsondecode["src"][$apartamentoID]["src_imagen"][0];
                     ?>
                     <div class="col apartamento_" id="<?php echo   $apartamentoID; ?>">
                         <a class="link-offset-2 link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#apartamentoReserva" class="stretched-link">
@@ -364,12 +364,12 @@
                     console.log(apartamentos)
                     datos2 = apartamentos
 
-                    jQuery("#cosas").html("");
-                    apartamentos[0].forEach((element) => {
-                        let nombre = element.ApartamentosID
-                        let src = ""
-                        if (apartamentos[1].src.hasOwnProperty(nombre)) {
-                            src = apartamentos[1].src[nombre].src_imagen[0]
+                        jQuery("#cosas").html("");
+                        apartamentos[0].forEach((element) => {
+                            let nombre = element.ApartamentosID
+                            let src = ""
+                            if (apartamentos[1].src.hasOwnProperty(nombre)) {
+                                src = apartamentos[1].src[nombre].src_imagen[0]
 
                         } else {
                             src = "imgs/logo/logo.png"

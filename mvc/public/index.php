@@ -51,11 +51,13 @@ include "../src/controllers/doadduser.php";
 include "../src/controllers/CtrlAddUser.php";
 include "../src/controllers/CtrlEditUser.php";
 include "../src/controllers/deletereserva.php";
+include "../src/controllers/ctrlgaleriaima.php";
 include "../src/controllers/CtrlAdminApartamento.php";
 include "../src/controllers/CtrlAdminTemporada.php";
 include "../src/controllers/CtrlAdminReserva.php";
 include "../src/controllers/CtrlAdminUsuarios.php";
 include "../src/controllers/CtrlAdminEstados.php";
+include "../src/controllers/modifygalery.php";
 
 
 include "../src/Emeset/Container.php";
@@ -201,9 +203,16 @@ switch ($r) {
     case "img_apartamentos_ajax":
         img_apartamentos_ajax($request, $response, $container);
         break;
+    case "galeriaima":
+        ctrlgaleriaima($request, $response, $container);
+        break;
+        case "modifygalery":
+            modifygalery($request, $response, $container);
+            break;
     default:
         ctrlIndex($request, $response, $container);
         break;
+        
 }
 
 $response->response();

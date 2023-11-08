@@ -39,12 +39,36 @@
                                 <td><?php echo $reserva["DiaEntrada"]; ?></td>
                                 <td><?php echo $reserva["DiaSalida"]; ?></td>
                                 <td><?php echo $reserva["Precio"]; ?></td>
+<<<<<<< HEAD
                                 <td><button id="<?php echo $reserva["ReservaID"] ?>" class="btn btn-danger btnDeleteReserva">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                                             <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
                                         </svg>
                                 </td></button>
                                 <td><button type="button" class="btn btn-primary" id="btnPDF">Descargar PDF</button></td>
+=======
+                                <td>
+                                <?php
+                                
+                                $date=date_create($reserva["DiaEntrada"]);
+                                date_sub($date,date_interval_create_from_date_string("10 days"));
+                                $date_cancel=date_format($date,"Y-m-d");
+
+                                
+                                    if(date("Y-m-d")<$date_cancel){
+                                        ?>
+                                   <button id="<?php echo $reserva["ReservaID"]?>" class="btn btn-danger btnDeleteReserva">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                        </svg>
+                                        </button>
+                                <?php  }else{?>    
+                                    <span class="text-danger">Expiro el tiempo para cancelar la reserva</span>
+                                        
+
+                               <?php } ?>
+                                </td>
+>>>>>>> 4c6fdcfad26691774b29859e7d73af971e515f2d
                             </tr>
                         <?php } ?>
                     </tbody>
