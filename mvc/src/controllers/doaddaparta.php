@@ -24,7 +24,6 @@ function doanadiraparta($request, $response, $container){
     $ruta_json="../src/jsons/img.json";
     $jsoninfoimgs=file_get_contents($ruta_json);
     $jsoninfoimgsdecode=json_decode($jsoninfoimgs,true);
-<<<<<<< HEAD
     
 
     if($Titulo == null || $CP == null || $Laltitud == null || $Longitud == null || $descripcion == null || $m2 == null || $precioalt == null || $preciobaj == null || $numhabita == null){
@@ -39,10 +38,6 @@ function doanadiraparta($request, $response, $container){
         $response->redirect("Location: index.php?r=gestores&errorApartamento=1");
         return;
     }
-=======
-   
-   
->>>>>>> 4c6fdcfad26691774b29859e7d73af971e515f2d
     $valores = $_FILES;
     $nombreImagen="";
     $rutaimagen=[];

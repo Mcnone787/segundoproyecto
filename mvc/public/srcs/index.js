@@ -32,8 +32,6 @@ $(document).ready(function () {
       darkModeCheckbox.prop('checked', newTheme === 'dark');
    }
 
-<<<<<<< HEAD
-=======
    // if($.cookie('cookieAceptada') == null){
    //    $('#AceptoCookies').addClass("display");
    // }
@@ -45,7 +43,6 @@ $(document).ready(function () {
    //    $.cookie("aceptoCookies", "2");
    //  });
 
->>>>>>> 4c6fdcfad26691774b29859e7d73af971e515f2d
    // Funcion para mostrar el modal de confirmacion de borrado de reserva
    $('.btnDeleteReserva').click(function () {
       $('#modalDeleteReserva').modal('show');

@@ -19,14 +19,7 @@ function ctrladdapartamento($request, $response, $container){
 
     $id = $request->get(INPUT_GET, "id");
 
-    if ($id == null) {
-        $response->redirect("location: index.php?r=gestores_apartamentos&error=1");
-        return;
-    }
-    if ($id == -1) {
-        $response->redirect("location: index.php?r=gestores_apartamentos&error=2");
-        return;
-    }
+ 
 
     $informationapartamento = $apartamento->getapartamento($id);
 
