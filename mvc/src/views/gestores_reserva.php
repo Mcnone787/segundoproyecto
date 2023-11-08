@@ -49,6 +49,9 @@
                                         <a href="index.php?r=deletereserva&id=<?php echo $usuario["IDUsuario"]; ?>">
                                             <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger">Eliminar</button>
                                         </a>
+                                        <a href="index.php?r=ctrldetallesreserva&id=<?php echo $reserva["ReservaID"]?>">
+                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-info">Detalles</button>
+                                        </a>
                                     </td>
                                 </tr>
                             <?php } ?>

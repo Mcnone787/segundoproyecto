@@ -60,6 +60,7 @@ include "../src/controllers/CtrlAdminEstados.php";
 include "../src/controllers/modifygalery.php";
 include "../src/controllers/ctrlestados.php";
 include "../src/controllers/addestados.php";
+include "../src/controllers/ctrldetallesreserva.php";
 
 
 include "../src/Emeset/Container.php";
@@ -190,6 +191,9 @@ switch ($r) {
     case "doadduser":
         adduser($request, $response, $container);
         break;
+    case "ctrldetallesreserva":
+        ctrldetallesreserva($request, $response, $container);
+        break;
     case "deletereserva":
         deletereserva($request, $response, $container);
         break;
@@ -208,19 +212,18 @@ switch ($r) {
     case "galeriaima":
         ctrlgaleriaima($request, $response, $container);
         break;
-        case "modifygalery":
-            modifygalery($request, $response, $container);
-            break;
-            case "estados":
-                ctrlestados($request, $response, $container);
-                break;
-                case "addestados":
-                    addestados($request, $response, $container);
-                    break;
+    case "modifygalery":
+        modifygalery($request, $response, $container);
+        break;
+    case "estados":
+        ctrlestados($request, $response, $container);
+        break;
+    case "addestados":
+        addestados($request, $response, $container);
+        break;
     default:
         ctrlIndex($request, $response, $container);
         break;
-        
 }
 
 $response->response();

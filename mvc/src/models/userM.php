@@ -25,10 +25,10 @@ class Users
         }
     }
 
-    public function register($nombre, $apellido, $debitcard, $email, $contraseña)
+    public function register($nombre, $apellido, $debitcard, $email, $contraseña, $telefono)
     {
-        $stm = $this->sql->prepare('INSERT INTO usuarios (Nombre, Apellidos, Tarjeta_Credito, contrasena, Rol, email) values (:Nombre, :Apellidos, :Tarjeta_Credito, :contrasena, :Rol, :email);');
-        $stm->execute([':Nombre' => $nombre, ':Apellidos' => $apellido, ':Tarjeta_Credito' => $debitcard, ':contrasena' => $contraseña, ':Rol' => 'user', ':email' => $email]);
+        $stm = $this->sql->prepare('INSERT INTO usuarios (Nombre, Apellidos, Tarjeta_Credito, contrasena, Rol, email, Telefono) values (:Nombre, :Apellidos, :Tarjeta_Credito, :contrasena, :Rol, :email, :Telefono);');
+        $stm->execute([':Nombre' => $nombre, ':Apellidos' => $apellido, ':Tarjeta_Credito' => $debitcard, ':contrasena' => $contraseña, ':Rol' => 'user', ':email' => $email, ':Telefono' => $telefono]);
     }
 
     public function getPersonalData($userID)
@@ -62,7 +62,7 @@ class Users
     }
     public function validationEmail($email)
     {
-        $stm = $this->sql->prepare('select * from usuarios where Email = :email;');
+        $stm = $this->sql->prepare('SELECT email FROM usuarios WHERE email = :email;');
         $stm->execute([':email' => $email]);
         $result = $stm->fetchAll(\PDO::FETCH_ASSOC);
         if(is_Array($result)){
@@ -73,7 +73,7 @@ class Users
     }
     public function validationPass($pass)
     {
-        $stm = $this->sql->prepare('select * from usuarios where contrasena = :pass;');
+        $stm = $this->sql->prepare('SELECT contrasena FROM usuarios WHERE contrasena = :pass;');
         $stm->execute([':pass' => $pass]);
         $result = $stm->fetchAll(\PDO::FETCH_ASSOC);
         if(is_Array($result)){

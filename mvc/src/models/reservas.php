@@ -48,6 +48,17 @@ class Reservas
         }
         return $reservas;
     }
+    public function getReservaDetalle($reservaID)
+    {
+        $stm = $this->sql->prepare("SELECT usuarios.* FROM reservas, usuarios where reservas.ClienteId = usuarios.IDUsuario and ReservaID = :reservas_id;");
+        $stm->execute([':reservas_id' => $reservaID]);
+        $reservas = array();
+
+        while ($reserva = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $reservas[] = $reserva;
+        }
+        return $reservas;
+    }
 
     public function setReserva ($userId, $apartamentoId, $diaEntrada, $diaSalida, $precio)
     {

@@ -47,7 +47,7 @@
     <?php include 'nav.php'; ?>
     <?php include 'ERROR_MANAGMENT.php'; ?>
 
-    <div class="container" style="">
+    <div class="container" style></div>
         <div class="row">
             <div class="form-inline row" style="
     margin-top: 50px;
