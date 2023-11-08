@@ -20,7 +20,12 @@
     <div class="container-fluid">
         <div class="row">
             <?php include "menu_gestores.php"; ?>
+            
             <div class="col-10">
+            <h3 style="text-align:center;padding:20px;">Lista de Temporadas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+                <div class="m-3">
+                    <a href="index.php?r=estados"><button class="btn btn-outline-success">Añadir temporada</button></a>
+                </div>
                 <h3 style="text-align:center;padding:20px;">Lista de Reservas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
                 <div class="row row-table">
                     <table id="myTable" class="display border rounded-2" style="width: 100%; margin-bottom: 15%; max-height: 100vh;">
@@ -39,14 +44,11 @@
                                 <tr>
                                     <td><?php echo $i + 1 ?></td>
                                     <td><?php echo $estado["estado_id"]; ?></td>
-                                    <td><?php echo $estado["ApartamentoID"]; ?></td>
+                                    <td><?php echo $estado["ApartamentosID"]; ?></td>
                                     <td><?php echo $estado["fechaini"]; ?></td>
                                     <td><?php echo $estado["fechafin"]; ?></td>
                                     <td>
-                                        <a href="index.php?r=ctrleditreserva&id=<?php echo $usuario["IDUsuario"]; ?>">
-                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button>
-                                        </a>
-                                        <a href="index.php?r=deletereserva&id=<?php echo $usuario["IDUsuario"]; ?>">
+                                        <a href="index.php?r=deletestado&id=<?php echo $usuario["IDUsuario"]; ?>">
                                             <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger">Eliminar</button>
                                         </a>
                                     </td>
