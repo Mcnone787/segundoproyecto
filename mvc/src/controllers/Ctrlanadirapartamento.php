@@ -1,24 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-function ctrladdapartamento($request, $response, $container)
-{
-    $apartamento = $container->apartamentos();
-
-    $servicios_apartamentos = $container->servicios_apartamentos();
-
-    $Mdelservicio = $container->servicios();
-    $totalservicios = $Mdelservicio->getApartamentos();
-
-
-    // for($i=0;$i<count($totalservicios);$i++){
-    //     for($i2=0;$i2<count($servicios);$i2++){
-    //             if($totalservicios[$i]["servicio"]==$servicios[$i2]["servicio"]){
-    //                 $totalservicios[$i]=1;
-    //             }
-    //     }
-    // }
-=======
 function ctrladdapartamento($request, $response, $container){
     $apartamento=$container->apartamentos();
         
@@ -35,7 +16,6 @@ function ctrladdapartamento($request, $response, $container){
                 }
         }
     }
->>>>>>> 4c6fdcfad26691774b29859e7d73af971e515f2d
 
     $id = $request->get(INPUT_GET, "id");
 
