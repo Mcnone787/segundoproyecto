@@ -22,9 +22,16 @@
     } ?>
     <div class="container-fluid">
         <div class="row">
-        <?php include "menu_gestores.php"; ?>
-            <div class="col-10">
-                <h3 style="text-align:center;padding:20px;">Lista de Temporadas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+            <?php include "menu_gestores.php"; ?>
+            <div class="col-12">
+                <div class="d-flex justify-content-center align-items-center">
+                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </button>
+                    <h3 style="text-align:center;padding:20px;">Lista de Temporadas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+                </div>
                 <div class="m-3">
                     <a href="index.php?r=temporada"> <button class="btn btn-outline-success">Añadir temporada</button></a>
                 </div>
@@ -47,9 +54,10 @@
                                     <td><?php echo $task["fechaini"]; ?></td>
                                     <td><?php echo $task["fechasalida"]; ?></td>
                                     <td>
-                                        <a href="index.php?r=deletetemporada&id=<?php echo $task["idtemporada"];?>">
-                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger">Eliminar</button>
-                                        </a>
+                                        <a href="index.php?r=deletetemporada&id=<?php echo $task["idtemporada"]; ?>">
+                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                                </svg></button></a>
                                     </td>
                                 </tr>
                             <?php } ?>

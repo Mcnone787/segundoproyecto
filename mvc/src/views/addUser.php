@@ -18,8 +18,15 @@
     <?php include "ERROR_MANAGMENT.php"; ?>
     <div class="row">
         <?php include "menu_gestores.php"; ?>
-        <div class="col-10 p-3">
-            <h3 style="text-align:center;padding:20px;">sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+        <div class="col-12 p-3">
+            <div class="d-flex justify-content-center align-items-center">
+                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </button>
+                <h3 style="text-align:center;padding:20px;">sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+            </div>
             <div class="container">
                 <div class="row align-items-center">
                     <div class="mx-auto col-10 col-md-8 col-lg-6">
@@ -63,7 +70,7 @@
     <?php include "footer.php"; ?>
     <script src="srcs/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
+
 </body>
 
 </html>

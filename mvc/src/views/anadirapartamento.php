@@ -20,14 +20,18 @@
     <?php include "nav.php"; ?>
     <?php include "ERROR_MANAGMENT.php"; ?>
     <div class="container" style="margin-bottom:200px;">
+        <?php include "menu_gestores.php"; ?>
         <div class="row">
-            <div class="col-5">
-                <p style=" text-align:left;float: none;">
-                    Añade tu apartamento con este formulario ^^
-                </p>
+            <div class="d-flex justify-content-center align-items-center">
+                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </button>
+                <h3 style="text-align:center;padding:20px;">Lista de Reservas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
             </div>
-            <div class="col-7" style="height: 100vh;">
-                <form class="form-control form_session" action="index.php?r=doanadiraparta&id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
+            <div class="col-12">
+                <form class="form-control form_session p-5" action="index.php?r=doanadiraparta&id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-6">
@@ -48,7 +52,6 @@
                                 <label for="Longitud"> Longitud </label>
                                 <input class="form-control" type="text" placeholder="Default input" name="Longitud">
                             </div>
-
                         </div>
                     </div>
                     <div class="row">
@@ -65,7 +68,7 @@
                             <label for="Laltidud"> m2 </label><input class="form-control" type="text" placeholder="Default input" name="m2">
                         </div>
                         <div class="col-6">
-                            <label for="" style="visibility:hidden;">d</label>
+                            <label style="visibility:hidden;">d</label>
                             <div id="accordion">
                                 <h3>Añadir servicio al apartamento</h3>
                                 <div>
@@ -88,7 +91,7 @@
                             <input class="form-control" type="text" placeholder="Default input" name="preciobaj">
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row m-3">
                         <div class="col-6" style="margin:0 auto;">
                             <label for="Laltidud"> Numero habitaciones </label><input class="form-control" name="numhabita" type="text" placeholder="Default input" value="<?php echo  $informationapartamento["num_habita"]; ?>">
                         </div>
@@ -99,7 +102,7 @@
                                 <div>
                                     <h3 style="text-align:center;">Añadir imagenes del apartamento</h3>
                                 </div>
-                                <button type="button" class="btn btn-success" id="addimg" style="float:right;">Añadir imagen</button>
+                                <button type="button" class="btn btn-success mb-3" id="addimg" style="float:right;">Añadir imagen</button>
                                 <div id="imgs">
                                     <input class="form-control" name="fichero_usuario[]" type="file" id="formFileMultiple">
                                 </div>
@@ -119,6 +122,7 @@
             });
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="srcs/index.js"></script>
     <script src="srcs/addmoreimg.js"></script>
 </body>
