@@ -65,7 +65,7 @@ class Users
         $stm = $this->sql->prepare('SELECT email FROM usuarios WHERE email = :email;');
         $stm->execute([':email' => $email]);
         $result = $stm->fetchAll(\PDO::FETCH_ASSOC);
-        if(is_Array($result)){
+        if(is_Array($result) && count($result)>0){
             return true;
         } else {
             return false;
