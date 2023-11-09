@@ -41,7 +41,6 @@ function modifygalery($request, $response, $container){
         if(array_key_exists($id_aparta,$jsoninfoimgsdecode["src"])){
       
             foreach ($rutaimagen as $key => $value) {
-                echo $value;
                 $jsoninfoimgsdecode["src"][$id_aparta]["src_imagen"][]=$value;
 
             }
@@ -59,11 +58,11 @@ function modifygalery($request, $response, $container){
         }
       
         $jsoninfoimgsdecode["src"][$id_aparta]["src_imagen"]=array_values( $jsoninfoimgsdecode["src"][$id_aparta]["src_imagen"]);
-        print_r($jsoninfoimgsdecode);
     
         
       $guardar=json_encode($jsoninfoimgsdecode);
       file_put_contents($ruta_json,$guardar);
-        
+      
+      $response->redirect("Location: index.php?r=gestores_usuarios");
     
 }
