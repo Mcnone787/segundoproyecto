@@ -1,80 +1,89 @@
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
-.row-table{
-    --bs-gutter-x: 0rem;
+.row-table {
+  --bs-gutter-x: 0rem;
 }
-.departamentos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.departamentos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.departamentos p{
-    color:black;
+.departamentos p {
+  color: black;
 }
-.departamentos{
-    border: solid 1px;
-    padding:20px;
-    margin: 0px;
-    margin-bottom: 50px;
-
+.departamentos {
+  border: solid 1px;
+  padding: 20px;
+  margin: 0px;
+  margin-bottom: 50px;
 }
-.row{
-    --bs-gutter-x: 0;
-}
-
-.menu{
-    text-align:center !important;color:white !important;
-}
-.nav{
-    background-color: #AAE6D9 !important;
-}
-.search_nav{
-    background-color: rgba(255, 255, 255, 0.329);
-    border: solid 1px;
+.row {
+  --bs-gutter-x: 0;
 }
 
-.textcentroHV{
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.menu {
+  text-align: center !important;
+  color: white !important;
+}
+.nav {
+  background-color: #aae6d9 !important;
+}
+.search_nav {
+  background-color: rgba(255, 255, 255, 0.329);
+  border: solid 1px;
 }
 
-.footer_class{
-    background-color: #AAE6D9 !important;
-    
-}
-.form_session{
-    box-shadow: 0px 0px 4px 0px rgba(65, 65, 65, 0.75);
+.textcentroHV {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card *{
-    text-decoration: none;
-    cursor: pointer;
+.footer_class {
+    display: block;
+    background-color: #aae6d9 !important;
+    min-height: calc(500px - 50px);
+}
+.form_session {
+  box-shadow: 0px 0px 4px 0px rgba(65, 65, 65, 0.75);
 }
 
-.reservabox{
-    box-shadow: 0px 0px 4px 0px rgba(105, 105, 105, 0.75);
+.card * {
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.cardApartamentos:hover{
-    box-shadow:  0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    cursor: pointer;
+.reservabox {
+  box-shadow: 0px 0px 4px 0px rgba(105, 105, 105, 0.75);
 }
-.infoReservaBox{
-    box-shadow: 0px 0px 4px 0px rgba(105, 105, 105, 0.75);
+
+.cardApartamentos:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
-.slider_modal, .slider_modal .carousel-inner, .carousel-item,.carousel-item img   {
-    height: 100% !important;
+.infoReservaBox {
+  box-shadow: 0px 0px 4px 0px rgba(105, 105, 105, 0.75);
 }
-.carousel-item{
-    transition: all !important;
+.slider_modal,
+.slider_modal .carousel-inner,
+.carousel-item,
+.carousel-item img {
+  height: 100% !important;
 }
-.shadowCircularBoxes:hover{
-    box-shadow:  0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    cursor: pointer;
+.carousel-item {
+  transition: all !important;
 }
-.row{
-    --bs-gutter-x:0 !important;
+.shadowCircularBoxes:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.row {
+  --bs-gutter-x: 0 !important;
 }
