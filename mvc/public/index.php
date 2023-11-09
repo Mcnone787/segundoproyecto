@@ -61,6 +61,7 @@ include "../src/controllers/modifygalery.php";
 include "../src/controllers/ctrlestados.php";
 include "../src/controllers/addestados.php";
 include "../src/controllers/ctrldetallesreserva.php";
+include "../src/controllers/infopdfreservas.php";
 
 
 include "../src/Emeset/Container.php";
