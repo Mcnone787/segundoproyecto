@@ -10,11 +10,11 @@ function ctrlDoLogin($request, $response, $container){
         $response->redirect("location: index.php?r=login&error=1");
         return;
     }
-    if($userModel->validationEmail($user)){
+    if(!$userModel->validationEmail($user)){
         $response->redirect("location: index.php?r=login&errorUsuario=5");
         return;
     }
-    if($userModel->validationPass($pass)){
+    if(!$userModel->validationPass($pass)){
         $response->redirect("location: index.php?r=login&errorUsuario=4");
         return;
     }

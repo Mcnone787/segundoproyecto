@@ -175,7 +175,7 @@
                                 <div class="col">
                                     <div class="row">
                                         <!-- img -->
-                                        <div class="col p-3 m-3 rounded-4 bg-white imgReservaBox">
+                                        <div class="col-12 col-md-6 p-3 m-3 rounded-4 bg-white imgReservaBox">
                                             <div id="carouselExampleIndicators" class="carousel slide slider_modal ">
                                                 <div class="carousel-indicators" id="buttons_carr"></div>
                                                 <div class="carousel-inner" id="slider_modal_img"></div>

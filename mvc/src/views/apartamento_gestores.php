@@ -51,7 +51,7 @@
                                         <a href="index.php?r=ctrldeleteapartamento&id=<?php echo $task["ApartamentosID"]; ?>"> <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger"> Eliminar</button></a>
                                         <a href="index.php?r=TempoParaApartame&id=<?php echo $task["ApartamentosID"]; ?>&Nombre_apartamento=<?php echo $task["Titulo"]; ?>"> <button style="display:block;" class="btn btn-outline-primary"> Temporadas</button></a>
                                         <a href="index.php?r=galeriaima&id=<?php echo $task["ApartamentosID"]; ?>"> <button style="display:block;" class="btn btn-outline-primary"> Imagenes</button></a>
-
+                                        
                                         
                                     </td>
                                 </tr>
