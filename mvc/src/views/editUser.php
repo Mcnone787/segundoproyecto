@@ -18,32 +18,40 @@
     <?php include "ERROR_MANAGMENT.php"; ?>
     <div class="row row-table">
         <?php include "menu_gestores.php"; ?>
-        <div class="col-10 p-3" style="height: 100vh;">
+        <div class="col-12 p-3">
+            <div class="d-flex justify-content-center align-items-center">
+                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </button>
+                <h3 style="text-align:center;padding:20px;">Editar usuarios sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+            </div>
             <div class="container">
                 <div class="row align-items-center">
                     <div class="mx-auto col-10 col-md-8 col-lg-6">
-                        <form class="form-control form_session" action="index.php?r=edituser&id=<?=$id?>" method="post">
+                        <form class="form-control form_session" action="index.php?r=edituser&id=<?= $id ?>" method="post">
                             <div class="my-3">
                                 <h3>Editar Usuario</h3>
                             </div>
                             <div class="mb-2">
                                 <label class="col-form-label-lg" for="nombre">Nombre</label>
-                                <input class="form-control" type="text" name="nombre" id="nombre" value="<?=$nombre?>" required>
+                                <input class="form-control" type="text" name="nombre" id="nombre" value="<?= $nombre ?>" required>
                             </div>
                             <div class="mb-2">
                                 <label class="col-form-label-lg" for="apellido">Apellido</label>
-                                <input class="form-control" type="text" name="apellido" id="apellido" value="<?=$apellidos?>" required>
+                                <input class="form-control" type="text" name="apellido" id="apellido" value="<?= $apellidos ?>" required>
                             </div>
                             <div class="mb-2">
                                 <label class="col-form-label-lg" for="email">Correo Electronico</label>
-                                <input class="form-control" type="text" name="email" id="email" value="<?=$email?>" required>
+                                <input class="form-control" type="text" name="email" id="email" value="<?= $email ?>" required>
                             </div>
                             <div class="mb-2">
                                 <label class="col-form-label-lg" for="contrasena">Contraseña</label>
-                                <input class="form-control" type="contrasena" name="contrasena" id="contrasena" value="<?=$contrasena?>" required>
+                                <input class="form-control" type="contrasena" name="contrasena" id="contrasena" value="<?= $contrasena ?>" required>
                             </div>
                             <div class="mb-4">
-                                <label class="col-form-label-lg" for="rol">Rol actual: <?=$rol?></label>
+                                <label class="col-form-label-lg" for="rol">Rol actual: <?= $rol ?></label>
                                 <select class="form-select" name="rol">
                                     <option value="user">user</option>
                                     <option value="gestor">gestor</option>
@@ -61,6 +69,8 @@
     </div>
     <?php include "footer.php"; ?>
     <script src="srcs/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="srcs/messages_erros_successful.js"></script>
 </body>
 
 </html>

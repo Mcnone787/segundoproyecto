@@ -11,46 +11,53 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
 </head>
 
 <body>
     <?php include "nav.php"; ?>
     <?php include "ERROR_MANAGMENT.php"; ?>
-    <div class="container" style="margin-bottom:200px;">
+    <div class="container">
         <div class="row">
-            <div class="col-5">
-                <p style="color:black; text-align:left;float :none;">
-                    Añade tu apartamento con este formulario ^^
-                </p>
-            </div>
-            <div class="col-7">
-                <form class="form-control form_session" action="index.php?r=addtemporada" method="post">
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col-12">
-                                <label for="Nombre"> Nombre de la temporada </label><input class="form-control" type="text" placeholder="Default input" name="temporadaNombre">
-                            </div>
-
+            <?php include "menu_gestores.php"; ?>
+            <div class="col-12" style="margin-bottom: 200px">
+                <div class="d-flex justify-content-center align-items-center">
+                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </button>
+                    <h3 style="text-align:center;padding:20px;">sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+                </div>
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="mx-auto col-12 col-md-8 col-lg-6">
+                            <form class="form-control shadow p-4" action="index.php?r=addtemporada" method="post">
+                                <div class="mb-3 p-2">
+                                    <div class="col">
+                                        <label for="Nombre"> Nombre de la temporada </label>
+                                        <input class="form-control" type="text" placeholder="Nombre de temporada" name="temporadaNombre">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="Nombre"> Fecha de final de temporada </label>
+                                            <input class="form-control" type="date" placeholder="Default input" name="fechaini">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="Nombre"> Fecha de inicio de temporada </label>
+                                            <input class="form-control" type="date" placeholder="Default input" name="fechafin">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 p-2">
+                                    <button type="submit" class="btn btn-primary">Añadir temporada :3</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col-6">
-                                <label for="Nombre"> Fecha de final de temporada </label>
-                                <input class="form-control" type="date" placeholder="Default input" name="fechaini">
-                            </div>
-                            <div class="col-6">
-                                <label for="Nombre"> Fecha de inicio de temporada </label>
-                                <input class="form-control" type="date" placeholder="Default input" name="fechafin">
-                            </div>
-
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Añadir temporada :3</button>
-                </form>
+                </div>
             </div>
 
         </div>
@@ -64,6 +71,7 @@
         });
     </script>
     <script src="srcs/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>
 

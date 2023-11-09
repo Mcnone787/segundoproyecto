@@ -31,6 +31,18 @@ $(document).ready(function () {
       // actualizar el checkbox
       darkModeCheckbox.prop('checked', newTheme === 'dark');
    }
+   //funcion ocultar el menu de perfil del usuario
+   $('#perfil-menu').show();
+   $('#btn-toogler').click(function () {
+      if($(this).attr("aria-expanded") == 'true'){
+         $('#perfil-menu').hide();
+      }else{
+         $('#perfil-menu').show();
+      }
+   });
+
+   //funcion para ocultar el menu de gestores
+   // $('#menu-gestores').hide();
 
    // Funcion para mostrar el modal de confirmacion de borrado de reserva
    $('.btnDeleteReserva').click(function () {
@@ -39,7 +51,3 @@ $(document).ready(function () {
       $("#reservaIDhref").attr("href", "index.php?r=deletereserva&id=" + id_);
    });
 });
-
-
-
-// $('body:contains('Lorem')').css('font-weight', 'bold');

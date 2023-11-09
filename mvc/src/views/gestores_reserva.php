@@ -20,8 +20,15 @@
     <div class="container-fluid">
         <div class="row">
             <?php include "menu_gestores.php"; ?>
-            <div class="col-10">
-                <h3 style="text-align:center;padding:20px;">Lista de Reservas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+            <div class="col-12">
+                <div class="d-flex justify-content-center align-items-center">
+                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </button>
+                    <h3 style="text-align:center;padding:20px;">Lista de Reservas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+                </div>
                 <div class="row row-table">
                     <table id="myTable" class="display border rounded-2" style="width: 100%; margin-bottom: 15%; max-height: 100vh;">
                         <thead>
@@ -43,15 +50,15 @@
                                     <td><?php echo $reserva["DiaSalida"]; ?></td>
                                     <td><?php echo $reserva["Precio"]; ?></td>
                                     <td>
-                                        <a href="index.php?r=ctrleditreserva&id=<?php echo $usuario["IDUsuario"]; ?>">
-                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-secondary">Editar</button>
-                                        </a>
                                         <a href="index.php?r=deletereserva&id=<?php echo $usuario["IDUsuario"]; ?>">
-                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger">Eliminar</button>
-                                        </a>
-                                        <a href="index.php?r=ctrldetallesreserva&id=<?php echo $reserva["ReservaID"]?>">
-                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-info">Detalles</button>
-                                        </a>
+                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                                </svg>
+                                            </button></a>
+                                        <a href="index.php?r=ctrldetallesreserva&id=<?php echo $reserva["ReservaID"] ?>">
+                                            <button style="display:block;margin-bottom:10px;" class="btn btn-outline-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
+                                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                                </svg></button></a>
                                     </td>
                                 </tr>
                             <?php } ?>

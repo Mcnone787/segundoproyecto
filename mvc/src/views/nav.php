@@ -1,7 +1,7 @@
 <header class="navbar navbar-expand-lg bd-navbar sticky-top bg-body-tertiary nav">
    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
       <div class="bd-navbar-toogler">
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+         <button id="btn-toogler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
          </button>
       </div>
@@ -18,7 +18,7 @@
             </li>
          </ul>
       </div>
-      <div class="dropdown">
+      <div id="perfil-menu" class="dropdown">
          <?php if ($_SESSION['user']) { ?>
             <button class='btn dropdown-toggle text-dark' data-bs-toggle='dropdown' aria-expanded='false'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 20 19">
                   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
