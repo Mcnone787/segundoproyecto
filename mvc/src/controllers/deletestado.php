@@ -6,5 +6,13 @@ function deleteestado($request, $response, $container)
     $estadoModel = $container->estados();
     $estadoModel->deleteEstado($id);
     
-    $response->redirect("Location: index.php?r=reservas");
+    
+    if($_SESSION["user"]["Rol"]=="gestor"){
+        $response->redirect("Location: index.php?r=gestores_estados");
+
+    }else if($_SESSION["user"]["Rol"]=="admin"){
+        $response->redirect("Location: index.php?r=adminEstados");
+
+    }
+    
 }

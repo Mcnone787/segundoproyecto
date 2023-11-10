@@ -43,16 +43,20 @@ function doanadiraparta($request, $response, $container)
     $nombreImagen = "";
     $rutaimagen = [];
 
-    if (isset($_FILES["fichero_usuario"])) {
-        for ($i = 0; $i < count($_FILES["fichero_usuario"]["name"]); $i++) {
+    if(isset($_FILES["fichero_usuario"])){
+            
+        for($i=0;$i<count($_FILES["fichero_usuario"]["name"]);$i++){
             $tmp_nameimg = $_FILES["fichero_usuario"]["tmp_name"][$i];
-            $url_img = "imgs/" . $Titulo . "" . time() . "" . $i . ".png";
-            if ($_FILES["fichero_usuario"]["tmp_name"][$i] != "") {
-                $rutaimagen[] = $url_img;
-
+            $url_img = "imgs/" . $Titulo.time()."".$i.".png";
+           
+            
+            if($_FILES["fichero_usuario"]["tmp_name"][$i]!=""){
+                $rutaimagen[]=$url_img;
                 move_uploaded_file($tmp_nameimg, $url_img);
-            }
+            }      
+            
         }
+    
     }
 
     $idUltimoapartamento = ($Modaapartameto->ultimoapartamento());

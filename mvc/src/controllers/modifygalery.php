@@ -1,9 +1,7 @@
 <?php
 
 function modifygalery($request, $response, $container){
-        // print_r($_POST);
-        // print_r($_FILES);
-        // print_r($_GET);
+       
         $id_aparta=$_GET["id"];
         $valores2 = $_FILES;
         $rutaimagen=[];
@@ -62,7 +60,13 @@ function modifygalery($request, $response, $container){
         
       $guardar=json_encode($jsoninfoimgsdecode);
       file_put_contents($ruta_json,$guardar);
-      
-      $response->redirect("Location: index.php?r=galeriaima&id=$id_aparta");
+      if($_SESSION["user"]["Rol"]=="gestor"){
+        $response->redirect("Location: index.php?r=gestores_estados");
+
+    }else if($_SESSION["user"]["Rol"]=="admin"){
+        $response->redirect("Location: index.php?r=adminApartamento");
+
+    }
+      $response->redirect("Location: index.php?r=gestores_apartamentos");
     
 }

@@ -208,7 +208,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="d-grid gap-2 col-6 mx-auto">
-                                                    <button class="btn btn-primary btn-lg" type="submit" id="reserva">Reservar</button>
+                                                    <button class="btn btn-primary btn-lg " type="submit" id="reserva">Reservar</button>
                                                 </div>
                                             </div>
                                             <div class="col mt-5 p-3">
@@ -385,7 +385,14 @@
                             let nombre = element.ApartamentosID
                             let src = ""
                             if (apartamentos[1].src.hasOwnProperty(nombre)) {
-                                src = apartamentos[1].src[nombre].src_imagen[0]
+                                console.log(apartamentos[1].src[nombre].src_imagen[0])
+                                if(apartamentos[1].src[nombre].src_imagen[0]!=""){
+                                    src = apartamentos[1].src[nombre].src_imagen[0]
+                                }else{
+                                    src = "imgs/logo/logo.png"
+
+                                }
+                                
 
                         } else {
                             src = "imgs/logo/logo.png"
@@ -422,7 +429,9 @@
             $('#alertReserva').hide();
             jQuery(".apartamento_").each((element, obje) => {
                 obje.addEventListener("click", () => {
-                   
+                   if(formfeiniglobal>formfefinglobal){
+                        jQuery
+                   }else{
 
                     id_ = obje.id
                     let sum = 0;
@@ -543,8 +552,7 @@ const resizeObserver = new ResizeObserver(() => {
   map.invalidateSize();
 });
 resizeObserver.observe(mapDiv);
-
-                    if (galeriaimagenes.length >= 1) {
+                    if (galeriaimagenes!= "") {
                         galeriaimagenes[0].forEach((item, i) => {
                             jQuery("#buttons_carr").append(
                                 `
@@ -595,7 +603,7 @@ resizeObserver.observe(mapDiv);
                         )
                     }
 
-
+                }
                     //aqui
                 })
             });

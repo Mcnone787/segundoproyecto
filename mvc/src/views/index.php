@@ -22,16 +22,17 @@
    <!-- carrousel -->
    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-         <div class="carousel-item active" data-bs-interval="10000">
-            <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
+      <?php
+  $jsoninfoimgsdecode= array_values( $jsoninfoimgsdecode["src"]);
+   for($i=0;$i<=3;$i++){
+      ?>
+        <!-- cargamos 3 sliders por default si no hay imagenes de los apartamentos por que no existen entonces ponemos unos por default  -->
+         <div class="carousel-item <?php echo $i==0 ? 'active':'';  ?>" data-bs-interval="10000">
+            <img src="<?php  echo $jsoninfoimgsdecode[$i]["src_imagen"][0]=='' ? 'imgs/sliderdefault'.$i.'.jpg' :$jsoninfoimgsdecode[$i]["src_imagen"][0];?>" class="d-block w-100" alt="casa blanca" style="object-fit:cover;">
          </div>
-         <div class="carousel-item" data-bs-interval="2000">
-            <img src="https://www.apartamentogudar.com/templates/yootheme/cache/Apartamentos-Sierra-Gudar-casa1_08-b6078931.jpeg" class="d-block w-100" alt="casa blanca">
-         </div>
-         <div class="carousel-item">
-            <img src="https://orpea.es/wp-content/uploads/2022/10/Apartamentos-Ciutat-diagonal-20200917-0139-L.jpg" class="d-block w-100" alt="casa blanca">
-         </div>
-      </div>
+   <?php }?>
+       
+     
       <button class="carousel-control-prev text-light" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
          <span class="visually-hidden">Previous</span>
@@ -81,6 +82,7 @@
          </div>
       </div>
    </div>
+
 
    <!-- Cookie Aviso Legal -->
    <div id="AceptoCookies" class="border m-3 p-3 bg-body rounded-3 shadow fixed-bottom">

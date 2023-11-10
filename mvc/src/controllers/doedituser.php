@@ -21,8 +21,8 @@ function edituser($request, $response, $container)
 
     if ($userModel) {
         $userModel->edituser($nombre, $apellidos, $contrasena, $email, $rol, $id);
-        $response->redirect("Location: index.php?r=gestores_usuarios");
+        $response->redirect("Location: index.php?r=adminUsuarios");
     } else {
-        $response->redirect("Location: index.php?r=gestores_usuarios");
+        $response->redirect("Location: index.php?r=adminUsuarios");
     }
 }
