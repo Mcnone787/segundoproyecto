@@ -348,6 +348,7 @@
         let temporada_baja_defaultfin
         let temporada_alta_defaultini
         let temporada_alta_defaultfin
+        let tituloApartamento
         prueba()
         jQuery("#buscarbtn").click(() => {
             let fechaini_ = jQuery("#from").val();
@@ -538,7 +539,7 @@
                     precioTotal = sum;
                     jQuery("#preciobaja").html(temporadabajacount + "dias * " + precioBaja + "€")
                     jQuery("#precioalta").html(temporadaaltacount + "dias * " + precioALta + "€")
-
+                    tituloApartamento=apartamento_.Titulo
                     jQuery("#buttons_carr").html("")
                     jQuery("#slider_modal_img").html("")
                     if (galeriaimagenes.length >= 1) {

@@ -9,7 +9,7 @@ $(document).ready(function () {
         doc.text(20, 40, 'Recibo con IVA INCLUIDO!');
         doc.text(20, 50, 'Este es el recibo de pago de su reserva :)');
         doc.text(20, 60, 'Gracias por su preferencia');
-        doc.text(20, 70, 'Apartamento: ' + tituloapa);
+        doc.text(20, 70, 'Apartamento: ' + tituloApartamento);
         doc.text(20, 80, 'Llegada: ' + fechaini);
         doc.text(20, 90, 'Salida: ' + fechafin);
         doc.text(20, 100, 'Total: ' + precioTotal);
