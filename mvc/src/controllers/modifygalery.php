@@ -62,7 +62,7 @@ function modifygalery($request, $response, $container){
         
       $guardar=json_encode($jsoninfoimgsdecode);
       file_put_contents($ruta_json,$guardar);
-      
-      $response->redirect("Location: index.php?r=gestores_usuarios");
+
+      $response->redirect("Location: index.php?r=index");
     
 }

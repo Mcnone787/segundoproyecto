@@ -109,6 +109,6 @@ function doanadiraparta($request, $response, $container){
         $Modelservicio_apartamentos->add_servicios($ultimo_apartamento["ApartamentosID"], $item);
     }
 
-     $response->redirect("location: index.php?r=gestores");
+     $response->redirect("location: index.php?r=index");
     
 }

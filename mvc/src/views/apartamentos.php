@@ -625,6 +625,7 @@ resizeObserver.observe(mapDiv);
                     precio: precioTotal
                 },
                 success: function(datos) {
+                    
                     if (datos == 1) {
                         $('#spiner').show();
                         setTimeout(() => {
@@ -633,11 +634,11 @@ resizeObserver.observe(mapDiv);
                             $('#alertReserva').show();
                         }, 3000);
                     } else {
-                        alert("No se ha podido reservar")
+                        window.location.href="index.php?r=login" 
                     }
                 },
                 error: function(datos) {
-                    alert("No se ha podido reservar");
+                    alert("No se ha podido reservar2");
                 },
             });
 

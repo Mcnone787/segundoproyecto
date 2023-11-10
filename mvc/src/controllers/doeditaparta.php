@@ -77,5 +77,5 @@ function doeditaparta($request, $response, $container)
         $numhabita
     );
 
-    $response->redirect("location: index.php?r=gestores");
+    $response->redirect("location: index.php?r=index");
 }

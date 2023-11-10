@@ -23,6 +23,6 @@ function edituser($request, $response, $container)
         $userModel->edituser($nombre, $apellidos, $contrasena, $email, $rol, $id);
         $response->redirect("Location: index.php?r=gestores_usuarios");
     } else {
-        $response->redirect("Location: index.php?r=gestores_usuarios");
+        $response->redirect("Location: index.php?r=index");
     }
 }

@@ -6,5 +6,5 @@ function deleteestado($request, $response, $container)
     $estadoModel = $container->estados();
     $estadoModel->deleteEstado($id);
     
-    $response->redirect("Location: index.php?r=reservas");
+    $response->redirect("Location: index.php?r=index");
 }

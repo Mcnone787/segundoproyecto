@@ -9,5 +9,5 @@ function dodeleteservicio($request, $response, $container){
     
     $reservaModel->deleteservicio($id);
     
-    $response->redirect("Location: index.php?r=reservas");
+    $response->redirect("Location: index.php?r=index");
 }
