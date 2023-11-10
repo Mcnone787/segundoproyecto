@@ -53,9 +53,10 @@ class Estados
         
     }
 
-    public function deleteEstado($id)
+    public function deleteEstado($reservaId,)
     {
-       
+        $stm = $this->sql->prepare("DELETE FROM estado WHERE estado_id = :reservaId");
+        $stm->execute([':reservaId' => $reservaId]);
     }
 
 }

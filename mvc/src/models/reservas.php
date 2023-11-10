@@ -59,17 +59,29 @@ class Reservas
         }
         return $reservas;
     }
+    public function reservas_apartamento_usuario($idreserva)
+    {
+      
+        $stm = $this->sql->prepare('select * from reservas,apartamentos where apartamentos.ApartamentosID=reservas.ApartamentosID and  reservas.reservaID=:idreserva;');
+        $stm->execute([':idreserva' => $idreserva]);
+         $reservas = array();
 
+        while ($reserva = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $reservas[] = $reserva;
+        }
+        return $reservas;
+    }
+   
     public function setReserva ($userId, $apartamentoId, $diaEntrada, $diaSalida, $precio)
     {
         $stm = $this->sql->prepare("INSERT INTO reservas (ClienteId, ApartamentosID, DiaEntrada, DiaSalida, Precio) VALUES (:user_id, :apartamento_id, :dia_entrada, :dia_salida, :precio);");
         $stm->execute([':user_id' => $userId, ':apartamento_id' => $apartamentoId, ':dia_entrada' => $diaEntrada, ':dia_salida' => $diaSalida, ':precio' => $precio]);
     }
 
-    public function deleteReserva($reservaId,$userId)
+    public function deleteReserva($reservaId)
     {
-        $stm = $this->sql->prepare("DELETE FROM reservas WHERE ClienteId = :user_id and ReservaID = :reserva_id;");
-        $stm->execute([':user_id' => $userId, ':reserva_id' => $reservaId]);
+        $stm = $this->sql->prepare("DELETE FROM reservas WHERE  ReservaID = :reserva_id;");
+        $stm->execute([':reserva_id' => $reservaId]);
     }
 
     public function updateReserva($userId, $apartamentoId, $diaEntrada, $diaSalida)

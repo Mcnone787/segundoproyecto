@@ -61,7 +61,12 @@ include "../src/controllers/modifygalery.php";
 include "../src/controllers/ctrlestados.php";
 include "../src/controllers/addestados.php";
 include "../src/controllers/ctrldetallesreserva.php";
-
+include "../src/controllers/infopdfreservas.php";
+include "../src/controllers/deletestado.php";
+include "../src/controllers/ctrlserviciosAdmin.php";
+include "../src/controllers/dodeleteservicio.php";
+include "../src/controllers/ctrladdservicio.php";
+include "../src/controllers/doaddservicio.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -221,6 +226,24 @@ switch ($r) {
     case "addestados":
         addestados($request, $response, $container);
         break;
+    case "infopdfreservas":
+        infopdfreservas($request, $response, $container);
+        break;
+        case "deletestado":
+            deleteestado($request, $response, $container);
+            break;
+            case "ctrlserviciosAdmin":  
+                ctrlserviciosAdmin($request, $response, $container);
+                break;
+            case "dodeleteservicio":
+                dodeleteservicio($request, $response, $container);
+                break;
+                case "ctrladdservicio":
+                    ctrladdservicio($request, $response, $container);
+                    break;
+                    case "doaddservicio":
+                        doaddservicio($request, $response, $container);
+                        break;
     default:
         ctrlIndex($request, $response, $container);
         break;
