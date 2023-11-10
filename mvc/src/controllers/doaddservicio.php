@@ -10,5 +10,10 @@ function doaddservicio($request, $response, $container){
     }
     
     $servicioMOdel->createservice($servicio);
-    $response->redirect("Location: index.php?r=index");
+    if($_SESSION['user']['Rol'] == 'admin') {
+        $response->redirect("location: index.php?r=adminEstados");
+
+    } else{
+        $response->redirect("location: index.php?r=getores_apartamentos");
+    }
 }

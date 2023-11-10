@@ -15,8 +15,8 @@
 <body>
     <?php include "nav.php" ?>
     <?php include "ERROR_MANAGMENT.php" ?>
-    <div class="container">
-        <div class="col mb-5">
+    <div class="container" style="margin-bottom: 350px">
+        <div class="col mb-5 p-4">
             <h1>Tus Reservas</h1>
         </div>
         <div class="row tabla">

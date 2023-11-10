@@ -9,5 +9,8 @@ function dodeleteservicio($request, $response, $container){
     
     $reservaModel->deleteservicio($id);
     
-    $response->redirect("Location: index.php?r=reservas");
+    if($_SESSION['user']['Rol'] == 'admin') {
+        $response->redirect("location: index.php?r=adminEstados");
+
+    }
 }

@@ -23,6 +23,16 @@ class Reservas
         }
         return $reservas;
     }
+    public function getReservasPorApartamentos($userID){
+        $stm = $this->sql->prepare("SELECT reservas.*,apartamentos.* FROM reservas, apartamentos, usuarios WHERE reservas.ApartamentosID = apartamentos.ApartamentosID AND  apartamentos.GestorId=:userID;");
+        $stm->execute([':userID' => $userID]);
+        $reservas = array();
+
+        while ($reserva = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $reservas[] = $reserva;
+        }
+        return $reservas;
+    }
 
     public function getReservas($userId)
     {
