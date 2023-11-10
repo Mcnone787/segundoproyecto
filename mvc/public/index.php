@@ -222,6 +222,9 @@ switch ($r) {
     case "addestados":
         addestados($request, $response, $container);
         break;
+    case "infopdfreservas":
+        infopdfreservas($request, $response, $container);
+        break;
     default:
         ctrlIndex($request, $response, $container);
         break;

@@ -1,4 +1,4 @@
-<footer class="py-3 mt-auto footer_class">
+<footer class="py-3 mt-auto footer_class container-fluid">
     <div class="container">
         <ul class="nav justify-content-center border-bottom mb-3 pb-3 mt-3">
             <li class="m-3 nav-item">

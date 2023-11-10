@@ -76,13 +76,17 @@ body {
 .carousel-item img {
   height: 100% !important;
 }
-.carousel-item {
-  transition: all !important;
-}
+
 .shadowCircularBoxes:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
 .row {
   --bs-gutter-x: 0 !important;
+}
+@media (min-width: 992px){
+.dropdown-menu-lg-start[data-bs-popper] {
+    right: 0 !important; 
+     left: 0 !important;
+}
 }

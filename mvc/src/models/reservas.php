@@ -59,7 +59,19 @@ class Reservas
         }
         return $reservas;
     }
+    public function reservas_apartamento_usuario($idreserva)
+    {
+      
+        $stm = $this->sql->prepare('select * from reservas,apartamentos where apartamentos.ApartamentosID=reservas.ApartamentosID and  reservas.reservaID=:idreserva;');
+        $stm->execute([':idreserva' => $idreserva]);
+         $reservas = array();
 
+        while ($reserva = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $reservas[] = $reserva;
+        }
+        return $reservas;
+    }
+   
     public function setReserva ($userId, $apartamentoId, $diaEntrada, $diaSalida, $precio)
     {
         $stm = $this->sql->prepare("INSERT INTO reservas (ClienteId, ApartamentosID, DiaEntrada, DiaSalida, Precio) VALUES (:user_id, :apartamento_id, :dia_entrada, :dia_salida, :precio);");
