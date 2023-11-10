@@ -54,7 +54,7 @@
                                     <td><?php echo $estado["fechaini"]; ?></td>
                                     <td><?php echo $estado["fechafin"]; ?></td>
                                     <td>
-                                        <a href="index.php?r=deletestado&id=<?php echo $usuario["IDUsuario"]; ?>">
+                                        <a href="index.php?r=deletestado&id=<?php  echo $estado["estado_id"]; ?>">
                                             <button style="display:block;margin-bottom:10px;" class="btn btn-outline-danger">Eliminar</button>
                                         </a>
                                     </td>

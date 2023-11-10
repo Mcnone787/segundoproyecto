@@ -78,10 +78,10 @@ class Reservas
         $stm->execute([':user_id' => $userId, ':apartamento_id' => $apartamentoId, ':dia_entrada' => $diaEntrada, ':dia_salida' => $diaSalida, ':precio' => $precio]);
     }
 
-    public function deleteReserva($reservaId,$userId)
+    public function deleteReserva($reservaId)
     {
-        $stm = $this->sql->prepare("DELETE FROM reservas WHERE ClienteId = :user_id and ReservaID = :reserva_id;");
-        $stm->execute([':user_id' => $userId, ':reserva_id' => $reservaId]);
+        $stm = $this->sql->prepare("DELETE FROM reservas WHERE  ReservaID = :reserva_id;");
+        $stm->execute([':reserva_id' => $reservaId]);
     }
 
     public function updateReserva($userId, $apartamentoId, $diaEntrada, $diaSalida)

@@ -37,11 +37,11 @@
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-6">
-                                <label for="Nombre"> Fecha de inicio  de temporada </label>
+                                <label for="Nombre"> Fecha de inicio  del estado </label>
                                 <input class="form-control" type="date" placeholder="Default input" name="ini">
                             </div>
                             <div class="col-6">
-                                <label for="Nombre"> Fecha de final de temporada </label>
+                                <label for="Nombre"> Fecha de final del estado </label>
                                 <input class="form-control" type="date" placeholder="Default input" name="fin">
                             </div>
                             <?php

@@ -17,6 +17,12 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
     <style>
         .house {
             display: block;
@@ -24,7 +30,7 @@
             width: 16em;
             height: auto;
         }
-
+        #map { height: 180px; }
         /* Dark theme */
         @media (prefers-color-scheme: dark) {
             :root {
@@ -226,7 +232,7 @@
                             <!-- info -->
                             <div class="col p-3 m-3 bg-white text-dark rounded-4 infoReservaBox">
                                 <div class="row">
-                                    <div class="col p-3">
+                                    <div class="col-12 col-lg-6 p-3">
                                         <div class="col p-3 m-2">
                                             <div>
                                                 <span class="fw-bold">Titulo:</span>
@@ -246,7 +252,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col p-3">
+                                    <div class="col-12 col-lg-6 p-3">
                                         <h4>Servicios</h4>
                                         <div class="d-flex justify-content-center">
                                             <div class="col-2 justify-content-center">
@@ -274,7 +280,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
+                        <div id="map"></div>
                     </div>
                     <div id="alertReserva" class="alert alert-success" role="alert">Reserva realizada correctamente. 
                         <button type="button" class="btn btn-primary" id="btnPDF">Descargar PDF</button>
@@ -287,8 +294,10 @@
             </div>
         </div>
     </div>
-
+   
     <script>
+
+
         $('#spiner').hide();
         // CALENDARIO
 
@@ -432,6 +441,7 @@
             $('#alertReserva').hide();
             jQuery(".apartamento_").each((element, obje) => {
                 obje.addEventListener("click", () => {
+                   
 
                     id_ = obje.id
                     let sum = 0;
@@ -542,6 +552,21 @@
                     tituloApartamento=apartamento_.Titulo
                     jQuery("#buttons_carr").html("")
                     jQuery("#slider_modal_img").html("")
+
+                    var container = L.DomUtil.get('map');
+if(container != null){
+container._leaflet_id = null;
+}
+                                        let mapDiv = document.getElementById("map");
+let map = L.map(mapDiv).setView([apartamento_.Laltidud, apartamento_.Longitud], 13);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+var marker = L.marker([apartamento_.Laltidud, apartamento_.Longitud]).addTo(map);
+
+const resizeObserver = new ResizeObserver(() => {
+  map.invalidateSize();
+});
+resizeObserver.observe(mapDiv);
+
                     if (galeriaimagenes.length >= 1) {
                         galeriaimagenes[0].forEach((item, i) => {
                             jQuery("#buttons_carr").append(
@@ -581,6 +606,7 @@
                             `
                         )
                     }
+
 
                     //aqui
                 })

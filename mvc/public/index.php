@@ -62,7 +62,7 @@ include "../src/controllers/ctrlestados.php";
 include "../src/controllers/addestados.php";
 include "../src/controllers/ctrldetallesreserva.php";
 include "../src/controllers/infopdfreservas.php";
-
+include "../src/controllers/deletestado.php";
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -225,6 +225,9 @@ switch ($r) {
     case "infopdfreservas":
         infopdfreservas($request, $response, $container);
         break;
+        case "deletestado":
+            deleteestado($request, $response, $container);
+            break;
     default:
         ctrlIndex($request, $response, $container);
         break;
