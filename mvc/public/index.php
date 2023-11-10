@@ -229,21 +229,21 @@ switch ($r) {
     case "infopdfreservas":
         infopdfreservas($request, $response, $container);
         break;
-        case "deletestado":
-            deleteestado($request, $response, $container);
-            break;
-            case "ctrlserviciosAdmin":  
-                ctrlserviciosAdmin($request, $response, $container);
-                break;
-            case "dodeleteservicio":
-                dodeleteservicio($request, $response, $container);
-                break;
-                case "ctrladdservicio":
-                    ctrladdservicio($request, $response, $container);
-                    break;
-                    case "doaddservicio":
-                        doaddservicio($request, $response, $container);
-                        break;
+    case "deletestado":
+        deleteestado($request, $response, $container);
+        break;
+    case "ctrlserviciosAdmin":
+        ctrlserviciosAdmin($request, $response, $container);
+        break;
+    case "dodeleteservicio":
+        dodeleteservicio($request, $response, $container);
+        break;
+    case "ctrladdservicio":
+        ctrladdservicio($request, $response, $container);
+        break;
+    case "doaddservicio":
+        doaddservicio($request, $response, $container);
+        break;
     default:
         ctrlIndex($request, $response, $container);
         break;

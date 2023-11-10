@@ -48,5 +48,11 @@ function doeditTempoAparta($request, $response, $container)
         $TemporadaApartamentoModel->rm_temporada($id, $item);
     }
 
-    $response->redirect("location: index.php?r=gestores_apartamentos");
-}
+    if ($_SESSION['user']['Rol'] == 'gestor') {
+
+        $response->redirect("location: index.php?r=gestores_apartamentos");
+    }
+    if($_SESSION['user']['Rol'] == 'admin') {
+        $response->redirect("location: index.php?r=adminApartamento");
+
+    }}

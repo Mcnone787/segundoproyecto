@@ -15,7 +15,7 @@
 <body>
     <?php include "nav.php"; ?>
     <div class="container">
-        <div class="row align-items-center m-5" style="height: 100vh">
+        <div class="row align-items-center m-5">
             <div class="mx-auto col-10 col-md-8 col-lg-6">
                 <form class="form-control form_session" action="index.php?r=doregistro" method="post">
                     <div class="my-3">
