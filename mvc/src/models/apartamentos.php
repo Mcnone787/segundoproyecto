@@ -43,7 +43,11 @@ class Apartamentos
     {
 
         $condiciondias = "apartamentos.ApartamentosID not in (select reservas.ApartamentosID from reservas where :diaini>=reservas.DiaEntrada  AND  :diafin<=reservas.DiaSalida or (
-        (:diaini>=reservas.DiaEntrada or :diaini=reservas.DiaSalida or :diafin<=reservas.DiaSalida or :diafin>=reservas.DiaSalida) and :diafin>=reservas.DiaEntrada and :diaini<reservas.DiaSalida ))";
+        (:diaini>=reservas.DiaEntrada or :diaini=reservas.DiaSalida or :diafin<=reservas.DiaSalida or :diafin>=reservas.DiaSalida) and :diafin>=reservas.DiaEntrada and :diaini<reservas.DiaSalida ))
+        and
+        apartamentos.ApartamentosID not in (select estado.ApartamentosID from estado where :diaini>=estado.fechaini  AND  :diafin<=estado.fechafin or (
+            (:diaini>=estado.fechaini or :diaini=estado.fechafin or :diafin<=estado.fechafin or :diafin>=estado.fechafin) and :diafin>=estado.fechaini and :diaini<estado.fechafin ))
+        ";
         $condicionnumhabita = "apartamentos.num_habita=:numhabita";
         $condiciontitulo = "apartamentos.Titulo like :Titulo";
         if ($Titulo == "") {
@@ -169,3 +173,4 @@ class Apartamentos
     }
     
 }
+

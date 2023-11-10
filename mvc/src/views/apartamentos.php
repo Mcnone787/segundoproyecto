@@ -395,8 +395,9 @@
                 }, // data recive un objeto con la informacion que se enviara al servidor
                 success: function(datos) {
                     //success es una funcion que se utiliza si el servidor retorna informacion
+                    console.log(datos)
+
                     let apartamentos = JSON.parse(datos);
-                    console.log(apartamentos)
                     datos2 = apartamentos
 
                         jQuery("#cosas").html("");
