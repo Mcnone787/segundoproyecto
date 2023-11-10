@@ -57,7 +57,7 @@ function doanadiraparta($request, $response, $container){
         
     }
 
-  $idUltimoapartamento=($Modaapartameto->ultimoapartamento());
+  $idUltimoapartamento=$Modaapartameto->ultimoapartamento();
   $id_=$idUltimoapartamento["ApartamentosID"]+1;
 
     $jsoninfoimgsdecode["src"][$id_]=[
@@ -65,9 +65,10 @@ function doanadiraparta($request, $response, $container){
         "src_imagen"=>$rutaimagen
         
     ];
- 
-
     
+  
+
+  
   $guardar=json_encode($jsoninfoimgsdecode);
   file_put_contents($ruta_json,$guardar);
   

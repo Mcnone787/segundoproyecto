@@ -5,7 +5,6 @@ function pruebas2($request, $response, $container){
     
     $temporada=$temporadaModel->daysinrangetemporada($_POST["diaini"],$_POST["idapartamento"]);
 
- 
  echo json_encode($temporada);
 
 }
