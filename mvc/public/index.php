@@ -68,6 +68,10 @@ include "../src/controllers/dodeleteservicio.php";
 include "../src/controllers/ctrladdservicio.php";
 include "../src/controllers/doaddservicio.php";
 
+include "../src/middleware/isLogged.php";
+include "../src/middleware/isgestor.php";
+include "../src/middleware/isadmin.php";
+
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
 include "../src/Emeset/Response.php";
@@ -95,22 +99,26 @@ switch ($r) {
         ctrlLogin($request, $response, $container);
         break;
     case "panelAdmin":
-        ctrlAdmin($request, $response, $container);
+        isadmin($request, $response, $container,"ctrlAdmin");
         break;
     case "adminApartamento":
-        ctrlAdminApartamento($request, $response, $container);
+        isadmin($request, $response, $container,"ctrlAdminApartamento");
         break;
     case "adminTemporada":
-        ctrlAdminTemporada($request, $response, $container);
+        isadmin($request, $response, $container,"ctrlAdminTemporada");
         break;
     case "adminReservas":
-        ctrlAdminReserva($request, $response, $container);
+        isadmin($request, $response, $container,"ctrlAdminReserva");
+
         break;
     case "adminUsuarios":
-        ctrlAdminUsuarios($request, $response, $container);
+        isadmin($request, $response, $container,"ctrlAdminUsuarios");
+
         break;
     case "adminEstados":
-        ctrlAdminEstado($request, $response, $container);
+        isadmin($request, $response, $container,"ctrlAdminEstado");
+
+        
         break;
     case "index":
         ctrlIndex($request, $response, $container);
@@ -128,85 +136,126 @@ switch ($r) {
         ctrlDoLogout($request, $response, $container);
         break;
     case "perfilUser":
-        ctrlUserData($request, $response, $container);
+        isLogged($request, $response, $container,"ctrlUserData");
         break;
     case "doUpDateUserData":
-        ctrlUserDataUpdate($request, $response, $container);
+        isLogged($request, $response, $container,"ctrlUserDataUpdate");
         break;
     case "reservas":
-        ctrlReservas($request, $response, $container);
+        isLogged($request, $response, $container,"ctrlReservas");
+
         break;
     case "ctrldeleteapartamento":
-        ctrldeletedepartamento($request, $response, $container);
+
+        isgestor($request, $response, $container,"ctrldeletedepartamento");
         break;
     case "addapartamento":
-        ctrladdapartamento($request, $response, $container);
+
+        isgestor($request, $response, $container,"ctrladdapartamento");
+
         break;
     case "apartamentos":
+        
         ctrlApartamentos($request, $response, $container);
         break;
     case "doreserva":
-        ctrlDoReserva($request, $response, $container);
+        isLogged($request, $response, $container,"ctrlDoReserva");
+
+        
         break;
     case "ctrleditaparta":
-        ctrleditaparta($request, $response, $container);
+
+        isgestor($request, $response, $container,"ctrleditaparta");
+
         break;
     case "doeditaparta":
-        doeditaparta($request, $response, $container);
+
+        isgestor($request, $response, $container,"doeditaparta");
+
         break;
     case "doanadiraparta":
-        doanadiraparta($request, $response, $container);
+
+        isgestor($request, $response, $container,"doanadiraparta");
+
         break;
     case "temporada":
-        temporada($request, $response, $container);
+
+        isgestor($request, $response, $container,"temporada");
+
         break;
     case "addtemporada":
-        addtemporada($request, $response, $container);
+
+        isgestor($request, $response, $container,"addtemporada");
+
         break;
     case "TempoParaApartame":
-        adtemporadaApartamento($request, $response, $container);
+
+        isgestor($request, $response, $container,"adtemporadaApartamento");
+
         break;
     case "ctrledituser":
-        CtrlEditUser($request, $response, $container);
+        isadmin($request, $response, $container,"CtrlEditUser");
+
         break;
     case "ctrldeleteuser":
-        deleteuser($request, $response, $container);
+        isadmin($request, $response, $container,"deleteuser");
+
+        
         break;
     case "ctrladduser":
-        CtrlAddUser($request, $response, $container);
+        isadmin($request, $response, $container,"CtrlAddUser");
+
+
         break;
     case "gestores_apartamentos":
-        gestores_apartamentos($request, $response, $container);
+
+        isgestor($request, $response, $container,"gestores_apartamentos");
+
         break;
     case "gestores_estados":
-        gestores_estados($request, $response, $container);
+
+        isgestor($request, $response, $container,"gestores_estados");
+
         break;
     case "gestores_temporadas":
-        gestores_temporadas($request, $response, $container);
+
+        isgestor($request, $response, $container,"gestores_temporadas");
+
         break;
     case "gestores_reserva":
-        gestores_reserva($request, $response, $container);
+
+        isgestor($request, $response, $container,"gestores_reserva");
+
         break;
     case "edituser":
         edituser($request, $response, $container);
         break;
     case "deleteuser":
-        deleteuser($request, $response, $container);
+        
+        isadmin($request, $response, $container,"deleteuser");
+
         break;
     case "doadduser":
         adduser($request, $response, $container);
+
         break;
     case "ctrldetallesreserva":
         ctrldetallesreserva($request, $response, $container);
         break;
     case "deletereserva":
-        deletereserva($request, $response, $container);
+        isgestor($request, $response, $container,"deletereserva");
+
+
         break;
     case "deletetemporada":
-        deleteTemporada($request, $response, $container);
+
+        isgestor($request, $response, $container,"deleteTemporada");
+
         break;
     case "dotemporadaapartamento";
-        doeditTempoAparta($request, $response, $container);
+
+        isgestor($request, $response, $container,"doeditTempoAparta");
+
         break;
     case "apartamentoAJAX":
         getapartamentoAJAX($request, $response, $container);
@@ -215,34 +264,52 @@ switch ($r) {
         img_apartamentos_ajax($request, $response, $container);
         break;
     case "galeriaima":
-        ctrlgaleriaima($request, $response, $container);
+
+        isgestor($request, $response, $container,"ctrlgaleriaima");
+
         break;
     case "modifygalery":
-        modifygalery($request, $response, $container);
+
+                isgestor($request, $response, $container,"modifygalery");
+
         break;
     case "estados":
-        ctrlestados($request, $response, $container);
+
+        isgestor($request, $response, $container,"ctrlestados");
+
         break;
     case "addestados":
-        addestados($request, $response, $container);
+
+        isgestor($request, $response, $container,"addestados");
+
         break;
     case "infopdfreservas":
-        infopdfreservas($request, $response, $container);
+
+        isLogged($request, $response, $container,"infopdfreservas");
+
+
         break;
         case "deletestado":
-            deleteestado($request, $response, $container);
+
+            isgestor($request, $response, $container,"deleteestado");
+
             break;
             case "ctrlserviciosAdmin":  
-                ctrlserviciosAdmin($request, $response, $container);
+                isadmin($request, $response, $container,"ctrlserviciosAdmin");
+
+                
                 break;
             case "dodeleteservicio":
-                dodeleteservicio($request, $response, $container);
-                break;
-                case "ctrladdservicio":
-                    ctrladdservicio($request, $response, $container);
+
+                isgestor($request, $response, $container,"dodeleteservicio");
+            break;
+            case "ctrladdservicio":
+                isadmin($request, $response, $container,"ctrladdservicio");
+
                     break;
                     case "doaddservicio":
-                        doaddservicio($request, $response, $container);
+                        isadmin($request, $response, $container,"doaddservicio");
+
                         break;
     default:
         ctrlIndex($request, $response, $container);
