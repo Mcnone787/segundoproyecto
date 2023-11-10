@@ -20,56 +20,62 @@
   <?php include "ERROR_MANAGMENT.php"; ?>
   <div class="container" style="margin-bottom:200px;">
     <div class="row">
-      <div class="col-5">
-        <p style="color:black; text-align:left;flotar:none;">
-          Añade tu apartamento con este formulario ^^
-        </p>
-      </div>
-      <div class="col-7">
-        <form class="form-control form_session" action="index.php?r=dotemporadaapartamento&id=<?php echo $id; ?>" method="post">
-          <div class="mb-3">
-            <h2>Estas editando el apartamento <?php echo $_GET["Nombre_apartamento"]; ?></h2>
-          </div>
-          <div class="mb-3">
-            <div class="row">
-              <div class="col-6">
-                <p>
-                  <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Añadir temporada ^^</a>
-                </p>
-                <div class="collapse multi-collapse" id="multiCollapseExample1">
-                  <div class="card card-body">
-                    <?php
-                    foreach ($totaltemporada as $i => $task) {
-                      if ($task != 1) { ?>
-                        <label for="d"><input type="checkbox" name="add<?php echo $task["idtemporada"]; ?>" id=""> <?php echo $task["temporadaNombre"]; ?> <?php echo $task["fechaini"]; ?> <?php echo $task["fechasalida"]; ?>
-                        </label><br>
-                    <?php }
-                    } ?>
+      <?php include "menu_gestores.php"; ?>
+      <div class="col-12 p-3">
+        <div class="d-flex justify-content-center align-items-center">
+          <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+          </button>
+          <h3 style="text-align:center;padding:20px;">Editando Temporadas sr/sra: <?php echo $_SESSION["user"]["Nombre"] ?></h3>
+        </div>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="mx-auto col-10 col-md-8 col-lg-6">
+              <form class="form-control form_session p-5" action="index.php?r=dotemporadaapartamento&id=<?php echo $id; ?>" method="post">
+                <div class="mb-3">
+                  <h2>Estas editando el apartamento <?php echo $_GET["Nombre_apartamento"]; ?></h2>
+                </div>
+                <div class="mb-3">
+                  <div class="row">
+                    <div class="col-6">
+                      <p>
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Añadir temporada ^^</a>
+                      </p>
+                      <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                          <?php
+                          foreach ($totaltemporada as $i => $task) {
+                            if ($task != 1) { ?>
+                              <label for="d"><input type="checkbox" name="add<?php echo $task["idtemporada"]; ?>" id=""> <?php echo $task["temporadaNombre"]; ?> <?php echo $task["fechaini"]; ?> <?php echo $task["fechasalida"]; ?>
+                              </label><br>
+                          <?php }
+                          } ?>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Quitar temporada :-:</button>
+                      <div class="collapse multi-collapse" id="multiCollapseExample2">
+                        <div class="card card-body">
+                          <?php
+                          foreach ($temporadas_apartamentos as $i => $task) { ?>
+
+                            <label for="d"><input type="checkbox" name="rm<?php echo $task["idtemporada"]; ?>" id=""> <?php echo $task["temporadaNombre"]; ?> <?php echo $task["fechaini"]; ?> <?php echo $task["fechasalida"]; ?> <?php } ?>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-6">
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Quitar temporada :-:</button>
-
-                <div class="collapse multi-collapse" id="multiCollapseExample2">
-                  <div class="card card-body">
-                    <?php
-                    foreach ($temporadas_apartamentos as $i => $task) { ?>
-
-                      <label for="d"><input type="checkbox" name="rm<?php echo $task["idtemporada"]; ?>" id=""> <?php echo $task["temporadaNombre"]; ?> <?php echo $task["fechaini"]; ?> <?php echo $task["fechasalida"]; ?> <?php } ?>
-                  </div>
-                </div>
-
-              </div>
-
+                <button type="submit" class="btn btn-primary">Añadir temporada :3</button>
+              </form>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Añadir temporada :3</button>
-        </form>
+        </div>
       </div>
     </div>
   </div>
-  
   <?php include "footer.php"; ?>
   <script>
     $(function() {

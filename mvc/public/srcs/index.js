@@ -41,9 +41,6 @@ $(document).ready(function () {
       }
    });
 
-   //funcion para ocultar el menu de gestores
-   // $('#menu-gestores').hide();
-
    // Funcion para mostrar el modal de confirmacion de borrado de reserva
    $('.btnDeleteReserva').click(function () {
       $('#modalDeleteReserva').modal('show');
