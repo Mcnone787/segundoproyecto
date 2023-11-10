@@ -35,6 +35,9 @@
                 <li class="list-group-item"><a class="link-body-emphasis" href="index.php?r=adminReservas">
                         <p>Reserva</p>
                     </a></li>
+                    <li class="list-group-item"><a class="link-body-emphasis" href="index.php?r=ctrlserviciosAdmin">
+                        <p>Servicios</p>
+                    </a></li>
             <?php endif; ?>
         </ul>
     </div>

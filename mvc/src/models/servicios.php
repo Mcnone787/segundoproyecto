@@ -37,6 +37,14 @@ class servicios
         return $apartamentos;
     }
    
-
- 
+    public function deleteservicio($idservico)
+    {
+        $stm = $this->sql->prepare("DELETE FROM servicios WHERE  idservicios = :idservico;");
+        $stm->execute([':idservico' => $idservico]);
+    }
+    public function createservice($servicio)
+    {
+        $stm = $this->sql->prepare('INSERT INTO servicios (servicio) values (:servicio);');
+        $stm->execute([':servicio' => $servicio]);
+    }
 }
