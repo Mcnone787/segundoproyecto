@@ -24,11 +24,11 @@ class temporada
     // }dd
 
 
-    public function addtemporada($id_gestor,$fechaini, $fechasalida, $temporadaNombre)
+    public function addtemporada($id_gestor,$fechaini, $fechasalida, $temporadaNombre,$tipo)
     {   
 
-        $stm = $this->sql->prepare('INSERT INTO temporada (fechaini,fechasalida,temporadaNombre,GestorId) values (:fechasalida, :fechasalida, :temporadaNombre,:GestorId);');
-        $stm->execute([':fechaini' => $fechaini, ':fechasalida' => $fechasalida, ':temporadaNombre' => $temporadaNombre,':GestorId'=>$id_gestor]);
+        $stm = $this->sql->prepare('INSERT INTO temporada (fechaini,fechasalida,temporadaNombre,GestorId,Tipo) values (:fechasalida, :fechasalida, :temporadaNombre,:GestorId,:tipo);');
+        $stm->execute([':fechaini' => $fechaini, ':fechasalida' => $fechasalida, ':temporadaNombre' => $temporadaNombre,':GestorId'=>$id_gestor,':tipo'=>$tipo]);
     }
     public function deletetemporada($id){
       

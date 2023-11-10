@@ -18,7 +18,7 @@ function addtemporada($request, $response, $container) {
         return;
     }
 
-    $temporadamodel->addtemporada($_SESSION["user"]["IDUsuario"],$_POST["fechaini"],$_POST["fechafin"],$_POST["temporadaNombre"]);
+    $temporadamodel->addtemporada($_SESSION["user"]["IDUsuario"],$_POST["fechaini"],$_POST["fechafin"],$_POST["temporadaNombre"],$_POST["tipotemporada"]);
     $response->redirect("location: index.php?r=gestores_temporadas");
     $response->set("container", $container);
     return $response;

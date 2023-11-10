@@ -48,6 +48,11 @@
                                         <div class="col-6">
                                             <label for="Nombre"> Fecha de inicio de temporada </label>
                                             <input class="form-control" type="date" placeholder="Default input" name="fechafin">
+                                            <label for="Nombre"> Tipo de temporada </label>
+                                            <select name="tipotemporada">
+                                            <option value="alta" >alta</option>
+                                            <option value="baja">baja</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
