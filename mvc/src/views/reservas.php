@@ -19,7 +19,7 @@
         <div class="col mb-5">
             <h1>Tus Reservas</h1>
         </div>
-        <div class="row">
+        <div class="row tabla">
             <div class="col">
                 <table class="table">
                     <thead>

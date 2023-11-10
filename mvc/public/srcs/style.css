@@ -4,12 +4,18 @@
 a {
   text-decoration: none;
 }
+.card-img-top{
+    max-height: 200px;
+    object-fit: contain;
+}
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
 }
-
+.tabla{
+    margin-bottom: 220px;
+}
 .row-table {
   --bs-gutter-x: 0rem;
 }

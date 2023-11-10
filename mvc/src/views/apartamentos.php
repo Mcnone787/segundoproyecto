@@ -104,7 +104,7 @@
                     $apartamentoID = $apartamento['ApartamentosID'];
                     $imgApartamento=$imgjsondecode["src"][$apartamentoID]["src_imagen"][0];
                     ?>
-                    <div class="col apartamento_" id="<?php echo   $apartamentoID; ?>">
+                    <div class="col apartamento_ px-3" id="<?php echo   $apartamentoID; ?>">
                         <a class="link-offset-2 link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#apartamentoReserva" class="stretched-link">
                             <div class="card h-100" style="width: 100%;">
                                 <img src="<?php echo $imgApartamento == null ? 'imgs/logo/logo.png' : $imgApartamento ?>" class="card-img-top" alt="...">
@@ -411,7 +411,7 @@
                             src = "imgs/logo/logo.png"
                         }
                         jQuery("#cosas").append(`
-                        <div class="col apartamento_" id="${element.ApartamentosID}">
+                        <div class="col apartamento_ px-3" id="${element.ApartamentosID}">
                         <a class="link-offset-2 link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#apartamentoReserva" class="stretched-link" >
                             <div class="card h-100" style="width: 100%;">
                                 <img src='${src}' class="card-img-top" alt="...">

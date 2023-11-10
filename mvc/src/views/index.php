@@ -27,10 +27,10 @@
             <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
          </div>
          <div class="carousel-item" data-bs-interval="2000">
-            <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
+            <img src="https://www.apartamentogudar.com/templates/yootheme/cache/Apartamentos-Sierra-Gudar-casa1_08-b6078931.jpeg" class="d-block w-100" alt="casa blanca">
          </div>
          <div class="carousel-item">
-            <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
+            <img src="https://orpea.es/wp-content/uploads/2022/10/Apartamentos-Ciutat-diagonal-20200917-0139-L.jpg" class="d-block w-100" alt="casa blanca">
          </div>
       </div>
       <button class="carousel-control-prev text-light" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -43,101 +43,42 @@
       </button>
    </div>
    <div class="container contendores_ini" style="margin-top:100px; margin-bottom:100px;">
-      <div class="row">
+      <div class="row" style="display: flex;
+    flex-direction: row;
+    align-items: center;">
          <div class="col-3">
-            <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
+            <img src="https://f1ciaimobiliaria.com.br/wp-content/uploads/2022/03/como-funciona-aluguel-por-imobiliaria.jpg" class="d-block w-100" alt="casa blanca">
          </div>
          <div class="col-9">
-            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa mollitia distinctio nobis ipsam, quo libero tempora, debitis suscipit at, saepe neque quod atque minima facere dolor quas consequatur sit quia?</p>
+            <p class="text-center">Empresa dedicada integramente en la satisfaccion de nuestros clientes con años de experiencia</p>
          </div>
       </div>
    </div>
 
    <!-- info en medio -->
    <div class="container contendores_ini">
-      <div class="row">
+      <div class="row" style="display: flex;
+    flex-direction: row;
+    align-items: center;">
          <div class="col-9">
-            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa mollitia distinctio nobis ipsam, quo libero tempora, debitis suscipit at, saepe neque quod atque minima facere dolor quas consequatur sit quia?</p>
+            <p class="text-center">Apartamentos ubicados en las mejores zonas con las mejores calidades que puedan haber a que esperas corre </p>
          </div>
          <div class="col-3">
-            <img src="https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*" class="d-block w-100" alt="casa blanca">
+            <img src="https://i0.wp.com/www.carreiraodalgrande.com.br/wp-content/uploads/2018/03/assessoria-imobili%C3%A1ria.png?resize=840%2C483&ssl=1" class="d-block w-100" alt="casa blanca">
          </div>
       </div>
    </div>
    <!-- search -->
-   <div class="container" style="margin-top:50px;margin-bottom:100px;;">
-      <div class="row">
-         <div class="col-1">
-         </div>
-         <div class="col-10">
-            <h3 class="text-center" id="title_apartamentos" style="padding:50px;">Mira nuestros apartamentos</h3>
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-4 col-12">
-                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-12">
-                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-12">
-                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col-lg-4 col-12">
-                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-12">
-                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-12">
-                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-   </div>
+   
 
    <div class="container">
-      <div class="row">
-         <div class="col-6 textcentroHV">
+      <div class="row mt-5">
+         <div class="col-12 col-lg-6 textcentroHV">
             <h2 class="text-center ">Empresa lider de nuestro sector</h2>
          </div>
 
-         <div class="col-6">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.2256160229385!2d2.962094874992734!3d42.273707040554356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ba8dd91251e3ff%3A0xe8dfb11cd9cdef78!2sInstitut%20Cendrassos!5e0!3m2!1ses!2ses!4v1697476156936!5m2!1ses!2ses" width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         <div class="col-6 col-lg-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.2256160229385!2d2.962094874992734!3d42.273707040554356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ba8dd91251e3ff%3A0xe8dfb11cd9cdef78!2sInstitut%20Cendrassos!5e0!3m2!1ses!2ses!4v1697476156936!5m2!1ses!2ses" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
          </div>
       </div>
    </div>
