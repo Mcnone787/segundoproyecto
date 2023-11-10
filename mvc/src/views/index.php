@@ -9,11 +9,10 @@
    <link rel="stylesheet" href="srcs/style.css">
    <link rel="icon" href="imgs/logo/favicon/logo-removebg-preview.png" type="image/x-icon">
    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-  
    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" ></script>
-
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 </head>
 
 <body data-bs-theme="light">
@@ -142,8 +141,16 @@
       </div>
    </div>
 
+   <!-- Cookie Aviso Legal -->
+   <div id="AceptoCookies" class="border m-3 p-3 bg-body rounded-3 shadow fixed-bottom">
+      <p>Bienvnido a Apartamentos Figures, al navegar por nuestra web asumiremos que estas de acuerdo y <b>aceptas los términos y condiciones</b></p>
+      <p>Este es un aviso legal informando que esta web utilizara cookies para guardar informacion</p>
+      <button style="float: right;" type="button" class="btn btn-primary" id="btnAceptarCookies">Aceptar</button>
+   </div>
+
    <?php include "footer.php"; ?>
    <script src="srcs/index.js"></script>
+   <script src="srcs/cookies.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
