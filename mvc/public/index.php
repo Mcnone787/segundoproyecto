@@ -60,7 +60,7 @@ include "../src/controllers/CtrlAdminEstados.php";
 include "../src/controllers/modifygalery.php";
 include "../src/controllers/ctrlestados.php";
 include "../src/controllers/addestados.php";
-include "../src/controllers/ctrldetallesreserva.php";
+include "../src/controllers/Ctrldetallesreserva.php";
 include "../src/controllers/infopdfreservas.php";
 include "../src/controllers/deletestado.php";
 include "../src/controllers/ctrlserviciosAdmin.php";
@@ -243,7 +243,7 @@ switch ($r) {
         ctrldetallesreserva($request, $response, $container);
         break;
     case "deletereserva":
-        isgestor($request, $response, $container,"deletereserva");
+        deletereserva($request, $response, $container);
 
 
         break;
