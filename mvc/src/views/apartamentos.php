@@ -429,9 +429,8 @@
             $('#alertReserva').hide();
             jQuery(".apartamento_").each((element, obje) => {
                 obje.addEventListener("click", () => {
-                   if(formfeiniglobal>formfefinglobal){
-                        jQuery
-                   }else{
+                 
+                   
 
                     id_ = obje.id
                     let sum = 0;
@@ -603,7 +602,7 @@ resizeObserver.observe(mapDiv);
                         )
                     }
 
-                }
+                
                     //aqui
                 })
             });

@@ -26,7 +26,7 @@ class servicios_apartamentos
 
     public function getAll($id){
         
-        $stm = $this->sql->prepare("select s.* from Apartamentos_servicios as_ ,apartamentos a,servicios s where as_.ApartamentosID=a.ApartamentosID and as_.servicioid=s.idservicios and a.ApartamentosID=:id; ");   
+        $stm = $this->sql->prepare("select s.* from apartamentos_servicios as_ ,apartamentos a,servicios s where as_.ApartamentosID=a.ApartamentosID and as_.servicioid=s.idservicios and a.ApartamentosID=:id; ");   
         $stm->execute([':id' => $id]);
 
         $tasks = array();
